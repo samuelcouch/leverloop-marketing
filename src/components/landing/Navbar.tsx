@@ -245,14 +245,12 @@ export default function Navbar() {
               href="/"
               className="flex items-center gap-2 font-display font-bold text-xl tracking-tight text-heading"
             >
-              <svg width="28" height="28" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-                <path
-                  d="M6 6H34V30H58V58H30V34H6V6Z"
-                  stroke="currentColor"
-                  strokeWidth="7"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <img
+                src="/leverloop-mark-dark.svg"
+                alt=""
+                aria-hidden="true"
+                className="h-7 w-7"
+              />
               LeverLoop
             </a>
           </div>
