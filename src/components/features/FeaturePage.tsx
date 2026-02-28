@@ -3,14 +3,36 @@ import FeatureHero from "./FeatureHero";
 import FeatureDetails from "./FeatureDetails";
 import FreeResources from "./FreeResources";
 import FAQ from "./FAQ";
-import SearchMockup from "./mockups/SearchMockup";
-import PipelineMockup from "./mockups/PipelineMockup";
-import AssistantsMockup from "./mockups/AssistantsMockup";
+import {
+  CustomerDatabaseMockup,
+  DispatchBoardMockup,
+  EquipmentTrackingMockup,
+  EstimateBuilderMockup,
+  LeadEngineMockup,
+  MembershipsMockup,
+  MobileTechMockup,
+  PaymentsMockup,
+  PipelineBoardMockup,
+  ReliabilityRouterMockup,
+  RevenueRecoveryMockup,
+  TeamManagementMockup,
+  UnifiedInboxMockup,
+} from "./mockups/HomeServiceMockups";
 
 const mockupMap: Record<Feature["mockup"], React.FC> = {
-  search: SearchMockup,
-  pipeline: PipelineMockup,
-  assistants: AssistantsMockup,
+  lead: LeadEngineMockup,
+  pipeline: PipelineBoardMockup,
+  customer: CustomerDatabaseMockup,
+  equipment: EquipmentTrackingMockup,
+  estimate: EstimateBuilderMockup,
+  payments: PaymentsMockup,
+  dispatch: DispatchBoardMockup,
+  mobile: MobileTechMockup,
+  memberships: MembershipsMockup,
+  recovery: RevenueRecoveryMockup,
+  inbox: UnifiedInboxMockup,
+  team: TeamManagementMockup,
+  reliability: ReliabilityRouterMockup,
 };
 
 export default function FeaturePage({ feature }: { feature: Feature }) {

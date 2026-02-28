@@ -44,6 +44,10 @@ const jsonLdGraph: Record<string, unknown>[] = [
       "@type": "Organization",
       name: "LeverLoop",
       url: siteOrigin,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteOrigin}/og-image.png`,
+      },
     },
     isPartOf: {
       "@type": "WebSite",

@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import { siteMetadata } from '../data/landing'
 
 interface Props {
 	title?: string;
@@ -15,8 +16,8 @@ interface Props {
 }
 
 const {
-	title = 'LeverLoop — The CRM that adapts to you',
-	description = 'LeverLoop captures every detail of your relationships in a beautifully simple CRM. AI assistants learn from your data to automate routine work.',
+	title = siteMetadata.defaultTitle,
+	description = siteMetadata.defaultDescription,
 	jsonLd,
 	ogType = 'website',
 	articleMeta,
@@ -31,6 +32,8 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://leverloo
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -41,6 +44,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://leverloo
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonicalUrl} />
 		<meta property="og:type" content={ogType} />
+		<meta property="og:image" content="/og-image.png" />
 		<meta name="twitter:card" content="summary_large_image" />
 		{articleMeta && (
 			<>

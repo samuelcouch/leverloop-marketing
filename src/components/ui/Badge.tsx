@@ -23,7 +23,7 @@ const softColors = {
 
 const variantStyles = {
   default: 'px-3 py-1.5 rounded-full bg-white text-body',
-  pill: 'px-4 py-2 rounded-full border border-edge text-sm text-heading',
+  pill: 'px-4 py-2 rounded-full border border-heading text-sm text-heading',
   status: 'px-2.5 py-1 rounded-md text-xs font-semibold',
   numbered: 'px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider',
 };

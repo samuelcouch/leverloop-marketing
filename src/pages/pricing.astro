@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/landing/Navbar';
+import PricingPage from '../components/landing/PricingPage';
+import Footer from '../components/landing/Footer';
+import { pricingPageData } from '../data/pricing';
+
+const { meta } = pricingPageData;
+
+const siteUrl = Astro.site ?? new URL('https://leverloop.com');
+const pageUrl = new URL('/pricing', siteUrl).href;
+
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": "WebPage",
+	name: meta.title,
+	description: meta.description,
+	url: pageUrl,
+	isPartOf: { "@type": "WebSite", name: "LeverLoop", url: siteUrl.toString() },
+};
+---
+
+<Layout title={meta.title} description={meta.description} jsonLd={jsonLd}>
+	<Navbar client:load />
+	<PricingPage client:load />
+	<Footer />
+</Layout>
