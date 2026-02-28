@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/landing/Navbar';
+import Footer from '../../components/landing/Footer';
+import FeaturePage from '../../components/features/FeaturePage';
+import { features } from '../../data/features';
+
+export function getStaticPaths() {
+  return features.map((feature) => ({
+    params: { slug: feature.slug },
+    props: { feature },
+  }));
+}
+
+const { feature } = Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://leverloop.com');
+const pageUrl = new URL(`/features/${feature.slug}`, siteUrl).href;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl.toString().replace(/\/$/, '') },
+        { "@type": "ListItem", position: 2, name: "Features", item: `${siteUrl.toString().replace(/\/$/, '')}/features` },
+        { "@type": "ListItem", position: 3, name: feature.headline, item: pageUrl },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      name: feature.metaTitle,
+      description: feature.metaDescription,
+      url: pageUrl,
+      isPartOf: { "@type": "WebSite", name: "LeverLoop", url: siteUrl.toString() },
+    },
+  ],
+};
+---
+
+<Layout title={feature.metaTitle} description={feature.metaDescription} jsonLd={jsonLd}>
+  <Navbar client:load />
+  <FeaturePage client:load feature={feature} />
+  <Footer />
+</Layout>

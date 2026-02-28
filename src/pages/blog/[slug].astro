@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/landing/Navbar';
+import Footer from '../../components/landing/Footer';
+import BlogArticlePage from '../../components/blog/BlogArticlePage';
+import { articles } from '../../data/articles';
+
+export function getStaticPaths() {
+  return Object.values(articles).map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://leverloop.com');
+const siteOrigin = siteUrl.toString().replace(/\/$/, '');
+const pageUrl = new URL(`/blog/${article.slug}`, siteUrl).href;
+
+const jsonLdGraph: Record<string, unknown>[] = [
+  {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteOrigin },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${siteOrigin}/blog` },
+      { "@type": "ListItem", position: 3, name: article.title, item: pageUrl },
+    ],
+  },
+  {
+    "@type": "Article",
+    headline: article.title,
+    description: article.excerpt,
+    url: pageUrl,
+    datePublished: article.publishedISO,
+    ...(article.lastUpdatedISO && { dateModified: article.lastUpdatedISO }),
+    author: {
+      "@type": "Person",
+      name: article.authorDetail.name,
+      jobTitle: article.authorDetail.role,
+      ...(article.authorDetail.linkedin && { url: article.authorDetail.linkedin }),
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "LeverLoop",
+      url: siteOrigin,
+    },
+    isPartOf: {
+      "@type": "WebSite",
+      name: "LeverLoop",
+      url: siteOrigin,
+    },
+  },
+];
+
+if (article.faq && article.faq.length > 0) {
+  jsonLdGraph.push({
+    "@type": "FAQPage",
+    mainEntity: article.faq.map((f: { question: string; answer: string }) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.answer,
+      },
+    })),
+  });
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": jsonLdGraph,
+};
+---
+
+<Layout
+  title={`${article.title} — LeverLoop Blog`}
+  description={article.excerpt}
+  jsonLd={jsonLd}
+  ogType="article"
+  articleMeta={{
+    publishedTime: article.publishedISO,
+    modifiedTime: article.lastUpdatedISO,
+    author: article.authorDetail.name,
+    section: article.category,
+  }}
+>
+  <Navbar client:load />
+  <BlogArticlePage client:load article={article} />
+  <Footer />
+</Layout>
