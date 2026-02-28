@@ -34,7 +34,7 @@ export default function AssistantsMockup() {
     <div className="w-full max-w-[440px] bg-white rounded-2xl shadow-[0_8px_40px_-12px_rgba(0,0,0,0.12),0_0_0_1px_rgba(0,0,0,0.04)] overflow-hidden">
       {/* Header */}
       <div className="flex items-center gap-2.5 px-5 py-4 border-b border-[#f1f5f9]">
-        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#6366f1] to-[#8b5cf6] flex items-center justify-center text-white text-sm">
+        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#023e8a] to-[#0353a4] flex items-center justify-center text-white text-sm">
           🤖
         </div>
         <div>

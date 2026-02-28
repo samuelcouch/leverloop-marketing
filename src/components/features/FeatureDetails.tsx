@@ -27,7 +27,7 @@ function FilterMock() {
         </div>
         <div className="space-y-2">
           {[
-            { name: "Sarah Chen", company: "Stripe", value: "$24K", color: "#6366f1" },
+            { name: "Sarah Chen", company: "Stripe", value: "$24K", color: "#023e8a" },
             { name: "Alex Rivera", company: "Figma", value: "$18K", color: "#f59e0b" },
             { name: "James Park", company: "Linear", value: "$32K", color: "#10b981" },
           ].map((r) => (
@@ -62,7 +62,7 @@ function InstantMock() {
             <path d="m21 21-4.35-4.35" />
           </svg>
           <span className="text-sm text-[#111827]">Str</span>
-          <span className="w-[2px] h-4 bg-[#6366f1] animate-pulse" />
+          <span className="w-[2px] h-4 bg-[#023e8a] animate-pulse" />
         </div>
         <div className="py-1">
           {[
@@ -114,7 +114,7 @@ function SavedMock() {
                 <div className="text-[10px] text-[#9ca3af]">{list.count} contacts · Auto-updates</div>
               </div>
               {list.shared && (
-                <span className="text-[9px] px-2 py-0.5 rounded-full bg-[#eef2ff] text-[#6366f1] font-medium">
+                <span className="text-[9px] px-2 py-0.5 rounded-full bg-[#dce8f5] text-[#023e8a] font-medium">
                   Shared
                 </span>
               )}
@@ -133,7 +133,7 @@ function StagesMock() {
         <div className="text-xs font-semibold text-[#111827] mb-3">Pipeline stages</div>
         <div className="space-y-2">
           {[
-            { name: "Lead", color: "#e0e7ff", required: ["Company", "Email"], action: "Auto-enrich" },
+            { name: "Lead", color: "#c5d9ed", required: ["Company", "Email"], action: "Auto-enrich" },
             { name: "Qualified", color: "#dbeafe", required: ["Budget", "Timeline"], action: "Notify owner" },
             { name: "Demo booked", color: "#fef3c7", required: ["Meeting date"], action: "Send prep email" },
             { name: "Proposal", color: "#fce7f3", required: ["Contract value"], action: "Alert manager" },
@@ -174,7 +174,7 @@ function ForecastMock() {
               className="flex-1 rounded-t"
               style={{
                 height: `${h}%`,
-                backgroundColor: i >= 7 ? "#6366f1" : i >= 5 ? "#a5b4fc" : "#e0e7ff",
+                backgroundColor: i >= 7 ? "#023e8a" : i >= 5 ? "#5a9bd5" : "#c5d9ed",
               }}
             />
           ))}
@@ -222,7 +222,7 @@ function ActivityMock() {
                 <div className="flex items-center gap-2 mt-0.5">
                   <span className="text-[10px] text-[#9ca3af]">{a.time}</span>
                   {a.auto && (
-                    <span className="text-[9px] px-1.5 py-0.5 rounded bg-[#eef2ff] text-[#6366f1] font-medium">
+                    <span className="text-[9px] px-1.5 py-0.5 rounded bg-[#dce8f5] text-[#023e8a] font-medium">
                       Auto-logged
                     </span>
                   )}
@@ -241,9 +241,9 @@ function FollowupMock() {
     <div className="p-5">
       <div className="bg-white rounded-xl border border-[#e5e7eb] shadow-sm overflow-hidden">
         <div className="px-4 py-3 border-b border-[#f1f5f9] flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-[#6366f1] animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-[#023e8a] animate-pulse" />
           <span className="text-xs font-semibold text-[#111827]">AI-drafted follow-up</span>
-          <span className="ml-auto text-[10px] px-2 py-0.5 rounded bg-[#eef2ff] text-[#6366f1] font-medium">
+          <span className="ml-auto text-[10px] px-2 py-0.5 rounded bg-[#dce8f5] text-[#023e8a] font-medium">
             Ready to send
           </span>
         </div>
@@ -280,7 +280,7 @@ function EnrichMock() {
     <div className="p-5">
       <div className="bg-white rounded-xl border border-[#e5e7eb] shadow-sm p-4">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#6366f1] to-[#8b5cf6] flex items-center justify-center text-white text-sm font-semibold">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#023e8a] to-[#0353a4] flex items-center justify-center text-white text-sm font-semibold">
             JK
           </div>
           <div>

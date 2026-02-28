@@ -4,7 +4,7 @@ const stages = [
     color: "#dbeafe",
     amount: "$30K",
     cards: [
-      { name: "Sarah Chen", company: "Stripe", color: "#6366f1" },
+      { name: "Sarah Chen", company: "Stripe", color: "#023e8a" },
       { name: "Alex Rivera", company: "Figma", color: "#f59e0b" },
     ],
   },

@@ -84,7 +84,7 @@ function CaptureMock() {
         </div>
         <div className="p-4">
           <div className="flex items-start gap-3">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#6366f1] to-[#8b5cf6] flex items-center justify-center text-white text-sm font-semibold shrink-0">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#023e8a] to-[#0353a4] flex items-center justify-center text-white text-sm font-semibold shrink-0">
               SC
             </div>
             <div className="flex-1">
@@ -99,7 +99,7 @@ function CaptureMock() {
       <div className="mt-3 bg-white rounded-xl border border-[#e5e7eb] shadow-sm p-4">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
-            <div className="w-5 h-5 rounded bg-[#6366f1] flex items-center justify-center text-white text-[8px] font-bold">
+            <div className="w-5 h-5 rounded bg-[#023e8a] flex items-center justify-center text-white text-[8px] font-bold">
               L
             </div>
             <span className="text-xs font-semibold text-[#111827]">Add to LeverLoop</span>
@@ -116,7 +116,7 @@ function CaptureMock() {
           ].map((field) => (
             <div key={field.label} className="flex items-center justify-between">
               <span className="text-[10px] text-[#9ca3af]">{field.label}</span>
-              <span className={`text-[10px] ${field.found ? "text-[#111827]" : "text-[#6366f1]"} font-medium`}>
+              <span className={`text-[10px] ${field.found ? "text-[#111827]" : "text-[#023e8a]"} font-medium`}>
                 {field.value}
               </span>
             </div>
@@ -159,13 +159,13 @@ function ResearchMock() {
         <div className="border-t border-[#f1f5f9] pt-3">
           <div className="flex items-center gap-1.5 mb-2">
             <span className="text-xs">🤖</span>
-            <span className="text-[10px] font-semibold text-[#6366f1]">AI Research Notes</span>
+            <span className="text-[10px] font-semibold text-[#023e8a]">AI Research Notes</span>
           </div>
           <div className="text-xs text-[#6b7280] leading-relaxed">
             Stripe is a leading financial infrastructure platform powering payments for internet businesses. Recent expansion into banking-as-a-service and crypto payouts. Key decision makers include...
           </div>
           <div className="mt-2 flex gap-1.5">
-            <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#eef2ff] text-[#6366f1] font-medium">
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#dce8f5] text-[#023e8a] font-medium">
               Auto-enriched
             </span>
             <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#f9fafb] text-[#9ca3af] border border-[#f1f5f9]">
@@ -185,7 +185,7 @@ function OutreachMock() {
         <div className="px-4 py-3 border-b border-[#f1f5f9] flex items-center justify-between">
           <div className="text-xs font-semibold text-[#111827]">Compose sequence</div>
           <div className="flex gap-1.5">
-            <span className="text-[10px] px-2 py-0.5 rounded bg-[#eef2ff] text-[#6366f1] font-medium">
+            <span className="text-[10px] px-2 py-0.5 rounded bg-[#dce8f5] text-[#023e8a] font-medium">
               AI draft
             </span>
           </div>
@@ -210,8 +210,8 @@ function OutreachMock() {
               I noticed Stripe recently expanded into banking-as-a-service — congrats on the launch! I'd love to share how LeverLoop could help your team manage...
             </div>
             <div className="mt-3 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#6366f1] animate-pulse" />
-              <span className="text-[10px] text-[#6366f1] font-medium">
+              <span className="w-2 h-2 rounded-full bg-[#023e8a] animate-pulse" />
+              <span className="text-[10px] text-[#023e8a] font-medium">
                 AI is personalizing based on CRM data...
               </span>
             </div>
@@ -308,7 +308,7 @@ function CloseMock() {
                 className="flex-1 rounded-t"
                 style={{
                   height: `${h}%`,
-                  backgroundColor: i === 11 ? "#6366f1" : i >= 9 ? "#a5b4fc" : "#e0e7ff",
+                  backgroundColor: i === 11 ? "#023e8a" : i >= 9 ? "#5a9bd5" : "#c5d9ed",
                 }}
               />
             ))}

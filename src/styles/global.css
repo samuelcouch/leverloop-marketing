@@ -18,9 +18,9 @@
   --color-divider: #d1d5db;
 
   /* Accent / brand */
-  --color-accent: #6366f1;
-  --color-accent-hover: #4f46e5;
-  --color-accent-soft: #eef2ff;
+  --color-accent: #023e8a;
+  --color-accent-hover: #012d6b;
+  --color-accent-soft: #dce8f5;
 
   /* Dark / ink (buttons, dark UI) */
   --color-ink: #111827;
@@ -84,14 +84,14 @@
 }
 
 .article-prose a {
-  color: #6366f1;
+  color: #023e8a;
   text-decoration: underline;
   text-underline-offset: 2px;
   transition: color 150ms;
 }
 
 .article-prose a:hover {
-  color: #4f46e5;
+  color: #012d6b;
 }
 
 .article-prose ul,
@@ -116,11 +116,11 @@
 }
 
 .article-prose li::marker {
-  color: #6366f1;
+  color: #023e8a;
 }
 
 .article-prose blockquote {
-  border-left: 3px solid #6366f1;
+  border-left: 3px solid #023e8a;
   background-color: #f9fafb;
   border-radius: 0 0.75rem 0.75rem 0;
   padding: 1.25rem 1.5rem;

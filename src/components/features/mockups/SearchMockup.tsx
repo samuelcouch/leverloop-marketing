@@ -3,13 +3,13 @@ const results = [
     category: "Deals",
     title: "Acme Corp Renewal",
     snippet: "Contract renewal for Acme Corp — Q3 pipeline",
-    color: "#6366f1",
+    color: "#023e8a",
   },
   {
     category: "Deals",
     title: "Acme Expansion",
     snippet: "Upsell opportunity for enterprise plan…",
-    color: "#6366f1",
+    color: "#023e8a",
   },
   {
     category: "Contacts",
@@ -52,7 +52,7 @@ export default function SearchMockup() {
             <path d="m21 21-4.35-4.35" />
           </svg>
           <span className="text-[15px] text-[#111827] font-medium">Acme</span>
-          <span className="w-[2px] h-5 bg-[#6366f1] animate-pulse" />
+          <span className="w-[2px] h-5 bg-[#023e8a] animate-pulse" />
           <button className="ml-auto text-[#9ca3af] hover:text-[#6b7280] transition-colors">
             <svg
               width="16"

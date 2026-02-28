@@ -64,7 +64,7 @@ export default function Hero() {
             {/* Sidebar */}
             <div className="hidden sm:flex flex-col w-56 border-r border-[#f1f5f9] bg-[#fafafa] p-4 shrink-0">
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-6 h-6 rounded bg-[#6366f1] flex items-center justify-center text-white text-[10px] font-bold">
+                <div className="w-6 h-6 rounded bg-[#023e8a] flex items-center justify-center text-white text-[10px] font-bold">
                   L
                 </div>
                 <span className="text-sm font-semibold text-[#111827]">
@@ -137,7 +137,7 @@ export default function Hero() {
                       name="Sarah Chen"
                       company="Stripe"
                       email="sarah@stripe.com"
-                      color="#6366f1"
+                      color="#023e8a"
                     />
                     <PipelineCard
                       name="Alex Rivera"
@@ -195,14 +195,14 @@ export default function Hero() {
             {/* Right detail panel */}
             <div className="hidden lg:flex flex-col w-64 border-l border-[#f1f5f9] p-5 shrink-0">
               <div className="flex flex-col items-center text-center mb-5">
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#6366f1] to-[#8b5cf6] flex items-center justify-center text-white text-lg font-semibold mb-3">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#023e8a] to-[#0353a4] flex items-center justify-center text-white text-lg font-semibold mb-3">
                   SC
                 </div>
                 <div className="font-semibold text-sm text-[#111827]">
                   Sarah Chen
                 </div>
                 <div className="text-xs text-[#6b7280] flex items-center gap-1 mt-0.5">
-                  <span className="w-3 h-3 rounded-full bg-[#6366f1] inline-block" />
+                  <span className="w-3 h-3 rounded-full bg-[#023e8a] inline-block" />
                   Stripe
                 </div>
               </div>
