@@ -6,7 +6,7 @@ Every primitive in this directory must be exported from `index.ts`. When adding 
 
 ## Available Primitives
 
-`Button`, `Input`, `Select`, `Section`, `SectionHeader`, `Badge`, `IconBox`, `FeatureRow`
+`Button`, `IconButton`, `Input`, `Select`, `Section`, `SectionHeader`, `Badge`, `IconBox`, `FeatureRow`
 
 ## Button API
 
