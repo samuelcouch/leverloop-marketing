@@ -9,6 +9,7 @@ export type BlogPost = {
     name: string;
     avatar: string;
   };
+  gradient: string;
 };
 
 export type Author = {
@@ -102,6 +103,7 @@ export const posts: BlogPost[] = [
     date: 'Feb 24, 2026',
     readTime: '5 min read',
     author: { name: 'Sarah Chen', avatar: 'SC' },
+    gradient: 'from-violet-400 via-indigo-300 to-sky-200',
   },
   {
     slug: 'scaling-postgres-beyond-1b-rows',
@@ -112,6 +114,7 @@ export const posts: BlogPost[] = [
     date: 'Feb 18, 2026',
     readTime: '12 min read',
     author: { name: 'James Park', avatar: 'JP' },
+    gradient: 'from-emerald-400 via-teal-300 to-cyan-200',
   },
   {
     slug: 'pipeline-management-best-practices',
@@ -122,6 +125,7 @@ export const posts: BlogPost[] = [
     date: 'Feb 12, 2026',
     readTime: '8 min read',
     author: { name: 'Maria Gonzalez', avatar: 'MG' },
+    gradient: 'from-amber-400 via-orange-300 to-rose-200',
   },
   {
     slug: 'series-b-announcement',
@@ -132,6 +136,7 @@ export const posts: BlogPost[] = [
     date: 'Feb 5, 2026',
     readTime: '3 min read',
     author: { name: 'Alex Rivera', avatar: 'AR' },
+    gradient: 'from-pink-400 via-rose-300 to-red-200',
   },
   {
     slug: 'getting-started-with-leverloop-api',
@@ -142,6 +147,7 @@ export const posts: BlogPost[] = [
     date: 'Jan 28, 2026',
     readTime: '10 min read',
     author: { name: 'Priya Patel', avatar: 'PP' },
+    gradient: 'from-sky-400 via-blue-300 to-indigo-200',
   },
   {
     slug: 'smart-search-deep-dive',
@@ -152,6 +158,7 @@ export const posts: BlogPost[] = [
     date: 'Jan 22, 2026',
     readTime: '7 min read',
     author: { name: 'James Park', avatar: 'JP' },
+    gradient: 'from-teal-400 via-emerald-300 to-lime-200',
   },
   {
     slug: 'cold-email-playbook',
@@ -162,6 +169,7 @@ export const posts: BlogPost[] = [
     date: 'Jan 15, 2026',
     readTime: '9 min read',
     author: { name: 'Maria Gonzalez', avatar: 'MG' },
+    gradient: 'from-orange-400 via-amber-300 to-yellow-200',
   },
   {
     slug: 'real-time-sync-architecture',
@@ -172,6 +180,7 @@ export const posts: BlogPost[] = [
     date: 'Jan 8, 2026',
     readTime: '14 min read',
     author: { name: 'Sarah Chen', avatar: 'SC' },
+    gradient: 'from-fuchsia-400 via-purple-300 to-violet-200',
   },
   {
     slug: 'custom-fields-workflows',
@@ -182,6 +191,7 @@ export const posts: BlogPost[] = [
     date: 'Jan 2, 2026',
     readTime: '6 min read',
     author: { name: 'Priya Patel', avatar: 'PP' },
+    gradient: 'from-cyan-400 via-sky-300 to-blue-200',
   },
   {
     slug: 'year-in-review-2025',
@@ -192,6 +202,7 @@ export const posts: BlogPost[] = [
     date: 'Dec 28, 2025',
     readTime: '4 min read',
     author: { name: 'Alex Rivera', avatar: 'AR' },
+    gradient: 'from-rose-400 via-pink-300 to-fuchsia-200',
   },
   {
     slug: 'deal-forecasting-with-ml',
@@ -202,6 +213,7 @@ export const posts: BlogPost[] = [
     date: 'Dec 20, 2025',
     readTime: '8 min read',
     author: { name: 'James Park', avatar: 'JP' },
+    gradient: 'from-indigo-400 via-violet-300 to-purple-200',
   },
   {
     slug: 'migration-guide-salesforce',
@@ -212,5 +224,6 @@ export const posts: BlogPost[] = [
     date: 'Dec 14, 2025',
     readTime: '5 min read',
     author: { name: 'Priya Patel', avatar: 'PP' },
+    gradient: 'from-lime-400 via-green-300 to-emerald-200',
   },
 ];

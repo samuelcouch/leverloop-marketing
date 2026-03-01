@@ -22,9 +22,7 @@ export function IconBox({
   const base = 'flex items-center justify-center';
   const sizeClass = sizeStyles[size];
   const variantClass =
-    variant === 'colored'
-      ? ''
-      : 'bg-background-neutral border border-border-neutral text-content-secondary';
+    variant === 'colored' ? '' : 'bg-subtle border border-edge text-body';
   const style = variant === 'colored' && color ? { backgroundColor: color } : undefined;
 
   return (

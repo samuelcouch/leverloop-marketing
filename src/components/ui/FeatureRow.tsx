@@ -22,16 +22,16 @@ export function FeatureRow({
   children,
 }: FeatureRowProps) {
   return (
-    <div className="bg-background-neutral rounded-3xl p-6 sm:p-10 lg:p-14">
+    <div className="bg-warm rounded-3xl p-6 sm:p-10 lg:p-14">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div className={reversed ? 'lg:order-2' : ''}>
-          <span className="inline-block px-4 py-1.5 rounded-full pair-bg-bright-green text-xs font-semibold">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-success-soft text-success-dark text-xs font-semibold">
             {label}
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-content-primary leading-[1.15] mt-5">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-heading leading-[1.15] mt-5">
             {headline}
           </h2>
-          <p className="mt-5 text-base lg:text-lg text-content-secondary leading-relaxed">
+          <p className="mt-5 text-base lg:text-lg text-body leading-relaxed">
             {description}
           </p>
           <Button href={ctaHref} shape="pill" arrow className="mt-8">
@@ -41,7 +41,7 @@ export function FeatureRow({
         </div>
 
         <div className={`relative ${reversed ? 'lg:order-1' : ''}`}>
-          <div className="bg-background-elevated rounded-2xl border border-border-neutral shadow-sm overflow-hidden">
+          <div className="bg-white/60 rounded-2xl border border-white/80 shadow-sm overflow-hidden">
             {mockup}
           </div>
         </div>

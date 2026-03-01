@@ -30,7 +30,7 @@ export type NavbarFeature = {
   title: string;
   description: string;
   href: string;
-  gradient?: 'brand' | 'warm' | 'growth';
+  gradient?: string;
   icon?: string;
 };
 
@@ -91,19 +91,19 @@ export const navbarNavigation: NavbarItemConfig[] = [
         title: 'Speed-to-Lead Engine',
         description: 'Auto-text every new lead in 60 seconds so you stay first to respond',
         href: '/features/speed-to-lead-engine',
-        gradient: 'brand',
+        gradient: 'from-sky-300 via-blue-200 to-emerald-200',
       },
       {
         title: 'Good / Better / Best Estimates',
         description: 'Build option-based quotes on-site using your flat-rate pricebook',
         href: '/features/estimate-builder-good-better-best',
-        gradient: 'warm',
+        gradient: 'from-amber-300 via-yellow-200 to-lime-200',
       },
       {
         title: 'Dispatch + Field Mobile App',
         description: 'Schedule jobs, alert customers, and run every service call from the field',
         href: '/features/dispatch-board',
-        gradient: 'growth',
+        gradient: 'from-emerald-400 via-green-300 to-lime-200',
       },
     ],
     categories: [
@@ -186,7 +186,7 @@ export type HeroPipelineCard = {
   name: string;
   company: string;
   email: string;
-  tone: 'forest' | 'gold' | 'positive' | 'pink' | 'blue';
+  color: string;
 };
 
 export type HeroPipelineColumnTone = 'blue' | 'amber' | 'green';
@@ -211,7 +211,7 @@ export type HeroMockProfile = {
   initials: string;
   name: string;
   tag: string;
-  tagTone: 'forest' | 'gold' | 'positive' | 'pink' | 'blue';
+  tagColor: string;
   actions: string[];
   upcoming: HeroUpcomingItem[];
   recent: string[];
@@ -283,13 +283,13 @@ export const heroCopy: HeroCopy = {
             name: 'Olivia Reed',
             company: 'No-Cool Call',
             email: 'olivia.reed@email.com',
-            tone: 'forest',
+            color: '#023e8a',
           },
           {
             name: 'Marcus Hill',
             company: 'Water Heater Quote',
             email: 'marcushill@email.com',
-            tone: 'gold',
+            color: '#f59e0b',
           },
         ],
       },
@@ -302,13 +302,13 @@ export const heroCopy: HeroCopy = {
             name: 'Diana Flores',
             company: 'Panel Upgrade',
             email: 'diana.f@email.com',
-            tone: 'positive',
+            color: '#10b981',
           },
           {
             name: 'Evan Lee',
             company: 'Furnace Repair',
             email: 'evan.lee@email.com',
-            tone: 'pink',
+            color: '#ec4899',
           },
         ],
       },
@@ -321,7 +321,7 @@ export const heroCopy: HeroCopy = {
             name: 'Nina Patel',
             company: 'Spring Tune-Up Plan',
             email: 'nina.patel@email.com',
-            tone: 'blue',
+            color: '#3b82f6',
           },
         ],
       },
@@ -330,7 +330,7 @@ export const heroCopy: HeroCopy = {
       initials: 'OR',
       name: 'Olivia Reed',
       tag: 'No-Cool Service Call',
-      tagTone: 'forest',
+      tagColor: '#023e8a',
       actions: ['🧾 Build Estimate', '💬 Text Customer'],
       upcoming: [
         {

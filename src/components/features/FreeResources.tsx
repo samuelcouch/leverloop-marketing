@@ -19,10 +19,10 @@ const typeIcons: Record<ResourceLink['type'], string> = {
 };
 
 const typeAccentBg: Record<ResourceLink['type'], string> = {
-  Guide: 'pair-bg-bright-blue',
-  Template: 'pair-bg-bright-green',
-  Checklist: 'pair-bg-bright-yellow',
-  Playbook: 'pair-bg-bright-pink',
+  Guide: 'bg-[#dbeafe]',
+  Template: 'bg-success-soft',
+  Checklist: 'bg-warning-soft',
+  Playbook: 'bg-accent-soft',
 };
 
 export default function FreeResources({
@@ -34,7 +34,7 @@ export default function FreeResources({
 
   return (
     <Section className="!pt-6">
-      <div className="rounded-3xl bg-background-neutral p-8 sm:p-12 lg:p-16">
+      <div className="rounded-3xl bg-subtle p-8 sm:p-12 lg:p-16">
       <SectionHeader
         heading="Free resources"
         subheading="Guides, templates, and checklists to help you get the most out of this feature."
@@ -45,7 +45,7 @@ export default function FreeResources({
           <a
             key={r.href}
             href={r.href}
-            className="group flex flex-col bg-background-elevated rounded-2xl border border-border-neutral overflow-hidden transition-all duration-200 hover:shadow-lg hover:-translate-y-1"
+            className="group flex flex-col bg-raised rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-lg hover:-translate-y-1"
           >
             <div className={`${typeAccentBg[r.type]} flex items-center justify-center py-8`}>
               <span className="text-5xl group-hover:scale-110 transition-transform duration-200">
@@ -58,15 +58,15 @@ export default function FreeResources({
                 {r.type}
               </Badge>
 
-              <h3 className="font-display text-lg font-bold text-content-primary leading-snug mt-4 group-hover:text-content-link transition-colors">
+              <h3 className="font-display text-lg font-bold text-heading leading-snug mt-4 group-hover:text-accent transition-colors">
                 {r.title}
               </h3>
 
-              <p className="text-sm text-content-secondary mt-2 leading-relaxed flex-1">
+              <p className="text-sm text-body mt-2 leading-relaxed flex-1">
                 {r.description}
               </p>
 
-              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-content-link mt-5 group-hover:gap-2.5 transition-all">
+              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent mt-5 group-hover:gap-2.5 transition-all">
                 Read more
                 <span aria-hidden="true">→</span>
               </span>

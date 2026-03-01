@@ -1,49 +1,49 @@
 const tasks = [
   {
-    icon: '✉️',
-    title: 'Follow-up drafted',
-    detail: 'Sent personalized email to Sarah Chen',
-    time: '2 min ago',
-    tone: 'pair-bg-bright-blue',
+    icon: "✉️",
+    title: "Follow-up drafted",
+    detail: "Sent personalized email to Sarah Chen",
+    time: "2 min ago",
+    color: "#dbeafe",
   },
   {
-    icon: '✨',
-    title: 'Contact enriched',
-    detail: 'Added LinkedIn, title, and company info for 3 leads',
-    time: '8 min ago',
-    tone: 'pair-bg-bright-pink',
+    icon: "✨",
+    title: "Contact enriched",
+    detail: "Added LinkedIn, title, and company info for 3 leads",
+    time: "8 min ago",
+    color: "#ede9fe",
   },
   {
-    icon: '📊',
-    title: 'Deal insight',
-    detail: 'Acme Corp engagement is up 40% this week',
-    time: '15 min ago',
-    tone: 'pair-bg-bright-green',
+    icon: "📊",
+    title: "Deal insight",
+    detail: "Acme Corp engagement is up 40% this week",
+    time: "15 min ago",
+    color: "#d1fae5",
   },
   {
-    icon: '🔔',
-    title: 'Meeting reminder',
-    detail: 'Product demo with James Park in 1 hour',
-    time: '25 min ago',
-    tone: 'pair-bg-bright-yellow',
+    icon: "🔔",
+    title: "Meeting reminder",
+    detail: "Product demo with James Park in 1 hour",
+    time: "25 min ago",
+    color: "#fef3c7",
   },
-] as const;
+];
 
 export default function AssistantsMockup() {
   return (
-    <div className="w-full max-w-[440px] bg-background-elevated rounded-2xl border border-border-neutral shadow-sm overflow-hidden">
+    <div className="w-full max-w-[440px] bg-white rounded-2xl shadow-[0_8px_40px_-12px_rgba(0,0,0,0.12),0_0_0_1px_rgba(0,0,0,0.04)] overflow-hidden">
       {/* Header */}
-      <div className="flex items-center gap-2.5 px-5 py-4 border-b border-border-neutral">
-        <div className="w-8 h-8 rounded-full pair-bg-forest-green flex items-center justify-center text-sm">
+      <div className="flex items-center gap-2.5 px-5 py-4 border-b border-[#f1f5f9]">
+        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#023e8a] to-[#0353a4] flex items-center justify-center text-white text-sm">
           🤖
         </div>
         <div>
-          <p className="text-sm font-semibold text-content-primary">LeverLoop Assistant</p>
-          <p className="text-[11px] text-content-tertiary">Working in the background</p>
+          <p className="text-sm font-semibold text-[#111827]">LeverLoop Assistant</p>
+          <p className="text-[11px] text-[#9ca3af]">Working in the background</p>
         </div>
         <div className="ml-auto flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-sentiment-positive animate-pulse" />
-          <span className="text-[11px] text-sentiment-positive font-medium">Active</span>
+          <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
+          <span className="text-[11px] text-[#10b981] font-medium">Active</span>
         </div>
       </div>
 
@@ -52,18 +52,19 @@ export default function AssistantsMockup() {
         {tasks.map((t, i) => (
           <div
             key={i}
-            className="flex items-start gap-3.5 px-5 py-3.5 hover:bg-background-neutral transition-colors"
+            className="flex items-start gap-3.5 px-5 py-3.5 hover:bg-[#f9fafb] transition-colors"
           >
             <div
-              className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm shrink-0 ${t.tone}`}
+              className="w-8 h-8 rounded-lg flex items-center justify-center text-sm shrink-0"
+              style={{ backgroundColor: t.color }}
             >
               {t.icon}
             </div>
             <div className="min-w-0 flex-1">
-              <p className="text-sm font-semibold text-content-primary">{t.title}</p>
-              <p className="text-sm text-content-secondary mt-0.5 truncate">{t.detail}</p>
+              <p className="text-sm font-semibold text-[#111827]">{t.title}</p>
+              <p className="text-sm text-[#6b7280] mt-0.5 truncate">{t.detail}</p>
             </div>
-            <span className="text-[11px] text-content-tertiary shrink-0 mt-0.5">
+            <span className="text-[11px] text-[#9ca3af] shrink-0 mt-0.5">
               {t.time}
             </span>
           </div>
