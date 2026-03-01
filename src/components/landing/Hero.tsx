@@ -4,6 +4,7 @@ import Select from '../ui/Select';
 import { Badge } from '../ui/Badge';
 import {
   heroCopy,
+  type HeroPipelineCard,
   type HeroPipelineColumnTone,
   type HeroUpcomingTone,
 } from '../../data/landing';
@@ -17,6 +18,14 @@ const stageToneClasses: Record<HeroPipelineColumnTone, string> = {
 const upcomingToneClasses: Record<HeroUpcomingTone, string> = {
   blue: 'pair-bg-bright-blue',
   amber: 'pair-bg-bright-yellow',
+};
+
+const avatarToneClasses: Record<HeroPipelineCard['tone'], string> = {
+  forest: 'bg-core-forest-green',
+  gold: 'bg-secondary-dark-gold',
+  positive: 'bg-sentiment-positive',
+  pink: 'bg-secondary-bright-pink',
+  blue: 'bg-secondary-bright-blue',
 };
 
 export default function Hero() {
@@ -139,7 +148,7 @@ export default function Hero() {
                           name={card.name}
                           company={card.company}
                           email={card.email}
-                          color={card.color}
+                          tone={card.tone}
                         />
                       ))}
                     </div>
@@ -157,10 +166,7 @@ export default function Hero() {
                   {heroCopy.mock.profile.name}
                 </div>
                 <div className="text-xs text-content-secondary flex items-center gap-1 mt-0.5">
-                  <span
-                    className="w-3 h-3 rounded-full inline-block"
-                    style={{ backgroundColor: heroCopy.mock.profile.tagColor }}
-                  />
+                  <span className={`w-3 h-3 rounded-full inline-block ${avatarToneClasses[heroCopy.mock.profile.tagTone]}`} />
                   {heroCopy.mock.profile.tag}
                 </div>
               </div>
@@ -225,19 +231,18 @@ function PipelineCard({
   name,
   company,
   email,
-  color,
+  tone,
 }: {
   name: string;
   company: string;
   email: string;
-  color: string;
+  tone: HeroPipelineCard['tone'];
 }) {
   return (
     <div className="bg-background-elevated rounded-xl border border-border-neutral p-3 shadow-sm">
       <div className="flex items-center gap-2 mb-2">
         <div
-          className="w-7 h-7 rounded-full flex items-center justify-center text-base-light text-[10px] font-semibold shrink-0"
-          style={{ backgroundColor: color }}
+          className={`w-7 h-7 rounded-full flex items-center justify-center text-base-light text-[10px] font-semibold shrink-0 ${avatarToneClasses[tone]}`}
         >
           {name
             .split(' ')
@@ -247,10 +252,7 @@ function PipelineCard({
         <span className="text-xs font-semibold text-content-primary truncate">{name}</span>
       </div>
       <div className="text-[10px] text-content-secondary flex items-center gap-1.5 mb-0.5">
-        <span
-          className="w-2.5 h-2.5 rounded-full shrink-0"
-          style={{ backgroundColor: color, opacity: 0.3 }}
-        />
+        <span className={`w-2.5 h-2.5 rounded-full shrink-0 ${avatarToneClasses[tone]} opacity-30`} />
         {company}
       </div>
       <div className="text-[10px] text-content-tertiary flex items-center gap-1.5">
