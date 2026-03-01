@@ -199,7 +199,7 @@ export default function Navbar() {
             `mx-auto flex items-center justify-between ${
               mobileOpen
                 ? 'max-md:[transition:none] md:transition-all md:duration-500 md:ease-[cubic-bezier(0.4,0,0.2,1)]'
-                : 'transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]'
+                : 'max-md:[transition:none] md:transition-all md:duration-500 md:ease-[cubic-bezier(0.4,0,0.2,1)]'
             }`,
             scrolled
               ? 'md:max-w-5xl md:h-14 md:rounded-full md:bg-white md:backdrop-blur-xl md:shadow-[0_2px_24px_-4px_rgba(0,0,0,0.10),0_0_0_1px_rgba(0,0,0,0.04)] max-w-7xl h-16 px-5 lg:px-8 max-md:bg-white max-md:backdrop-blur-lg'
