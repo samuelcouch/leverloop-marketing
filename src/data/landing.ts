@@ -890,35 +890,7 @@ export type CtaLink = {
   href: string;
 };
 
-export type PricingSectionCopy = {
-  badge: string;
-  heading: string;
-  subheading: string;
-  bullets: string[];
-  primaryCta: CtaLink;
-  secondaryCta: CtaLink;
-};
 
-export const pricingSectionCopy: PricingSectionCopy = {
-  badge: 'Flat pricing by crew size',
-  heading: 'No per-user fees. No add-on surprises.',
-  subheading:
-    'Pick the plan that fits your crew today. Add techs or office staff without triggering a bill spike. Every plan includes the full platform.',
-  bullets: [
-    'Starter: $49/mo for solo operators',
-    'Pro: $149/mo for crews up to 5',
-    'Enterprise: custom pricing for 6+ users or multiple locations',
-    'CRM, dispatch, estimates, text-to-pay, and memberships included in every plan',
-  ],
-  primaryCta: {
-    label: 'Book a demo',
-    href: '/#demo',
-  },
-  secondaryCta: {
-    label: 'See full pricing',
-    href: '/pricing',
-  },
-};
 
 export type FooterLink = {
   label: string;
