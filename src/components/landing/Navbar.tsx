@@ -14,6 +14,7 @@ import {
   type NavbarFeature,
   type NavbarItemConfig,
 } from '../../data/landing';
+import { Button } from '../ui';
 
 function ChevronIcon({ className }: { className?: string }) {
   return (
@@ -287,53 +288,31 @@ export default function Navbar() {
           </PopoverGroup>
 
           <div className="hidden md:flex items-center gap-4 shrink-0">
-            <a
+            <Button
               href={navbarPrimaryCta.href}
-              className={[
-                'group text-sm font-medium pl-5 pr-1.5 py-1.5 rounded-full flex items-center gap-2.5 transition-all duration-300',
-                scrolled
-                  ? 'bg-accent-soft text-heading hover:bg-[#e0e7ff]'
-                  : 'bg-ink text-white hover:bg-ink-hover',
-              ].join(' ')}
+              variant="none"
+              shape="pill"
+              iconBubble
+              arrow
+              className={scrolled
+                ? 'bg-accent-soft text-heading hover:bg-accent-soft/80'
+                : 'bg-ink text-white hover:bg-ink-hover'}
+              iconBubbleClassName={scrolled ? 'bg-accent text-white' : undefined}
             >
               {navbarPrimaryCta.label}
-              <span
-                className={[
-                  'w-7 h-7 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-115',
-                  scrolled ? 'bg-accent text-white' : 'bg-white/20 text-white',
-                ].join(' ')}
-              >
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                  <path
-                    d="M3.5 8h9m0 0L9 4.5M12.5 8 9 11.5"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </a>
+            </Button>
           </div>
 
           <div className="md:hidden flex items-center">
-            <a
+            <Button
               href={navbarPrimaryCta.href}
-              className="group text-sm font-medium pl-4 pr-1.5 py-2 rounded-full flex items-center gap-2.5 transition-all duration-300 bg-ink text-white hover:bg-ink-hover"
+              variant="primary"
+              shape="pill"
+              iconBubble
+              arrow
             >
               {navbarPrimaryCta.label}
-              <span className="w-7 h-7 rounded-full bg-white/20 text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-115">
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                  <path
-                    d="M3.5 8h9m0 0L9 4.5M12.5 8 9 11.5"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </a>
+            </Button>
           </div>
         </nav>
 
