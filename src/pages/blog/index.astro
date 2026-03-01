@@ -1,13 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Navbar from '../../components/landing/Navbar';
-import Footer from '../../components/landing/Footer';
 import BlogIndex from '../../components/blog/BlogIndex';
 ---
 
 <Layout title="Blog — LeverLoop" description="Product updates, engineering deep-dives, and practical guides from the LeverLoop team.">
-	<Navbar client:load />
-	<div class="h-4 lg:h-5" aria-hidden="true"></div>
 	<BlogIndex client:load />
-	<Footer />
 </Layout>

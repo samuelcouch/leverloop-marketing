@@ -1,8 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/landing/Navbar';
 import PricingPage from '../components/landing/PricingPage';
-import Footer from '../components/landing/Footer';
 import { pricingPageData } from '../data/pricing';
 
 const { meta } = pricingPageData;
@@ -21,8 +19,5 @@ const jsonLd = {
 ---
 
 <Layout title={meta.title} description={meta.description} jsonLd={jsonLd}>
-	<Navbar client:load />
-	<div class="h-4 lg:h-5" aria-hidden="true"></div>
 	<PricingPage client:load />
-	<Footer />
 </Layout>

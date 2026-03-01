@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css'
 import { siteMetadata } from '../data/landing'
+import Navbar from '../components/landing/Navbar';
+import Footer from '../components/landing/Footer';
 
 interface Props {
 	title?: string;
@@ -13,6 +15,7 @@ interface Props {
 		author: string;
 		section: string;
 	};
+	flush?: boolean;
 }
 
 const {
@@ -21,6 +24,7 @@ const {
 	jsonLd,
 	ogType = 'website',
 	articleMeta,
+	flush = false,
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://leverloop.com').href;
@@ -59,9 +63,12 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://leverloo
 		)}
 	</head>
 	<body class="antialiased text-heading bg-white" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+		<Navbar client:load />
+		{!flush && <div class="h-4 lg:h-5" aria-hidden="true"></div>}
 		<main>
 			<slot />
 		</main>
+		<Footer />
 	</body>
 </html>
 
