@@ -1,50 +1,245 @@
 @import "tailwindcss";
 
-@theme {
-  /* Foreground / text */
-  --color-heading: #111827;
-  --color-body: #6b7280;
-  --color-muted: #9ca3af;
+:root {
+  color-scheme: light;
 
-  /* Surfaces */
-  --color-surface: #ffffff;
-  --color-subtle: #f9fafb;
-  --color-raised: #f3f4f6;
-  --color-warm: #faf6f1;
+  /* Core colours */
+  --ll-core-bright-green: #9fe870;
+  --ll-core-forest-green: #163300;
 
-  /* Borders */
-  --color-edge: #e5e7eb;
-  --color-edge-light: #f1f5f9;
-  --color-divider: #d1d5db;
+  /* Secondary colours */
+  --ll-secondary-bright-orange: #ffc091;
+  --ll-secondary-bright-yellow: #ffeb69;
+  --ll-secondary-bright-blue: #a0e1e1;
+  --ll-secondary-bright-pink: #ffd7ef;
+  --ll-secondary-dark-purple: #260a2f;
+  --ll-secondary-dark-gold: #3a341c;
+  --ll-secondary-dark-charcoal: #21231d;
+  --ll-secondary-dark-maroon: #320707;
 
-  /* Accent / brand */
-  --color-accent: #023e8a;
-  --color-accent-hover: #012d6b;
-  --color-accent-soft: #dce8f5;
+  /* Product: content */
+  --ll-content-primary: #0e0f0c;
+  --ll-content-secondary: #454745;
+  --ll-content-tertiary: #6a6c6a;
+  --ll-content-link: #163300;
 
-  /* Dark / ink (buttons, dark UI) */
-  --color-ink: #111827;
-  --color-ink-hover: #1e293b;
+  /* Product: interactive */
+  --ll-interactive-primary: #163300;
+  --ll-interactive-accent: #9fe870;
+  --ll-interactive-secondary: #868685;
+  --ll-interactive-control: #163300;
+  --ll-interactive-contrast: #9fe870;
 
-  /* Status: success */
-  --color-success: #10b981;
-  --color-success-soft: #d1fae5;
-  --color-success-dark: #065f46;
+  /* Product: background */
+  --ll-background-screen: #ffffff;
+  --ll-background-elevated: #ffffff;
+  --ll-background-neutral: rgba(22, 51, 0, 0.08);
+  --ll-background-overlay: rgba(22, 51, 0, 0.08);
 
-  /* Status: warning */
-  --color-warning-soft: #fef3c7;
-  --color-warning-dark: #92400e;
+  /* Product: border */
+  --ll-border-neutral: rgba(14, 15, 12, 0.12);
+  --ll-border-overlay: rgba(14, 15, 12, 0.12);
 
-  /* Status: info */
-  --color-info: #3b82f6;
-  --color-info-soft: #dbeafe;
+  /* Product: sentiment */
+  --ll-sentiment-negative: #a8200d;
+  --ll-sentiment-positive: #2f5711;
+  --ll-sentiment-warning: #edc843;
 
-  /* Status: danger */
-  --color-danger: #ef4444;
-  --color-danger-soft: #fee2e2;
+  /* Product: base */
+  --ll-base-contrast: #ffffff;
+  --ll-base-light: #ffffff;
+  --ll-base-dark: #121511;
+
+  /* Shared gradients */
+  --ll-gradient-hero: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    color-mix(in srgb, var(--ll-core-bright-green) 16%, var(--ll-base-light) 84%) 0%,
+    color-mix(in srgb, var(--ll-core-bright-green) 8%, var(--ll-base-light) 92%) 40%,
+    var(--ll-base-light) 80%
+  );
 }
 
-/* ── Article prose styles ── */
+[data-theme='dark'] {
+  color-scheme: dark;
+  --ll-background-screen: #121511;
+  --ll-background-elevated: #21231d;
+  --ll-background-neutral: rgba(255, 255, 255, 0.08);
+  --ll-background-overlay: rgba(255, 255, 255, 0.08);
+  --ll-border-neutral: rgba(255, 255, 255, 0.16);
+  --ll-border-overlay: rgba(255, 255, 255, 0.16);
+  --ll-content-primary: #ffffff;
+  --ll-content-secondary: #d5d8d3;
+  --ll-content-tertiary: #a1a99f;
+  --ll-content-link: #9fe870;
+  --ll-interactive-primary: #9fe870;
+  --ll-interactive-accent: #9fe870;
+  --ll-interactive-secondary: #a1a99f;
+  --ll-base-contrast: #121511;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --ll-background-screen: #121511;
+    --ll-background-elevated: #21231d;
+    --ll-background-neutral: rgba(255, 255, 255, 0.08);
+    --ll-background-overlay: rgba(255, 255, 255, 0.08);
+    --ll-border-neutral: rgba(255, 255, 255, 0.16);
+    --ll-border-overlay: rgba(255, 255, 255, 0.16);
+    --ll-content-primary: #ffffff;
+    --ll-content-secondary: #d5d8d3;
+    --ll-content-tertiary: #a1a99f;
+    --ll-content-link: #9fe870;
+    --ll-interactive-primary: #9fe870;
+    --ll-interactive-accent: #9fe870;
+    --ll-interactive-secondary: #a1a99f;
+    --ll-base-contrast: #121511;
+  }
+}
+
+@theme {
+  /* Core */
+  --color-core-bright-green: var(--ll-core-bright-green);
+  --color-core-forest-green: var(--ll-core-forest-green);
+
+  /* Secondary */
+  --color-secondary-bright-orange: var(--ll-secondary-bright-orange);
+  --color-secondary-bright-yellow: var(--ll-secondary-bright-yellow);
+  --color-secondary-bright-blue: var(--ll-secondary-bright-blue);
+  --color-secondary-bright-pink: var(--ll-secondary-bright-pink);
+  --color-secondary-dark-purple: var(--ll-secondary-dark-purple);
+  --color-secondary-dark-gold: var(--ll-secondary-dark-gold);
+  --color-secondary-dark-charcoal: var(--ll-secondary-dark-charcoal);
+  --color-secondary-dark-maroon: var(--ll-secondary-dark-maroon);
+
+  /* Product */
+  --color-content-primary: var(--ll-content-primary);
+  --color-content-secondary: var(--ll-content-secondary);
+  --color-content-tertiary: var(--ll-content-tertiary);
+  --color-content-link: var(--ll-content-link);
+
+  --color-interactive-primary: var(--ll-interactive-primary);
+  --color-interactive-accent: var(--ll-interactive-accent);
+  --color-interactive-secondary: var(--ll-interactive-secondary);
+  --color-interactive-control: var(--ll-interactive-control);
+  --color-interactive-contrast: var(--ll-interactive-contrast);
+
+  --color-background-screen: var(--ll-background-screen);
+  --color-background-elevated: var(--ll-background-elevated);
+  --color-background-neutral: var(--ll-background-neutral);
+  --color-background-overlay: var(--ll-background-overlay);
+
+  --color-border-neutral: var(--ll-border-neutral);
+  --color-border-overlay: var(--ll-border-overlay);
+
+  --color-sentiment-negative: var(--ll-sentiment-negative);
+  --color-sentiment-positive: var(--ll-sentiment-positive);
+  --color-sentiment-warning: var(--ll-sentiment-warning);
+
+  --color-base-contrast: var(--ll-base-contrast);
+  --color-base-light: var(--ll-base-light);
+  --color-base-dark: var(--ll-base-dark);
+
+  /* Compatibility aliases for existing components during migration */
+  --color-heading: var(--ll-content-primary);
+  --color-body: var(--ll-content-secondary);
+  --color-muted: var(--ll-content-tertiary);
+
+  --color-surface: var(--ll-background-screen);
+  --color-subtle: var(--ll-background-neutral);
+  --color-raised: var(--ll-background-elevated);
+  --color-warm: color-mix(in srgb, var(--ll-base-light) 92%, var(--ll-core-forest-green) 8%);
+
+  --color-edge: var(--ll-border-neutral);
+  --color-edge-light: color-mix(in srgb, var(--ll-border-neutral) 65%, transparent);
+  --color-divider: var(--ll-border-neutral);
+
+  --color-accent: var(--ll-interactive-primary);
+  --color-accent-hover: color-mix(in srgb, var(--ll-interactive-primary) 88%, var(--ll-base-dark) 12%);
+  --color-accent-soft: color-mix(in srgb, var(--ll-interactive-accent) 24%, var(--ll-background-screen) 76%);
+
+  --color-ink: var(--ll-interactive-primary);
+  --color-ink-hover: color-mix(in srgb, var(--ll-interactive-primary) 88%, var(--ll-base-dark) 12%);
+
+  --color-success: var(--ll-sentiment-positive);
+  --color-success-soft: color-mix(in srgb, var(--ll-sentiment-positive) 18%, var(--ll-background-screen) 82%);
+  --color-success-dark: var(--ll-sentiment-positive);
+
+  --color-warning-soft: color-mix(in srgb, var(--ll-sentiment-warning) 26%, var(--ll-background-screen) 74%);
+  --color-warning-dark: var(--ll-secondary-dark-gold);
+
+  --color-info: var(--ll-secondary-bright-blue);
+  --color-info-soft: color-mix(in srgb, var(--ll-secondary-bright-blue) 30%, var(--ll-background-screen) 70%);
+
+  --color-danger: var(--ll-sentiment-negative);
+  --color-danger-soft: color-mix(in srgb, var(--ll-sentiment-negative) 18%, var(--ll-background-screen) 82%);
+}
+
+@layer base {
+  body {
+    background-color: var(--ll-background-screen);
+    color: var(--ll-content-primary);
+  }
+}
+
+@layer utilities {
+  /* Approved type + colour pairings */
+  .pair-bg-bright-green {
+    background-color: var(--ll-core-bright-green);
+    color: var(--ll-core-forest-green);
+  }
+
+  .pair-bg-bright-pink {
+    background-color: var(--ll-secondary-bright-pink);
+    color: var(--ll-secondary-dark-maroon);
+  }
+
+  .pair-bg-bright-orange {
+    background-color: var(--ll-secondary-bright-orange);
+    color: var(--ll-secondary-dark-maroon);
+  }
+
+  .pair-bg-bright-yellow {
+    background-color: var(--ll-secondary-bright-yellow);
+    color: var(--ll-secondary-dark-gold);
+  }
+
+  .pair-bg-bright-blue {
+    background-color: var(--ll-secondary-bright-blue);
+    color: var(--ll-core-forest-green);
+  }
+
+  .pair-bg-forest-green {
+    background-color: var(--ll-core-forest-green);
+    color: var(--ll-core-bright-green);
+  }
+
+  .pair-bg-dark-maroon {
+    background-color: var(--ll-secondary-dark-maroon);
+    color: var(--ll-secondary-bright-pink);
+  }
+
+  .pair-bg-dark-purple {
+    background-color: var(--ll-secondary-dark-purple);
+    color: var(--ll-secondary-bright-pink);
+  }
+
+  .pair-bg-dark-gold {
+    background-color: var(--ll-secondary-dark-gold);
+    color: var(--ll-secondary-bright-yellow);
+  }
+
+  .pair-bg-dark-charcoal {
+    background-color: var(--ll-secondary-dark-charcoal);
+    color: var(--ll-secondary-bright-blue);
+  }
+
+  .hero-radial {
+    background: var(--ll-gradient-hero);
+  }
+}
+
+/* Prose styles */
 
 .article-prose h2 {
   font-family: 'Bricolage Grotesque', sans-serif;
@@ -52,10 +247,10 @@
   font-size: 1.5rem;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #111827;
+  color: var(--ll-content-primary);
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--ll-border-neutral);
 }
 
 .article-prose h3 {
@@ -63,13 +258,13 @@
   font-weight: 600;
   font-size: 1.2rem;
   line-height: 1.3;
-  color: #111827;
+  color: var(--ll-content-primary);
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
 }
 
 .article-prose p {
-  color: #6b7280;
+  color: var(--ll-content-secondary);
   line-height: 1.75;
   margin-bottom: 1rem;
 }
@@ -79,24 +274,24 @@
 }
 
 .article-prose strong {
-  color: #111827;
+  color: var(--ll-content-primary);
   font-weight: 600;
 }
 
 .article-prose a {
-  color: #023e8a;
+  color: var(--ll-content-link);
   text-decoration: underline;
   text-underline-offset: 2px;
   transition: color 150ms;
 }
 
 .article-prose a:hover {
-  color: #012d6b;
+  color: var(--ll-interactive-primary);
 }
 
 .article-prose ul,
 .article-prose ol {
-  color: #6b7280;
+  color: var(--ll-content-secondary);
   line-height: 1.75;
   margin-bottom: 1rem;
   padding-left: 1.25rem;
@@ -116,42 +311,42 @@
 }
 
 .article-prose li::marker {
-  color: #023e8a;
+  color: var(--ll-content-link);
 }
 
 .article-prose blockquote {
-  border-left: 3px solid #023e8a;
-  background-color: #f9fafb;
+  border-left: 3px solid var(--ll-content-link);
+  background-color: var(--ll-background-neutral);
   border-radius: 0 0.75rem 0.75rem 0;
   padding: 1.25rem 1.5rem;
   margin: 1.5rem 0;
 }
 
 .article-prose blockquote p {
-  color: #111827;
+  color: var(--ll-content-primary);
   font-style: italic;
   margin-bottom: 0.5rem;
 }
 
 .article-prose blockquote p:last-child {
   font-style: normal;
-  color: #6b7280;
+  color: var(--ll-content-secondary);
   font-size: 0.875rem;
   margin-bottom: 0;
 }
 
 .article-prose code {
   font-size: 0.875em;
-  background-color: #f3f4f6;
-  color: #111827;
+  background-color: var(--ll-background-neutral);
+  color: var(--ll-content-primary);
   padding: 0.15em 0.4em;
   border-radius: 0.375rem;
   font-weight: 500;
 }
 
 .article-prose pre {
-  background-color: #111827;
-  color: #e5e7eb;
+  background-color: var(--ll-base-dark);
+  color: var(--ll-base-light);
   border-radius: 0.75rem;
   padding: 1.25rem 1.5rem;
   overflow-x: auto;
@@ -177,16 +372,16 @@
 .article-prose th {
   text-align: left;
   font-weight: 600;
-  color: #111827;
+  color: var(--ll-content-primary);
   padding: 0.75rem 1rem;
-  border-bottom: 2px solid #e5e7eb;
-  background-color: #f9fafb;
+  border-bottom: 2px solid var(--ll-border-neutral);
+  background-color: var(--ll-background-neutral);
 }
 
 .article-prose td {
-  color: #6b7280;
+  color: var(--ll-content-secondary);
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid var(--ll-border-neutral);
 }
 
 .article-prose img {
@@ -203,12 +398,12 @@
 .article-prose figcaption {
   text-align: center;
   font-size: 0.875rem;
-  color: #9ca3af;
+  color: var(--ll-content-tertiary);
   margin-top: 0.5rem;
 }
 
 .article-prose hr {
   border: none;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--ll-border-neutral);
   margin: 2rem 0;
 }
