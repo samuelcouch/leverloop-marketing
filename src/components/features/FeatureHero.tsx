@@ -20,7 +20,7 @@ export default function FeatureHero({
 }: FeatureHeroProps) {
   return (
     <section
-      className="pt-28 pb-16 lg:pt-36 lg:pb-24 relative overflow-hidden"
+      className="pt-32 pb-16 lg:pt-36 lg:pb-24 relative overflow-hidden"
       style={{
         background:
           "radial-gradient(ellipse 80% 60% at 50% 0%, #f5f0e8 0%, #faf7f2 40%, #ffffff 80%)",

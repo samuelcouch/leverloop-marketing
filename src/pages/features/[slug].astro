@@ -41,6 +41,7 @@ const jsonLd = {
 
 <Layout title={feature.metaTitle} description={feature.metaDescription} jsonLd={jsonLd}>
   <Navbar client:load />
+  <div class="h-4 lg:h-5" aria-hidden="true"></div>
   <FeaturePage client:load feature={feature} />
   <Footer />
 </Layout>
