@@ -22,8 +22,8 @@ const maxWidthMap = {
 
 const backgroundMap = {
   default: "",
-  muted: "bg-subtle",
-  dark: "bg-ink",
+  muted: "bg-background-neutral",
+  dark: "bg-core-forest-green text-core-bright-green",
 };
 
 export function Section({

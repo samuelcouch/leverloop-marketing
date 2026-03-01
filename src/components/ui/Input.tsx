@@ -5,13 +5,14 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 const variantStyles: Record<string, string> = {
   default:
-    'w-full px-4 py-3 rounded-full border border-heading text-sm placeholder:text-muted focus:outline-none focus:border-heading',
-  dark: 'w-full px-4 py-3 rounded-full border bg-white/10 border-white/60 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-white',
+    'w-full px-4 py-3 rounded-full border border-interactive-secondary bg-background-screen text-sm text-content-primary placeholder:text-content-tertiary focus:outline-none focus:border-interactive-primary focus:ring-2 focus:ring-interactive-accent/35',
+  dark:
+    'w-full px-4 py-3 rounded-full border border-interactive-secondary bg-background-overlay text-sm text-content-primary placeholder:text-content-tertiary focus:outline-none focus:border-interactive-primary focus:ring-2 focus:ring-interactive-accent/35',
 };
 
 const labelStyles: Record<string, string> = {
-  default: 'block text-sm font-medium text-heading mb-2',
-  dark: 'block text-sm font-medium text-white mb-2',
+  default: 'block text-sm font-medium text-content-primary mb-2',
+  dark: 'block text-sm font-medium text-content-primary mb-2',
 };
 
 export default function Input({

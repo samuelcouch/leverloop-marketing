@@ -6,24 +6,24 @@ interface BadgeProps {
 }
 
 const statusColors = {
-  gray: 'bg-subtle text-muted border border-edge-light',
-  indigo: 'bg-accent-soft text-accent',
-  green: 'bg-success-soft text-heading',
-  yellow: 'bg-warning-soft text-heading',
-  blue: 'bg-info-soft text-heading',
+  gray: 'bg-background-neutral text-content-secondary border border-border-neutral',
+  indigo: 'bg-secondary-bright-pink text-secondary-dark-maroon',
+  green: 'bg-core-bright-green text-core-forest-green',
+  yellow: 'bg-secondary-bright-yellow text-secondary-dark-gold',
+  blue: 'bg-secondary-bright-blue text-core-forest-green',
 };
 
 const softColors = {
-  gray: 'bg-subtle text-muted',
-  indigo: 'bg-accent-soft text-accent',
-  green: 'bg-success-soft text-success-dark',
-  yellow: 'bg-warning-soft text-warning-dark',
-  blue: 'bg-info-soft text-info',
+  gray: 'bg-background-neutral text-content-secondary',
+  indigo: 'bg-secondary-bright-pink text-secondary-dark-maroon',
+  green: 'bg-core-bright-green text-core-forest-green',
+  yellow: 'bg-secondary-bright-yellow text-secondary-dark-gold',
+  blue: 'bg-secondary-bright-blue text-core-forest-green',
 };
 
 const variantStyles = {
-  default: 'px-3 py-1.5 rounded-full bg-white text-body',
-  pill: 'px-4 py-2 rounded-full border border-heading text-sm text-heading',
+  default: 'px-3 py-1.5 rounded-full bg-background-elevated text-content-secondary',
+  pill: 'px-4 py-2 rounded-full border border-interactive-secondary text-sm text-content-primary',
   status: 'px-2.5 py-1 rounded-md text-xs font-semibold',
   numbered: 'px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider',
 };

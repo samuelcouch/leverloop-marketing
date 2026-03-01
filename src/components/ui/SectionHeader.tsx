@@ -24,13 +24,13 @@ export function SectionHeader({
   return (
     <div className={isCenter ? "text-center" : ""}>
       <h2
-        className={`font-display font-bold tracking-tight text-heading ${headingSizeMap[headingSize]}`}
+        className={`font-display font-bold tracking-tight text-content-primary ${headingSizeMap[headingSize]}`}
       >
         {heading}
       </h2>
       {subheading && (
         <p
-          className={`text-lg text-body mt-6 leading-relaxed ${isCenter ? "max-w-2xl mx-auto" : ""}`}
+          className={`text-lg text-content-secondary mt-6 leading-relaxed ${isCenter ? "max-w-2xl mx-auto" : ""}`}
         >
           {subheading}
         </p>
