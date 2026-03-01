@@ -7,27 +7,27 @@ export default function FAQ({ faqs }: { faqs: FAQItem[] }) {
 
   return (
     <Section padding="compact" className="!pb-0 !pt-6">
-      <div className="rounded-3xl bg-subtle p-8 sm:p-12 lg:p-16">
+      <div className="rounded-3xl bg-background-neutral p-8 sm:p-12 lg:p-16">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-6 lg:gap-20">
           {/* Left column */}
           <div>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-heading">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-content-primary">
               Got a question?
             </h2>
           </div>
 
           {/* Right column — accordion */}
-          <div className="divide-y divide-divider">
+          <div className="divide-y divide-border-neutral">
             {faqs.map((faq, i) => (
               <Disclosure key={i} as="div">
                 {({ open }) => (
                   <>
                     <DisclosureButton className="flex w-full items-center justify-between gap-4 py-6 text-left">
-                      <span className="font-display text-lg font-semibold text-heading leading-snug">
+                      <span className="font-display text-lg font-semibold text-content-primary leading-snug">
                         {faq.question}
                       </span>
                       <span
-                        className={`flex-shrink-0 flex items-center justify-center w-9 h-9 rounded-full bg-white text-body transition-transform duration-200 ${open ? "rotate-45" : ""}`}
+                        className={`flex-shrink-0 flex items-center justify-center w-9 h-9 rounded-full bg-background-elevated text-content-secondary transition-transform duration-200 ${open ? "rotate-45" : ""}`}
                       >
                         <svg
                           width="16"
@@ -43,7 +43,7 @@ export default function FAQ({ faqs }: { faqs: FAQItem[] }) {
                         </svg>
                       </span>
                     </DisclosureButton>
-                    <DisclosurePanel className="pb-6 pr-12 text-body leading-relaxed">
+                    <DisclosurePanel className="pb-6 pr-12 text-content-secondary leading-relaxed">
                       {faq.answer}
                     </DisclosurePanel>
                   </>

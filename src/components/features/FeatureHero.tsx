@@ -19,13 +19,7 @@ export default function FeatureHero({
   mockup,
 }: FeatureHeroProps) {
   return (
-    <section
-      className="pt-32 pb-16 lg:pt-36 lg:pb-24 relative overflow-hidden"
-      style={{
-        background:
-          "radial-gradient(ellipse 80% 60% at 50% 0%, #f5f0e8 0%, #faf7f2 40%, #ffffff 80%)",
-      }}
-    >
+    <section className="pt-32 pb-16 lg:pt-36 lg:pb-24 relative overflow-hidden hero-radial">
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left – copy */}
@@ -34,11 +28,11 @@ export default function FeatureHero({
               <Badge variant="pill" className="mb-6">{badge}</Badge>
             )}
 
-            <h1 className="font-display text-[2.75rem] sm:text-[3.5rem] lg:text-[4rem] font-extrabold tracking-[-0.03em] leading-[1.08] text-heading">
+            <h1 className="font-display text-[2.75rem] sm:text-[3.5rem] lg:text-[4rem] font-extrabold tracking-[-0.03em] leading-[1.08] text-content-primary">
               {headline}
             </h1>
 
-            <p className="mt-5 text-base lg:text-lg text-body leading-relaxed max-w-md">
+            <p className="mt-5 text-base lg:text-lg text-content-secondary leading-relaxed max-w-md">
               {description}
             </p>
 
