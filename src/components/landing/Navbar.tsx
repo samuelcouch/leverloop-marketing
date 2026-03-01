@@ -42,21 +42,21 @@ function FeatureCard({ feature }: { feature: NavbarFeature }) {
     >
       {hasGradient && (
         <div
-          className={`w-16 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} shrink-0`}
+          className="w-16 h-14 rounded-xl bg-gradient-to-br from-secondary-bright-blue via-secondary-bright-pink to-core-bright-green shrink-0"
         />
       )}
 
       {hasIcon && (
-        <div className="w-10 h-10 rounded-lg bg-raised flex items-center justify-center shrink-0 text-lg">
+        <div className="w-10 h-10 rounded-lg bg-background-neutral flex items-center justify-center shrink-0 text-lg">
           {feature.icon}
         </div>
       )}
 
       <div className={hasGradient ? 'py-0.5' : hasIcon ? 'py-1' : ''}>
-        <p className="text-sm font-semibold text-heading group-hover/card:text-black">
+        <p className="text-sm font-semibold text-content-primary group-hover/card:text-base-dark">
           {feature.title}
         </p>
-        <p className="text-sm text-body mt-0.5 leading-snug">{feature.description}</p>
+        <p className="text-sm text-content-secondary mt-0.5 leading-snug">{feature.description}</p>
       </div>
     </CloseButton>
   );
@@ -75,10 +75,10 @@ function FeaturedPanel({
         ))}
       </div>
       {item.categories && (
-        <div className="grid grid-cols-3 gap-x-6 gap-y-5 border-l border-[#f0f0f0] pl-6">
+        <div className="grid grid-cols-3 gap-x-6 gap-y-5 border-l border-border-neutral pl-6">
           {item.categories.map((category) => (
             <div key={category.heading}>
-              <p className="text-xs font-medium text-muted uppercase tracking-wider mb-2">
+              <p className="text-xs font-medium text-content-tertiary uppercase tracking-wider mb-2">
                 {category.heading}
               </p>
               <ul className="flex flex-col gap-1.5">
@@ -87,7 +87,7 @@ function FeaturedPanel({
                     <CloseButton
                       as="a"
                       href={link.href}
-                      className="text-sm font-medium text-heading hover:text-accent transition-colors"
+                      className="text-sm font-medium text-content-primary hover:text-content-link transition-colors"
                     >
                       {link.label}
                     </CloseButton>
@@ -114,7 +114,7 @@ function SimplePanel({
           as="a"
           key={link.label}
           href={link.href}
-          className="text-[15px] font-medium text-heading hover:text-accent transition-colors py-1.5"
+          className="text-[15px] font-medium text-content-primary hover:text-content-link transition-colors py-1.5"
         >
           {link.label}
         </CloseButton>
@@ -159,7 +159,7 @@ export default function Navbar() {
     <>
       {mobileOpen && (
         <div
-          className="md:hidden fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
+          className="md:hidden fixed inset-0 z-40 bg-base-dark/40 backdrop-blur-sm"
           onClick={() => setMobileOpen(false)}
         />
       )}
@@ -176,7 +176,7 @@ export default function Navbar() {
 
         <div
           className={[
-            'w-full bg-accent-soft text-heading text-center text-sm font-medium px-4 transition-all duration-300 ease-out overflow-hidden',
+            'w-full pair-bg-bright-blue text-center text-sm font-medium px-4 transition-all duration-300 ease-out overflow-hidden',
             scrolled ? 'max-h-0 py-0 opacity-0' : 'max-h-16 py-4 opacity-100',
           ].join(' ')}
         >
@@ -186,7 +186,7 @@ export default function Navbar() {
               {' '}
               <a
                 href={announcementBar.linkHref ?? '#'}
-                className="underline underline-offset-2 text-accent hover:text-accent/80 transition-colors"
+                className="underline underline-offset-2 text-content-link hover:text-interactive-primary transition-colors"
               >
                 {announcementBar.linkText}
               </a>
@@ -202,16 +202,16 @@ export default function Navbar() {
                 : 'max-md:[transition:none] md:transition-all md:duration-500 md:ease-[cubic-bezier(0.4,0,0.2,1)]'
             }`,
             scrolled
-              ? 'md:max-w-5xl md:h-14 md:rounded-full md:bg-white md:backdrop-blur-xl md:shadow-[0_2px_24px_-4px_rgba(0,0,0,0.10),0_0_0_1px_rgba(0,0,0,0.04)] max-w-7xl h-16 px-5 lg:px-8 max-md:bg-white max-md:backdrop-blur-lg'
+              ? 'md:max-w-5xl md:h-14 md:rounded-full md:bg-background-elevated md:backdrop-blur-xl md:shadow-sm max-w-7xl h-16 px-5 lg:px-8 max-md:bg-background-elevated max-md:backdrop-blur-lg'
               : `max-w-7xl h-16 px-5 lg:px-8 ${
-                  mobileOpen ? 'max-md:bg-white max-md:backdrop-blur-lg' : 'bg-transparent'
+                  mobileOpen ? 'max-md:bg-background-elevated max-md:backdrop-blur-lg' : 'bg-transparent'
                 }`,
           ].join(' ')}
         >
           <div className="flex items-center gap-1 shrink-0">
             <button
               type="button"
-              className="md:hidden p-2 text-body hover:text-heading transition-colors -ml-2"
+              className="md:hidden p-2 text-content-secondary hover:text-content-primary transition-colors -ml-2"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
@@ -243,7 +243,7 @@ export default function Navbar() {
 
             <a
               href="/"
-              className="flex items-center gap-2 font-display font-bold text-xl tracking-tight text-heading"
+              className="flex items-center gap-2 font-display font-bold text-xl tracking-tight text-content-primary"
             >
               <img
                 src="/leverloop-mark-dark.svg"
@@ -261,13 +261,13 @@ export default function Navbar() {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-sm font-medium text-body hover:text-heading transition-colors flex items-center gap-1 px-4 py-2 rounded-full"
+                  className="text-sm font-medium text-content-secondary hover:text-content-primary transition-colors flex items-center gap-1 px-4 py-2 rounded-full"
                 >
                   {item.label}
                 </a>
               ) : (
                 <Popover key={item.label} className="relative">
-                  <PopoverButton className="text-sm font-medium text-body hover:text-heading transition-colors flex items-center gap-1 px-4 py-2 rounded-full outline-none data-[open]:bg-ink data-[open]:text-white">
+                  <PopoverButton className="text-sm font-medium text-content-secondary hover:text-content-primary transition-colors flex items-center gap-1 px-4 py-2 rounded-full outline-none data-[open]:bg-interactive-primary data-[open]:text-interactive-contrast">
                     {item.label}
                     <ChevronIcon className="mt-px opacity-60 transition-transform duration-200 group-data-[open]:rotate-180 [[data-open]>&]:rotate-180" />
                   </PopoverButton>
@@ -275,7 +275,7 @@ export default function Navbar() {
                   <PopoverPanel
                     anchor={{ to: 'bottom', gap: 16, padding: 24 }}
                     transition
-                    className="z-[60] bg-white rounded-2xl shadow-[0_4px_32px_-8px_rgba(0,0,0,0.12),0_0_0_1px_rgba(0,0,0,0.04)] p-6 origin-top transition duration-200 ease-out data-[closed]:scale-95 data-[closed]:opacity-0 w-[min(800px,calc(100vw-2rem))]"
+                    className="z-[60] bg-background-elevated rounded-2xl border border-border-neutral shadow-sm p-6 origin-top transition duration-200 ease-out data-[closed]:scale-95 data-[closed]:opacity-0 w-[min(800px,calc(100vw-2rem))]"
                   >
                     {item.type === 'featured' && <FeaturedPanel item={item} />}
                     {item.type === 'simple' && <SimplePanel item={item} />}
@@ -292,15 +292,17 @@ export default function Navbar() {
               className={[
                 'group text-sm font-medium pl-5 pr-1.5 py-1.5 rounded-full flex items-center gap-2.5 transition-all duration-300',
                 scrolled
-                  ? 'bg-accent-soft text-heading hover:bg-[#e0e7ff]'
-                  : 'bg-ink text-white hover:bg-ink-hover',
+                  ? 'pair-bg-bright-blue hover:bg-secondary-bright-blue/80'
+                  : 'bg-interactive-primary text-interactive-contrast hover:bg-interactive-primary/90',
               ].join(' ')}
             >
               {navbarPrimaryCta.label}
               <span
                 className={[
                   'w-7 h-7 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-115',
-                  scrolled ? 'bg-accent text-white' : 'bg-white/20 text-white',
+                  scrolled
+                    ? 'bg-interactive-primary text-interactive-contrast'
+                    : 'bg-base-light/20 text-base-light',
                 ].join(' ')}
               >
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
@@ -319,10 +321,10 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <a
               href={navbarPrimaryCta.href}
-              className="group text-sm font-medium pl-4 pr-1.5 py-2 rounded-full flex items-center gap-2.5 transition-all duration-300 bg-ink text-white hover:bg-ink-hover"
+              className="group text-sm font-medium pl-4 pr-1.5 py-2 rounded-full flex items-center gap-2.5 transition-all duration-300 bg-interactive-primary text-interactive-contrast hover:bg-interactive-primary/90"
             >
               {navbarPrimaryCta.label}
-              <span className="w-7 h-7 rounded-full bg-white/20 text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-115">
+              <span className="w-7 h-7 rounded-full bg-base-light/20 text-base-light flex items-center justify-center transition-transform duration-300 group-hover:scale-115">
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                   <path
                     d="M3.5 8h9m0 0L9 4.5M12.5 8 9 11.5"
@@ -338,7 +340,7 @@ export default function Navbar() {
         </nav>
 
         {mobileOpen && (
-          <div className="md:hidden bg-white backdrop-blur-lg border-t border-edge/50 max-h-[80vh] overflow-y-auto">
+          <div className="md:hidden bg-background-elevated backdrop-blur-lg border-t border-border-neutral max-h-[80vh] overflow-y-auto">
             <div className="px-5 py-6 flex flex-col gap-6">
               {navbarNavigation.map((item) => {
                 if (item.type === 'link') {
@@ -346,7 +348,7 @@ export default function Navbar() {
                     <a
                       key={item.label}
                       href={item.href}
-                      className="text-sm font-semibold text-heading hover:text-accent transition-colors"
+                      className="text-sm font-semibold text-content-primary hover:text-content-link transition-colors"
                       onClick={() => setMobileOpen(false)}
                     >
                       {item.label}
@@ -357,18 +359,18 @@ export default function Navbar() {
                 if (item.type === 'featured' && item.categories) {
                   return (
                     <div key={item.label} className="flex flex-col gap-4">
-                      <span className="text-sm font-semibold text-heading">{item.label}</span>
+                      <span className="text-sm font-semibold text-content-primary">{item.label}</span>
                       <div className="grid grid-cols-2 gap-x-6 gap-y-4 pl-2">
                         {item.categories.map((cat) => (
                           <div key={cat.heading} className="flex flex-col gap-1.5">
-                            <span className="text-[11px] font-semibold uppercase tracking-wider text-muted">
+                            <span className="text-[11px] font-semibold uppercase tracking-wider text-content-tertiary">
                               {cat.heading}
                             </span>
                             {cat.links.map((link) => (
                               <a
                                 key={link.href}
                                 href={link.href}
-                                className="text-sm text-body hover:text-accent transition-colors"
+                                className="text-sm text-content-secondary hover:text-content-link transition-colors"
                                 onClick={() => setMobileOpen(false)}
                               >
                                 {link.label}
@@ -384,11 +386,11 @@ export default function Navbar() {
                 return null;
               })}
 
-              <hr className="border-edge" />
+              <hr className="border-border-neutral" />
 
               <a
                 href={navbarPrimaryCta.href}
-                className="inline-flex items-center justify-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white hover:bg-accent/90 transition-colors"
+                className="inline-flex items-center justify-center rounded-full bg-interactive-accent px-5 py-2.5 text-sm font-semibold text-interactive-control hover:bg-interactive-accent/90 transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {navbarPrimaryCta.label}

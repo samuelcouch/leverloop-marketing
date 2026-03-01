@@ -5,15 +5,15 @@ import { pricingSectionCopy } from '../../data/landing';
 export default function PricingBanner() {
   return (
     <Section padding="compact" id="pricing">
-      <div className="rounded-3xl border border-edge bg-gradient-to-br from-white via-[#f9fbff] to-[#eef4ff] p-7 sm:p-10 lg:p-12">
-        <span className="inline-flex px-3 py-1 rounded-full bg-accent-soft text-accent text-xs font-semibold">
+      <div className="rounded-3xl border border-border-neutral bg-gradient-to-br from-background-elevated via-background-neutral to-secondary-bright-blue/16 p-7 sm:p-10 lg:p-12">
+        <span className="inline-flex px-3 py-1 rounded-full pair-bg-bright-blue text-xs font-semibold">
           {pricingSectionCopy.badge}
         </span>
 
-        <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-heading leading-tight max-w-3xl">
+        <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-content-primary leading-tight max-w-3xl">
           {pricingSectionCopy.heading}
         </h2>
-        <p className="mt-5 text-base lg:text-lg text-body leading-relaxed max-w-3xl">
+        <p className="mt-5 text-base lg:text-lg text-content-secondary leading-relaxed max-w-3xl">
           {pricingSectionCopy.subheading}
         </p>
 
@@ -21,9 +21,9 @@ export default function PricingBanner() {
           {pricingSectionCopy.bullets.map((bullet) => (
             <div
               key={bullet}
-              className="rounded-xl border border-edge-light bg-white/90 px-3.5 py-3 text-sm text-heading font-medium flex items-center gap-2"
+              className="rounded-xl border border-border-neutral bg-background-elevated px-3.5 py-3 text-sm text-content-primary font-medium flex items-center gap-2"
             >
-              <span className="text-success text-xs">✓</span>
+              <span className="text-content-link text-xs">✓</span>
               <span>{bullet}</span>
             </div>
           ))}
@@ -35,7 +35,7 @@ export default function PricingBanner() {
           </Button>
           <a
             href={pricingSectionCopy.secondaryCta.href}
-            className="text-sm font-semibold text-body hover:text-heading transition-colors"
+            className="text-sm font-semibold text-content-secondary hover:text-content-primary transition-colors"
           >
             {pricingSectionCopy.secondaryCta.label}
           </a>
