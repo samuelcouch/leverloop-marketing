@@ -152,7 +152,7 @@ Before writing the full draft, create the SEO metadata:
 - Example: `declined-repair-revenue-recovery`
 
 **Category:**
-- Must be one of: `Product`, `Engineering`, `Sales`, `Company`, `Guides`
+- Must be one of: `Growth & Lead Gen`, `Operations & Dispatch`, `Payments & Profitability`, `Customer Experience`
 
 **Author:**
 - Must be one of the existing authors:
@@ -183,7 +183,7 @@ Before writing the full draft, create the SEO metadata:
 title: "Your Optimized Title Here"
 excerpt: "Your 150-160 character meta description with keyword and CTA."
 slug: "your-url-slug-here"
-category: "Sales"
+category: "Growth & Lead Gen"
 author: "Maria Gonzalez"
 readTime: "8 min read"
 date: "Feb 28, 2026"
@@ -245,7 +245,7 @@ Articles live in `src/data/articles/` as individual TypeScript files. The barrel
   slug: 'your-slug-here',
   title: 'Your Title Here',
   excerpt: 'Your 150-160 character excerpt here.',
-  category: 'Sales',
+  category: 'Growth & Lead Gen',
   date: 'Feb 28, 2026',
   readTime: '8 min read',
   author: { name: 'Maria Gonzalez', avatar: 'MG' },
@@ -329,18 +329,8 @@ export default article;
 - **`relatedSlugs`** must reference existing slugs from the `posts` array in `blog.ts`
 
 #### Existing Blog Slugs (for `relatedSlugs`):
-- `introducing-ai-assistants`
-- `scaling-postgres-beyond-1b-rows`
-- `pipeline-management-best-practices`
-- `series-b-announcement`
-- `getting-started-with-leverloop-api`
-- `smart-search-deep-dive`
-- `cold-email-playbook`
-- `real-time-sync-architecture`
-- `custom-fields-workflows`
-- `year-in-review-2025`
-- `deal-forecasting-with-ml`
-- `migration-guide-salesforce`
+
+No blog posts exist yet. The `posts` array in `src/data/blog.ts` is empty. When you create a new post, it becomes the first entry. For subsequent posts, reference only slugs that have already been added to the `posts` array.
 
 ### Step 5: Editor Review
 
@@ -388,35 +378,20 @@ Verify the build passes by running `npm run build`.
 
 ## LeverLoop Feature Slugs (for internal linking)
 
-Only reference features that exist. Link to `/features/[slug]`:
+Only reference features that exist in `src/data/features.ts`. Link to `/features/[slug]`:
 
-- `speed-to-lead-engine` — Auto-reply to leads in under 60 seconds
-- `lead-pipeline-visual-board` — Visual lead tracking board
-- `customer-database` — Customer and property records
-- `equipment-asset-tracking` — Equipment age and service history
-- `estimate-builder-good-better-best` — Good/Better/Best tiered estimates
-- `flat-rate-pricebook` — Consistent pricing across techs
-- `digital-approvals-signatures` — Digital customer approvals
-- `invoicing-text-to-pay` — Invoice and collect payment by text
+- `speed-to-lead` — Auto-reply to leads in under 60 seconds
+- `lead-board` — Visual lead tracking board
+- `automatic-follow-up` — Automated follow-up sequences
+- `good-better-best-estimates` — Good/Better/Best tiered estimates
+- `customer-approvals` — Customer approvals and e-signatures
+- `text-to-pay` — Invoice and collect payment by text
 - `dispatch-board` — Drag-and-drop scheduling
-- `on-my-way-notifications` — Technician ETA texts
-- `mobile-tech-app` — Full field capability mobile app
-- `offline-mode` — Works without signal
-- `service-agreement-management` — Membership plans and recurring billing
-- `mrr-dashboard` — Monthly recurring revenue tracking
-- `automated-maintenance-reminders` — Due-service text reminders
-- `revenue-recovery-dashboard` — Find lost revenue from declined repairs
-- `declined-repair-follow-up` — Automated follow-up on declined work
-- `equipment-age-alerts` — Aging equipment replacement outreach
-- `drip-campaigns` — Automated follow-up sequences
-- `unified-inbox` — All customer messages in one place
-- `photo-job-documentation` — Before/after photos and notes
-- `google-review-requests` — Automated review requests
-- `quickbooks-integration` — Two-way QuickBooks sync
-- `team-management-invitations` — Role-based team invites
-- `role-based-access` — Permission controls by role
-- `flat-monthly-pricing` — No per-seat pricing
-- `ens-router` — Reliable message delivery infrastructure
+- `tech-app` — Full field capability mobile app
+- `on-my-way-texts` — Technician ETA texts
+- `customer-records` — Customer and property records
+- `equipment-tracking` — Equipment age and service history
+- `two-way-texting` — All customer messages in one place
 
 ## LeverLoop Context
 

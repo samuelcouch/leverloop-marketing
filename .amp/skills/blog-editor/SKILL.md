@@ -225,7 +225,7 @@ Blog content lives in TypeScript data files, NOT MDX or content collections.
 
 ### Category Validation
 Category MUST be one of:
-- `Product`, `Engineering`, `Sales`, `Company`, `Guides`
+- `Growth & Lead Gen`, `Operations & Dispatch`, `Payments & Profitability`, `Customer Experience`
 
 **Action:** Flag any category not in this list.
 
@@ -290,13 +290,10 @@ Author MUST be one of:
 - **Never embellish or add capabilities** that LeverLoop does not have
 
 ### Existing Blog Slugs (for `relatedSlugs`)
-- `automated-follow-up-sequences-contractors`
-- `why-contractors-lose-leads`
-- `win-more-home-service-jobs`
-- `introducing-ai-assistants`
-- `scaling-postgres-beyond-1b-rows`
 
-**Action:** Flag any `relatedSlugs` entry that does not match an existing slug.
+No blog posts exist yet. The `posts` array in `src/data/blog.ts` is empty. When a new post is created, it becomes the first entry. For subsequent posts, only reference slugs that have already been added to the `posts` array. Always check `src/data/blog.ts` for the current list.
+
+**Action:** Flag any `relatedSlugs` entry that does not match an existing slug in the `posts` array.
 
 ---
 
