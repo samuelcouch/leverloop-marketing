@@ -13,5 +13,5 @@ All content and configuration lives here as typed TypeScript exports. Components
 ## Existing Data Shapes
 
 - **`blog.ts`** — `BlogPost`, `Author`, `Category`, `ArticleSection`, `FAQ`, `BlogArticle`. Exports `authors`, `categories`, `posts`.
-- **`articles.ts`** — `Record<string, BlogArticle>` with full article content (sections as HTML strings, FAQ, key takeaways, related slugs). Imports types and data from `blog.ts`.
+- **`articles/`** — One file per article (`<slug>.ts`), each exporting `default` as `BlogArticle`. The barrel `articles/index.ts` uses `import.meta.glob` to auto-discover all article files and re-exports `articles: Record<string, BlogArticle>`. To add a new article, create a new `<slug>.ts` file — no manual import wiring needed.
 - **`features.ts`** — `Feature`, `FeatureDetail`, `ResourceLink`, `FAQItem`. Exports `features` array with slugs, details, mockup types, resources, and FAQs.

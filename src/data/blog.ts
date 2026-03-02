@@ -95,6 +95,39 @@ export type Category = (typeof categories)[number];
 
 export const posts: BlogPost[] = [
   {
+    slug: 'automated-follow-up-sequences-contractors',
+    title: 'Automated Follow-Up Sequences for Contractors',
+    excerpt:
+      'Map out automated follow-up sequences for new leads, unsold estimates, completed jobs, and dormant customers. Includes exact copy, timing, and channel strategy.',
+    category: 'Guides',
+    date: 'Mar 1, 2026',
+    readTime: '14 min read',
+    author: { name: 'Maria Gonzalez', avatar: 'MG' },
+    gradient: 'from-amber-400 via-orange-300 to-rose-200',
+  },
+  {
+    slug: 'why-contractors-lose-leads',
+    title: 'Why Home Service Contractors Lose 60% of Leads (And How to Fix It)',
+    excerpt:
+      'Most contractors take 24-48 hours to respond to a lead. By then, the homeowner has already called 3 competitors. Here\'s the data on why speed and automation separate growing shops from struggling ones.',
+    category: 'Sales',
+    date: 'Feb 28, 2026',
+    readTime: '9 min read',
+    author: { name: 'Maria Gonzalez', avatar: 'MG' },
+    gradient: 'from-orange-400 via-rose-300 to-pink-200',
+  },
+  {
+    slug: 'win-more-home-service-jobs',
+    title: 'The Complete Guide to Winning More Home Service Jobs in 2026',
+    excerpt:
+      '63% of contractors are growing, but most still lose winnable jobs to slow follow-up. Master the four-step system from lead capture to five-star reviews.',
+    category: 'Guides',
+    date: 'Feb 28, 2026',
+    readTime: '8 min read',
+    author: { name: 'Maria Gonzalez', avatar: 'MG' },
+    gradient: 'from-emerald-400 via-teal-300 to-cyan-200',
+  },
+  {
     slug: 'introducing-ai-assistants',
     title: 'Introducing AI Assistants: Your CRM on Autopilot',
     excerpt:
@@ -116,114 +149,5 @@ export const posts: BlogPost[] = [
     author: { name: 'James Park', avatar: 'JP' },
     gradient: 'from-emerald-400 via-teal-300 to-cyan-200',
   },
-  {
-    slug: 'pipeline-management-best-practices',
-    title: 'Pipeline Management: 7 Practices Top Teams Swear By',
-    excerpt:
-      'From deal velocity metrics to stage hygiene, here\'s what separates high-performing sales orgs from the rest.',
-    category: 'Sales',
-    date: 'Feb 12, 2026',
-    readTime: '8 min read',
-    author: { name: 'Maria Gonzalez', avatar: 'MG' },
-    gradient: 'from-amber-400 via-orange-300 to-rose-200',
-  },
-  {
-    slug: 'series-b-announcement',
-    title: 'LeverLoop Raises $48M Series B to Redefine CRM',
-    excerpt:
-      'We\'re thrilled to announce our Series B, led by Acme Ventures, to accelerate product development and expand into new markets.',
-    category: 'Company',
-    date: 'Feb 5, 2026',
-    readTime: '3 min read',
-    author: { name: 'Alex Rivera', avatar: 'AR' },
-    gradient: 'from-pink-400 via-rose-300 to-red-200',
-  },
-  {
-    slug: 'getting-started-with-leverloop-api',
-    title: 'Getting Started with the LeverLoop API',
-    excerpt:
-      'A step-by-step walkthrough to authenticate, query contacts, and sync deals via our REST and GraphQL APIs.',
-    category: 'Guides',
-    date: 'Jan 28, 2026',
-    readTime: '10 min read',
-    author: { name: 'Priya Patel', avatar: 'PP' },
-    gradient: 'from-sky-400 via-blue-300 to-indigo-200',
-  },
-  {
-    slug: 'smart-search-deep-dive',
-    title: 'How Smart Search Finds Anything in Milliseconds',
-    excerpt:
-      'A look under the hood at the hybrid search engine that powers instant results across contacts, deals, notes, and emails.',
-    category: 'Product',
-    date: 'Jan 22, 2026',
-    readTime: '7 min read',
-    author: { name: 'James Park', avatar: 'JP' },
-    gradient: 'from-teal-400 via-emerald-300 to-lime-200',
-  },
-  {
-    slug: 'cold-email-playbook',
-    title: 'The Modern Cold Email Playbook for 2026',
-    excerpt:
-      'Deliverability, personalization, and sequencing strategies that actually get replies in today\'s inbox landscape.',
-    category: 'Sales',
-    date: 'Jan 15, 2026',
-    readTime: '9 min read',
-    author: { name: 'Maria Gonzalez', avatar: 'MG' },
-    gradient: 'from-orange-400 via-amber-300 to-yellow-200',
-  },
-  {
-    slug: 'real-time-sync-architecture',
-    title: 'Building Real-Time Sync with CRDTs',
-    excerpt:
-      'Why we chose conflict-free replicated data types over operational transforms for our multiplayer editing experience.',
-    category: 'Engineering',
-    date: 'Jan 8, 2026',
-    readTime: '14 min read',
-    author: { name: 'Sarah Chen', avatar: 'SC' },
-    gradient: 'from-fuchsia-400 via-purple-300 to-violet-200',
-  },
-  {
-    slug: 'custom-fields-workflows',
-    title: 'Guide: Custom Fields & Automated Workflows',
-    excerpt:
-      'Learn how to tailor LeverLoop to your exact process with custom properties, conditional logic, and trigger-based automations.',
-    category: 'Guides',
-    date: 'Jan 2, 2026',
-    readTime: '6 min read',
-    author: { name: 'Priya Patel', avatar: 'PP' },
-    gradient: 'from-cyan-400 via-sky-300 to-blue-200',
-  },
-  {
-    slug: 'year-in-review-2025',
-    title: '2025 Year in Review: What We Shipped',
-    excerpt:
-      'A retrospective on the features, milestones, and community growth that defined our biggest year yet.',
-    category: 'Company',
-    date: 'Dec 28, 2025',
-    readTime: '4 min read',
-    author: { name: 'Alex Rivera', avatar: 'AR' },
-    gradient: 'from-rose-400 via-pink-300 to-fuchsia-200',
-  },
-  {
-    slug: 'deal-forecasting-with-ml',
-    title: 'Accurate Deal Forecasting with Machine Learning',
-    excerpt:
-      'How our ML models analyze historical patterns to predict close rates with 92% accuracy — and what that means for your revenue planning.',
-    category: 'Product',
-    date: 'Dec 20, 2025',
-    readTime: '8 min read',
-    author: { name: 'James Park', avatar: 'JP' },
-    gradient: 'from-indigo-400 via-violet-300 to-purple-200',
-  },
-  {
-    slug: 'migration-guide-salesforce',
-    title: 'Migrating from Salesforce to LeverLoop in 30 Minutes',
-    excerpt:
-      'Our one-click migration tool handles contacts, deals, activities, and custom fields — here\'s how to make the switch.',
-    category: 'Guides',
-    date: 'Dec 14, 2025',
-    readTime: '5 min read',
-    author: { name: 'Priya Patel', avatar: 'PP' },
-    gradient: 'from-lime-400 via-green-300 to-emerald-200',
-  },
+
 ];
