@@ -4,16 +4,12 @@ import {
   growthSystemsCopy,
   customerIntelMock,
   unifiedInboxMock,
-  revenueRecoveryMock,
-  mobileOfflineMock,
   type GrowthMockId,
 } from '../../data/landing';
 
 const mockById: Record<GrowthMockId, React.ComponentType> = {
   customer_intel: CustomerIntelPanel,
   unified_inbox: UnifiedInboxPanel,
-  revenue_recovery: RevenueRecoveryPanel,
-  mobile_offline: MobileOfflinePanel,
 };
 
 export default function GrowthSystems() {
@@ -146,75 +142,4 @@ function UnifiedInboxPanel() {
   );
 }
 
-function RevenueRecoveryPanel() {
-  return (
-    <div className="p-4">
-      <div className="flex items-center justify-between gap-2 mb-3">
-        <div className="text-xs font-semibold text-heading">{revenueRecoveryMock.title}</div>
-        <span className="text-[10px] px-2 py-1 rounded-full bg-warning-soft text-warning-dark font-semibold">
-          {revenueRecoveryMock.subtitle}
-        </span>
-      </div>
 
-      <div className="space-y-2">
-        {revenueRecoveryMock.opportunities.map((opportunity) => (
-          <div
-            key={opportunity.label}
-            className="rounded-lg border border-edge-light bg-[#fafafa] p-2.5 flex items-center justify-between gap-2"
-          >
-            <div>
-              <div className="text-[11px] font-semibold text-heading">{opportunity.label}</div>
-              <div className="text-[11px] text-body">{opportunity.amount}</div>
-            </div>
-            <button className="text-[10px] px-2 py-1 rounded-md bg-ink text-white font-semibold whitespace-nowrap">
-              {opportunity.action}
-            </button>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-3 text-[11px] text-body leading-relaxed">{revenueRecoveryMock.footer}</div>
-    </div>
-  );
-}
-
-function MobileOfflinePanel() {
-  return (
-    <div className="flex items-center justify-center py-4 bg-gradient-to-b from-[#f8fafc] to-white">
-      <div className="w-[230px] rounded-[26px] border border-edge bg-white shadow-[0_20px_45px_-25px_rgba(0,0,0,0.35)] overflow-hidden">
-        <div className="h-6 bg-ink flex items-center justify-center">
-          <div className="w-14 h-1 rounded-full bg-white/40" />
-        </div>
-
-        <div className="p-3.5">
-          <div className="text-xs font-semibold text-heading">{mobileOfflineMock.title}</div>
-          <div className="inline-flex mt-2 text-[10px] px-2 py-0.5 rounded-full bg-warning-soft text-warning-dark font-semibold">
-            {mobileOfflineMock.mode}
-          </div>
-
-          <div className="mt-3 rounded-lg border border-edge-light bg-[#fafafa] p-2.5">
-            <div className="text-[11px] font-semibold text-heading">{mobileOfflineMock.customer}</div>
-            <div className="text-[11px] text-body mt-1">{mobileOfflineMock.task}</div>
-          </div>
-
-          <div className="mt-3 text-[11px] font-semibold text-heading">{mobileOfflineMock.queueLabel}</div>
-          <div className="mt-2 space-y-1.5">
-            {mobileOfflineMock.queue.map((item) => (
-              <div
-                key={item.text}
-                className="text-[11px] text-body flex items-center gap-2 rounded-md border border-edge-light px-2 py-1.5"
-              >
-                <span>{item.icon}</span>
-                <span>{item.text}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-3 text-[10px] font-semibold text-success-dark bg-success-soft rounded-md px-2 py-1.5 text-center">
-            {mobileOfflineMock.syncStatus}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}

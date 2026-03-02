@@ -77,15 +77,15 @@ export type PricingPageData = {
 
 export const pricingPageData: PricingPageData = {
   meta: {
-    title: 'Pricing | LeverLoop — Simple Plans for Every Crew Size',
+    title: 'Pricing | LeverLoop: Simple Plans for Every Crew Size',
     description:
-      'Transparent, flat-rate pricing for home service teams. Start at $49/mo for solo operators, scale to $299/mo for established crews. No hidden fees.',
+      'Transparent, flat-rate pricing for home service teams. Start at $99/mo, scale to $299/mo for established crews. No hidden fees.',
   },
   hero: {
     badge: 'Simple, transparent pricing',
     heading: 'One price. Everything included.',
     subheading:
-      'Pick the plan that fits your crew today. No hidden fees, no per-feature charges — just straightforward pricing that scales with your team.',
+      'Pick the plan that fits your crew today. No hidden fees, no per-feature charges. Straightforward pricing that scales with your team.',
   },
   billingToggle: {
     monthly: 'Monthly',
@@ -96,9 +96,9 @@ export const pricingPageData: PricingPageData = {
     {
       name: 'Starter',
       description: 'Solo operators and one-tech shops',
-      monthlyPrice: 49,
-      annualPrice: 39,
-      includedUsers: 1,
+      monthlyPrice: 99,
+      annualPrice: 79,
+      includedUsers: 3,
       cta: { label: 'Start free trial', href: '/#demo' },
     },
     {
@@ -118,10 +118,9 @@ export const pricingPageData: PricingPageData = {
       enterpriseFeatures: [
         'Everything in Pro',
         'Unlimited users',
-        'Service agreements + MRR dashboard',
-        'Maintenance reminders + revenue recovery',
-        'Equipment tracking + age alerts',
-        'Advanced role-based access & permissions',
+        'Equipment tracking',
+        'Advanced auto follow-up sequences',
+        'Owner and admin role management',
         'SSO/SAML + dedicated support',
         'Custom onboarding & data migration',
       ],
@@ -137,23 +136,23 @@ export const pricingPageData: PricingPageData = {
         { label: 'Estimate builder (Good/Better/Best), approvals & signatures', starter: 'included', pro: 'included' },
         { label: 'Flat-rate pricebook', starter: 'included', pro: 'included' },
         { label: 'Invoicing + text-to-pay', starter: 'included', pro: 'included' },
-        { label: 'Mobile app + offline mode + photo/docs', starter: 'included', pro: 'included' },
+        { label: 'Photo & job documentation', starter: 'included', pro: 'included' },
         { label: 'Basic dispatch', starter: 'included', pro: 'included' },
       ],
     },
     {
       name: 'Automation & Communication',
       rows: [
-        { label: 'Speed-to-lead + drip campaigns', starter: false, pro: 'included' },
-        { label: 'Unified inbox, on-my-way texts', starter: false, pro: 'included' },
-        { label: 'QuickBooks sync, Google review requests', starter: false, pro: 'included' },
+        { label: 'Speed-to-lead + auto follow-up', starter: false, pro: 'included' },
+        { label: 'Two-way texting, on-my-way texts', starter: false, pro: 'included' },
+        { label: 'Mobile tech app + offline mode', starter: false, pro: 'included' },
         { label: 'Team management + role-based access', starter: false, pro: 'included' },
       ],
     },
   ],
   addOns: {
     heading: 'Optional add-ons',
-    subheading: 'Pay only for what you need — no required extras.',
+    subheading: 'Pay only for what you need. No required extras.',
     items: [
       {
         icon: '👤',
@@ -182,7 +181,7 @@ export const pricingPageData: PricingPageData = {
     items: [
       {
         question: 'Can I switch plans later?',
-        answer: 'Yes. Upgrade or downgrade anytime — changes take effect on your next billing cycle with prorated credits applied automatically.',
+        answer: 'Yes. Upgrade or downgrade anytime. Changes take effect on your next billing cycle with prorated credits applied automatically.',
       },
       {
         question: 'Is there a contract?',
@@ -193,8 +192,8 @@ export const pricingPageData: PricingPageData = {
         answer: 'Additional users beyond your plan\u2019s included seats are $25/user/month. Add or remove users anytime from your account settings.',
       },
       {
-        question: 'Do all plans include the mobile app?',
-        answer: 'Yes. Every plan includes the full mobile app with offline mode, photo/document capture, and real-time sync.',
+        question: 'Do all plans include crew access?',
+        answer: 'Yes. Every plan includes crew work order URLs where your team can upload photos, update job status, and view customer details from any mobile browser.',
       },
       {
         question: 'Is my data secure?',
@@ -202,14 +201,14 @@ export const pricingPageData: PricingPageData = {
       },
       {
         question: 'Can I try before I buy?',
-        answer: 'Yes — every plan comes with a 14-day free trial. No credit card required to get started.',
+        answer: 'Yes, every plan comes with a 14-day free trial. No credit card required to get started.',
       },
     ],
   },
   bottomCta: {
-    heading: 'Ready to streamline your operation?',
+    heading: 'Ready to run your shop from one system?',
     subheading:
-      'Join thousands of home service teams running their business on LeverLoop. Start your free trial today — no credit card required.',
+      'See how LeverLoop handles your leads, estimates, dispatch, and payments in one place. Start your free trial today. No credit card required.',
     primaryCta: { label: 'Start free trial', href: '/#demo' },
     secondaryCta: { label: 'Book a demo', href: '/#demo' },
   },

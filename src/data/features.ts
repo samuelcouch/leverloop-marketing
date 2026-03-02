@@ -61,7 +61,20 @@ export interface Feature {
   faqs: FAQItem[];
 }
 
-const salesResources: ResourceLink[] = [
+// ---------------------------------------------------------------------------
+// Shared CTA
+// ---------------------------------------------------------------------------
+
+const demoCta = {
+  ctaLabel: "Book a demo",
+  ctaHref: "#demo",
+};
+
+// ---------------------------------------------------------------------------
+// Resource sets by category
+// ---------------------------------------------------------------------------
+
+const leadResources: ResourceLink[] = [
   {
     title: "Speed-to-Lead Playbook",
     description:
@@ -77,1730 +90,1102 @@ const salesResources: ResourceLink[] = [
     type: "Checklist",
   },
   {
+    title: "Lead Response Templates",
+    description:
+      "Copy-paste text and email templates for first response, follow-up, and re-engagement.",
+    href: "/resources/lead-response-templates",
+    type: "Template",
+  },
+];
+
+const estimateResources: ResourceLink[] = [
+  {
     title: "Field Estimate Framework",
     description:
-      "How to present Good / Better / Best options clearly on-site and raise average ticket value.",
+      "How to present Good, Better, and Best options on-site and raise your average ticket.",
     href: "/resources/field-estimate-framework",
     type: "Guide",
   },
-];
-
-const operationsResources: ResourceLink[] = [
   {
-    title: "Dispatch Optimization Guide",
+    title: "Estimate Follow-Up Templates",
     description:
-      "Best practices for assignment, routing, and reducing idle drive time across your team.",
-    href: "/resources/dispatch-optimization-guide",
-    type: "Guide",
-  },
-  {
-    title: "Job Documentation SOP",
-    description:
-      "A step-by-step process for before/after photos, notes, and customer sign-offs.",
-    href: "/resources/job-documentation-sop",
+      "Text and email templates for following up on open estimates without being pushy.",
+    href: "/resources/estimate-follow-up-templates",
     type: "Template",
   },
   {
-    title: "Field Readiness Checklist",
+    title: "Pricing Strategy Playbook",
     description:
-      "What every tech needs before leaving the shop: schedule, history, assets, and pricing.",
-    href: "/resources/field-readiness-checklist",
-    type: "Checklist",
-  },
-];
-
-const revenueResources: ResourceLink[] = [
-  {
-    title: "Service Agreement Growth Guide",
-    description:
-      "How to enroll more members from completed jobs and build predictable monthly revenue.",
-    href: "/resources/service-agreement-growth-guide",
-    type: "Guide",
-  },
-  {
-    title: "MRR Forecast Template",
-    description:
-      "Track enrollments, churn, and recurring revenue trends with one operator-friendly sheet.",
-    href: "/resources/mrr-forecast-template",
-    type: "Template",
-  },
-  {
-    title: "Revenue Recovery Playbook",
-    description:
-      "Processes to reactivate stale leads, declined repairs, and aging-equipment opportunities.",
-    href: "/resources/revenue-recovery-playbook",
+      "How to structure your pricebook and tiers to give customers clear choices.",
+    href: "/resources/pricing-strategy-playbook",
     type: "Playbook",
   },
 ];
 
-const communicationResources: ResourceLink[] = [
+const paymentResources: ResourceLink[] = [
   {
-    title: "Customer Messaging Guide",
+    title: "Getting Paid Faster Guide",
     description:
-      "Message examples for lead replies, ETA updates, estimate nudges, and review requests.",
-    href: "/resources/customer-messaging-guide",
+      "Reduce your days-to-payment with text-to-pay, automated reminders, and clear invoicing.",
+    href: "/resources/getting-paid-faster",
     type: "Guide",
   },
   {
-    title: "Drip Sequence Library",
+    title: "Invoice Template Pack",
     description:
-      "Copy-and-customize lifecycle campaigns built for home service customer journeys.",
-    href: "/resources/drip-sequence-library",
-    type: "Playbook",
+      "Professional invoice templates with clear line items and payment instructions.",
+    href: "/resources/invoice-templates",
+    type: "Template",
   },
   {
-    title: "TCPA Compliance Checklist",
+    title: "Payment Collection Checklist",
     description:
-      "A practical checklist for opt-ins, quiet hours, opt-outs, and message audit trails.",
-    href: "/resources/tcpa-compliance-checklist",
+      "Step-by-step process to reduce outstanding invoices and speed up cash flow.",
+    href: "/resources/payment-collection-checklist",
     type: "Checklist",
   },
 ];
 
-const managementResources: ResourceLink[] = [
+const dispatchResources: ResourceLink[] = [
   {
-    title: "Team Onboarding Template",
+    title: "Dispatch Efficiency Playbook",
     description:
-      "A repeatable onboarding checklist for dispatchers, techs, admins, and owners.",
-    href: "/resources/team-onboarding-template",
-    type: "Template",
+      "Scheduling strategies that reduce drive time and fit more calls into every day.",
+    href: "/resources/dispatch-efficiency-playbook",
+    type: "Playbook",
   },
   {
-    title: "Role Permission Matrix",
+    title: "Tech Onboarding Checklist",
     description:
-      "A starter matrix for assigning access by role without overexposing sensitive data.",
-    href: "/resources/role-permission-matrix",
-    type: "Guide",
-  },
-  {
-    title: "Growth Planning Checklist",
-    description:
-      "How to scale headcount, workflows, and software adoption without adding chaos.",
-    href: "/resources/growth-planning-checklist",
+      "Get new techs up and running on LeverLoop in their first afternoon.",
+    href: "/resources/tech-onboarding-checklist",
     type: "Checklist",
+  },
+  {
+    title: "Customer Communication Templates",
+    description:
+      "On My Way, appointment confirmation, and reschedule text templates.",
+    href: "/resources/customer-communication-templates",
+    type: "Template",
   },
 ];
 
-const platformResources: ResourceLink[] = [
+const customerResources: ResourceLink[] = [
   {
-    title: "QuickBooks Sync Guide",
+    title: "Customer Data Migration Guide",
     description:
-      "Set up two-way sync and reduce double-entry between operations and accounting.",
-    href: "/resources/quickbooks-sync-guide",
+      "How to move your customer records into LeverLoop cleanly, with no lost data.",
+    href: "/resources/customer-data-migration",
     type: "Guide",
   },
   {
-    title: "Automation Trigger Map",
+    title: "Equipment Logging Checklist",
     description:
-      "A visual map of event triggers you can use to run follow-up and booking workflows.",
-    href: "/resources/automation-trigger-map",
+      "A field checklist for capturing make, model, serial, and install date on every call.",
+    href: "/resources/equipment-logging-checklist",
+    type: "Checklist",
+  },
+  {
+    title: "Maintenance Agreement Templates",
+    description:
+      "Ready-to-use membership plan templates for HVAC, plumbing, and electrical.",
+    href: "/resources/maintenance-agreement-templates",
+    type: "Template",
+  },
+];
+
+const textingResources: ResourceLink[] = [
+  {
+    title: "Business Texting Best Practices",
+    description:
+      "How to text customers professionally: timing, tone, compliance, and quiet hours.",
+    href: "/resources/business-texting-best-practices",
+    type: "Guide",
+  },
+  {
+    title: "Text Message Templates",
+    description:
+      "Appointment reminders, follow-ups, review requests, and payment nudges. Copy and customize.",
+    href: "/resources/text-message-templates",
     type: "Template",
   },
   {
-    title: "Reliability & Compliance Brief",
+    title: "Customer Texting Playbook",
     description:
-      "How communication failover, deliverability logs, and compliance safeguards protect growth.",
-    href: "/resources/reliability-compliance-brief",
+      "Build a texting strategy that keeps customers informed and drives five-star reviews.",
+    href: "/resources/customer-texting-playbook",
     type: "Playbook",
   },
 ];
 
-const demoCta = {
-  ctaLabel: "Book a demo",
-  ctaHref: "#demo",
-};
+// ---------------------------------------------------------------------------
+// Features
+// ---------------------------------------------------------------------------
 
 export const features: Feature[] = [
+  // -----------------------------------------------------------------------
+  // 1. Speed-to-Lead
+  // -----------------------------------------------------------------------
   {
-    slug: "speed-to-lead-engine",
+    slug: "speed-to-lead",
     badge: "⚡ Speed-to-Lead",
-    headline: "The first company to respond wins. Make it yours every time.",
+    headline: "New lead? They hear from you in 60 seconds.",
     description:
-      "Auto-reply to every new lead in under 60 seconds, then keep follow-up moving until they book, reply, or opt out.",
+      "The first company to respond wins the job. LeverLoop texts new leads the moment they come in, then keeps following up until they book or reply.",
     ...demoCta,
     mockup: "lead",
-    metaTitle: "Speed-to-Lead Engine | LeverLoop",
+    metaTitle: "Speed-to-Lead | LeverLoop",
     metaDescription:
-      "Auto-text every new lead in under 60 seconds so your team stays first to respond and first to win.",
+      "Respond to every new lead in under 60 seconds with an automatic text from your business number. Stop losing jobs to the company that texts back first.",
     details: [
       {
         label: "Instant Response",
-        headline: "Reply to every lead before your competitor does",
+        headline: "Reply to every lead before your competitor picks up the phone",
         description:
-          "The second a lead enters your system, LeverLoop sends a personalized business text and marks the record as contacted.",
-        cta: "See instant response flow",
-        benefit: "Protect ad spend by converting inquiries while intent is highest.",
+          "The second a lead hits your system, LeverLoop sends a personalized text from your business number. No dispatcher needed. No delay.",
+        cta: "See the instant response flow",
+        benefit:
+          "Protect your ad spend by reaching leads while they're still thinking about their problem.",
         mock: "lead",
       },
       {
         label: "Automated Follow-Up",
-        headline: "Keep conversations alive without dispatcher effort",
+        headline:
+          "Keep the conversation going without anyone lifting a finger",
         description:
-          "If a lead goes quiet, your configured drip sequence continues follow-up automatically until there is a clear outcome.",
+          "Lead goes quiet? Your follow-up sequence keeps working. Texts go out on a schedule you set until there's a clear outcome: booked, replied, or opted out.",
         cta: "See follow-up automation",
-        benefit: "No more warm leads getting lost in inbox backlog.",
+        benefit: "No more warm leads dying in someone's inbox.",
         mock: "inbox",
       },
       {
         label: "Pipeline Visibility",
-        headline: "Track response outcomes across your whole funnel",
+        headline: "See every lead, every stage, every response",
         description:
-          "Stage updates, replies, and booking actions are logged in real time so the office always knows what happened next.",
+          "Stage updates, replies, and booking actions log automatically. Your office always knows which leads are hot, which went cold, and what happened last.",
         cta: "View lead tracking",
-        benefit: "Your team gets speed and accountability in one workflow.",
+        benefit: "Speed and accountability in one place.",
         mock: "pipeline",
       },
     ],
     relatedFeatureSlugs: [
-      "lead-pipeline-visual-board",
-      "drip-campaigns",
-      "unified-inbox",
+      "lead-board",
+      "automatic-follow-up",
+      "two-way-texting",
     ],
-    resources: salesResources,
+    resources: leadResources,
     faqs: [
       {
         question: "Can we customize the first-response message?",
         answer:
-          "Yes. You control the copy, tone, and merge fields so messages sound like your business, not a robot.",
+          "Yes. You write the copy and choose the merge fields, so it sounds like your business. Not a robot.",
       },
       {
-        question: "Does speed-to-lead still work after hours?",
+        question: "Does speed-to-lead work after hours?",
         answer:
-          "Yes. Automated lead replies fire around the clock, with compliance rules like quiet hours applied where required.",
+          "Yes. Automated texts fire around the clock. You set quiet hours for anything that needs them.",
+      },
+      {
+        question: "What if a lead replies right away?",
+        answer:
+          "Their reply lands in your inbox immediately. Your team can pick up the conversation live, and the automation pauses.",
+      },
+      {
+        question: "Do we need to connect our lead sources?",
+        answer:
+          "LeverLoop works with web forms, Google LSA, and most lead providers. Setup takes minutes.",
       },
     ],
   },
+
+  // -----------------------------------------------------------------------
+  // 2. Lead Board
+  // -----------------------------------------------------------------------
   {
-    slug: "lead-pipeline-visual-board",
-    badge: "📊 Lead Pipeline",
-    headline: "See every opportunity at a glance so nothing slips.",
+    slug: "lead-board",
+    badge: "📋 Lead Board",
+    headline: "Every lead on one board. Nothing slips.",
     description:
-      "Run your sales process on a visual board from New to Won, with timestamps, aging indicators, and real-time team updates.",
+      "See every lead, where it stands, and what's next. Drag cards between stages, spot stale opportunities, and know exactly what your pipeline is worth.",
     ...demoCta,
     mockup: "pipeline",
-    metaTitle: "Lead Pipeline Visual Board | LeverLoop",
+    metaTitle: "Lead Board | LeverLoop",
     metaDescription:
-      "Track every lead from first contact to closed deal with a visual pipeline built for home service sales workflows.",
+      "Track every lead from first contact to closed job on one visual board. See what's hot, what's gone cold, and where your team should focus next.",
     details: [
       {
-        label: "Stage Clarity",
-        headline: "Track leads through clear, operational stages",
+        label: "Visual Stages",
+        headline: "See your whole pipeline at a glance",
         description:
-          "Every card moves through a practical home-service funnel so the team always knows what needs action next.",
-        cta: "Explore stage setup",
-        benefit: "You get one shared source of pipeline truth.",
+          "Every lead sits in a stage: New, Contacted, Estimate Sent, Won, Lost. Drag a card to move it. Click to see the full history.",
+        cta: "See the board in action",
+        benefit:
+          "Stop asking 'what happened with that lead?' The board answers it.",
         mock: "pipeline",
       },
       {
-        label: "Aging Alerts",
-        headline: "Find stalled opportunities before they go cold",
+        label: "Stale Lead Alerts",
+        headline: "Know which leads are going cold before you lose them",
         description:
-          "Visual aging markers highlight opportunities that have sat too long and should be followed up today.",
-        cta: "See aging indicators",
-        benefit: "Your best opportunities stay active instead of forgotten.",
-        mock: "recovery",
+          "Leads sitting too long in one stage get flagged automatically. You see exactly how many days a lead has been idle, so nothing ages out quietly.",
+        cta: "See stale lead detection",
+        benefit:
+          "Catch the leads that would have fallen through the cracks.",
+        mock: "lead",
       },
       {
-        label: "One-Click Conversion",
-        headline: "Turn Won leads into jobs without double entry",
+        label: "Pipeline Value",
+        headline: "Know what your pipeline is worth right now",
         description:
-          "Close the deal and create customer plus job records immediately from the same board.",
-        cta: "See conversion workflow",
-        benefit: "Sales handoff to operations is fast and clean.",
-        mock: "dispatch",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "speed-to-lead-engine",
-      "estimate-builder-good-better-best",
-      "drip-campaigns",
-    ],
-    resources: salesResources,
-    faqs: [
-      {
-        question: "Can we filter pipeline views by rep or job type?",
-        answer:
-          "Yes. Filter by assignee, stage, date range, and job type to run focused pipeline reviews.",
-      },
-      {
-        question: "Does moving a stage trigger automations?",
-        answer:
-          "Yes. Stage transitions can automatically enroll leads in follow-up campaigns and notify the right team members.",
-      },
-    ],
-  },
-  {
-    slug: "customer-database",
-    badge: "🗂️ Customer Records",
-    headline: "Every customer, property, and service record in seconds.",
-    description:
-      "Search by name, phone, address, or equipment and pull up the full relationship history instantly.",
-    ...demoCta,
-    mockup: "customer",
-    metaTitle: "Customer Database | LeverLoop",
-    metaDescription:
-      "Access complete customer and property history instantly, including jobs, equipment, invoices, and messages.",
-    details: [
-      {
-        label: "Unified Profile",
-        headline: "See complete customer context on one screen",
-        description:
-          "Timeline view combines jobs, estimates, invoices, notes, photos, and communications in order.",
-        cta: "View unified timeline",
-        benefit: "Dispatchers answer confidently without searching multiple systems.",
-        mock: "customer",
-      },
-      {
-        label: "Multi-Property Support",
-        headline: "Handle landlords and portfolios without confusion",
-        description:
-          "One customer record can include many service addresses, each with its own equipment and job history.",
-        cta: "See property mapping",
-        benefit: "Commercial and rental customers stay organized as they scale.",
-        mock: "equipment",
-      },
-      {
-        label: "Compliance Built-In",
-        headline: "Track consent and communication status automatically",
-        description:
-          "Opt-in source, timestamp, and messaging status are captured with each profile for audit-ready records.",
-        cta: "See consent tracking",
-        benefit: "Your growth workflows stay compliant without extra admin work.",
-        mock: "reliability",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "equipment-asset-tracking",
-      "photo-job-documentation",
-      "unified-inbox",
-    ],
-    resources: operationsResources,
-    faqs: [
-      {
-        question: "Can techs access customer history before arriving?",
-        answer:
-          "Yes. Techs can view service history, notes, and equipment records from the mobile app before they knock.",
-      },
-      {
-        question: "Can we search by serial number or address?",
-        answer:
-          "Yes. Global search supports customer info, property details, and equipment identifiers.",
-      },
-    ],
-  },
-  {
-    slug: "equipment-asset-tracking",
-    badge: "🏷️ Asset Tracking",
-    headline: "Turn every service call into data you can sell from.",
-    description:
-      "Log make, model, serial, install date, warranty, photos, and service history for every unit at every property.",
-    ...demoCta,
-    mockup: "equipment",
-    metaTitle: "Equipment & Asset Tracking | LeverLoop",
-    metaDescription:
-      "Track equipment records, warranty timelines, and service history to uncover proactive replacement opportunities.",
-    details: [
-      {
-        label: "Fast Capture",
-        headline: "Create equipment records in under two minutes",
-        description:
-          "Techs add units from the field with data plate photos and key attributes while details are fresh.",
-        cta: "See in-field capture",
-        benefit: "Institutional knowledge gets stored in your business, not in one tech's memory.",
-        mock: "equipment",
-      },
-      {
-        label: "Lifecycle History",
-        headline: "Attach every visit to the exact unit worked on",
-        description:
-          "Completed jobs automatically build service history per asset for cleaner diagnostics and better recommendations.",
-        cta: "See service history",
-        benefit: "Future jobs start with complete context.",
-        mock: "customer",
-      },
-      {
-        label: "Proactive Alerts",
-        headline: "Surface aging and warranty risk before failure",
-        description:
-          "Automatic age and warranty logic flags units that should trigger maintenance or replacement conversations.",
-        cta: "See replacement signals",
-        benefit: "You create opportunities before competitors do.",
-        mock: "recovery",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "equipment-age-alerts",
-      "revenue-recovery-dashboard",
-      "mobile-tech-app",
-    ],
-    resources: operationsResources,
-    faqs: [
-      {
-        question: "Does asset history remain if property ownership changes?",
-        answer:
-          "Yes. Equipment records are tied to service locations so history remains intact through ownership transitions.",
-      },
-      {
-        question: "Can we report on units older than a certain age?",
-        answer:
-          "Yes. Filter and search by age, service frequency, and warranty windows to find high-priority opportunities.",
-      },
-    ],
-  },
-  {
-    slug: "estimate-builder-good-better-best",
-    badge: "🧾 Good / Better / Best",
-    headline: "Send option-based proposals from the field in minutes.",
-    description:
-      "Give every customer clear choices on their phone, with digital approval and one-tap conversion to invoice.",
-    ...demoCta,
-    mockup: "estimate",
-    metaTitle: "Estimate Builder (Good / Better / Best) | LeverLoop",
-    metaDescription:
-      "Create and send Good / Better / Best estimates from the field to increase close rates and average ticket size.",
-    details: [
-      {
-        label: "Three-Tier Quotes",
-        headline: "Present options that increase ticket value naturally",
-        description:
-          "Pre-configured service bundles help techs quote consistently with Good, Better, and Best recommendations.",
-        cta: "See option builder",
-        benefit: "Customers choose value levels instead of rejecting a single number.",
-        mock: "estimate",
-      },
-      {
-        label: "Phone-First Experience",
-        headline: "Deliver polished proposals by text in one tap",
-        description:
-          "Customers open the proposal link, compare tiers, sign, and approve without app downloads or PDFs.",
-        cta: "See customer approval view",
-        benefit: "Approvals happen while urgency is highest.",
-        mock: "mobile",
-      },
-      {
-        label: "Fast Handoff",
-        headline: "Convert approved options to jobs and invoices instantly",
-        description:
-          "Approved tier details flow directly into operations and billing so the office does not re-enter anything.",
-        cta: "See estimate-to-invoice flow",
-        benefit: "Faster fulfillment and fewer data errors.",
-        mock: "payments",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "flat-rate-pricebook",
-      "digital-approvals-signatures",
-      "invoicing-text-to-pay",
-    ],
-    resources: salesResources,
-    faqs: [
-      {
-        question: "Can inexperienced techs still quote confidently?",
-        answer:
-          "Yes. The structured option flow and pricebook mappings guide newer techs through consistent, profitable quoting.",
-      },
-      {
-        question: "Can we mark one option as recommended?",
-        answer:
-          "Yes. You can highlight a preferred tier so customers clearly understand your professional recommendation.",
-      },
-    ],
-  },
-  {
-    slug: "flat-rate-pricebook",
-    badge: "💵 Flat-Rate Pricing",
-    headline: "Consistent, profitable pricing in every tech's pocket.",
-    description:
-      "Standardize service pricing by trade and keep field quotes aligned with your target margins.",
-    ...demoCta,
-    mockup: "estimate",
-    metaTitle: "Flat-Rate Pricebook | LeverLoop",
-    metaDescription:
-      "Deploy consistent flat-rate pricing for every tech and every job to protect margins and build customer trust.",
-    details: [
-      {
-        label: "Pre-Seeded Catalog",
-        headline: "Start with trade-specific services out of the box",
-        description:
-          "HVAC, plumbing, and electrical line items are preloaded so teams can quote quickly from day one.",
-        cta: "See catalog structure",
-        benefit: "You launch faster without building a pricebook from scratch.",
-        mock: "estimate",
-      },
-      {
-        label: "Owner Control",
-        headline: "Set margins once and enforce everywhere",
-        description:
-          "Admins own pricing rules while techs can search and select items but cannot alter approved rates.",
-        cta: "See admin controls",
-        benefit: "No more margin leakage from inconsistent field pricing.",
-        mock: "team",
-      },
-      {
-        label: "GBB Mapping",
-        headline: "Auto-build estimate tiers from selected services",
-        description:
-          "Map line items to Good / Better / Best bundles so quote creation stays fast and consistent.",
-        cta: "See tier mappings",
-        benefit: "Every tech can quote like your best closer.",
+          "Every lead has an estimated value. The board totals it by stage so you can see how much revenue is sitting in Estimate Sent versus New. Real numbers, not guesses.",
+        cta: "See pipeline reporting",
+        benefit:
+          "Make decisions based on what your pipeline actually looks like today.",
         mock: "pipeline",
       },
     ],
     relatedFeatureSlugs: [
-      "estimate-builder-good-better-best",
-      "digital-approvals-signatures",
-      "mobile-tech-app",
+      "speed-to-lead",
+      "automatic-follow-up",
+      "good-better-best-estimates",
     ],
-    resources: salesResources,
+    resources: leadResources,
     faqs: [
       {
-        question: "Can we customize prices by local market?",
+        question: "Can I customize the stages on the board?",
         answer:
-          "Yes. Owners and admins can adjust every line item to match local pricing and target gross margin.",
+          "Yes. Rename stages and add new ones to match your sales process.",
       },
       {
-        question: "Can we disable seasonal or outdated services?",
+        question:
+          "Does the board update automatically when a lead responds?",
         answer:
-          "Yes. Any item can be activated or archived so the field only sees current offerings.",
+          "Yes. When a lead replies or an estimate is sent, the card moves to the right stage without anyone touching it.",
+      },
+      {
+        question: "Can my whole office see the board?",
+        answer:
+          "Yes. Everyone with dispatcher or admin access sees the same board in real time.",
+      },
+      {
+        question: "How far back does lead history go?",
+        answer:
+          "Every lead you've ever added stays in the system. Filter by date, stage, or source to find anything.",
       },
     ],
   },
+
+  // -----------------------------------------------------------------------
+  // 3. Automatic Follow-Up
+  // -----------------------------------------------------------------------
   {
-    slug: "digital-approvals-signatures",
-    badge: "✍️ Digital Signatures",
-    headline: "Approve estimates and completed work from any phone.",
+    slug: "automatic-follow-up",
+    badge: "🔄 Auto Follow-Up",
+    headline:
+      "Follow-up that runs itself. Leads stay warm while you run calls.",
     description:
-      "Capture legally auditable signatures in seconds, without paper packets, scans, or follow-up chasing.",
+      "Set your follow-up sequences once. LeverLoop sends the texts and emails on schedule, with pre-built templates for HVAC, plumbing, and electrical ready on day one.",
     ...demoCta,
-    mockup: "payments",
-    metaTitle: "Digital Approvals & Signatures | LeverLoop",
+    mockup: "lead",
+    metaTitle: "Automatic Follow-Up | LeverLoop",
     metaDescription:
-      "Get estimate and job sign-offs quickly with secure mobile approval links and full legal audit trails.",
+      "Automated follow-up sequences that text and email your leads on schedule. Pre-built templates for HVAC, plumbing, and electrical ready on day one.",
     details: [
       {
-        label: "Mobile Approval",
-        headline: "Send secure links that customers can sign immediately",
+        label: "Pre-Built Templates",
+        headline: "Turn on follow-up in five minutes, not five days",
         description:
-          "Customers open a tokenized link, review terms, draw a signature, and approve in under 90 seconds.",
-        cta: "See signature flow",
-        benefit: "Jobs move forward while customer attention is still high.",
-        mock: "mobile",
+          "LeverLoop ships with proven follow-up sequences for HVAC, plumbing, and electrical. Pick your trade, customize the wording, and turn it on. Your first sequence can be live before lunch.",
+        cta: "Browse trade templates",
+        benefit:
+          "Skip the blank-page problem. Start with what works and make it yours.",
+        mock: "lead",
       },
       {
-        label: "Legal Trail",
-        headline: "Store timestamped proof for every approval",
+        label: "Multi-Touch Sequences",
+        headline:
+          "Text, email, and text again until they book or tell you to stop",
         description:
-          "Signed records include selection details, IP metadata, and timestamp history for every accepted proposal.",
-        cta: "See audit details",
-        benefit: "You can confidently resolve approval disputes.",
-        mock: "reliability",
+          "Each sequence mixes texts and emails over days or weeks. You control the timing, the message, and the number of touches. When a lead replies, the sequence pauses automatically.",
+        cta: "See sequence builder",
+        benefit: "Persistent follow-up without being annoying.",
+        mock: "inbox",
       },
       {
-        label: "Workflow Trigger",
-        headline: "Push approved work straight into dispatch and billing",
+        label: "Sequence Performance",
+        headline: "See which messages are actually getting replies",
         description:
-          "Approvals notify the office immediately and can trigger downstream job or invoice actions automatically.",
-        cta: "See approval triggers",
-        benefit: "No lag between customer yes and operational next step.",
-        mock: "dispatch",
+          "Track open rates, reply rates, and booking rates per sequence. If a message isn't working, you'll know. Swap it out and keep improving.",
+        cta: "See performance metrics",
+        benefit: "Stop guessing which follow-up works. See the numbers.",
+        mock: "pipeline",
       },
     ],
     relatedFeatureSlugs: [
-      "estimate-builder-good-better-best",
-      "invoicing-text-to-pay",
-      "photo-job-documentation",
+      "speed-to-lead",
+      "lead-board",
+      "two-way-texting",
     ],
-    resources: communicationResources,
+    resources: leadResources,
     faqs: [
       {
-        question: "Do customers need to create an account to sign?",
+        question: "Can I write my own follow-up messages?",
         answer:
-          "No. Customers sign directly from a secure link in their text or email.",
+          "Yes. Use our templates as a starting point or write your own from scratch. You control every word.",
       },
       {
-        question: "How long are approval links valid?",
+        question: "What happens when a lead replies?",
         answer:
-          "Links are time-limited for security and can be resent when needed.",
+          "The sequence pauses immediately. Their reply shows up in your inbox so your team can respond personally.",
+      },
+      {
+        question: "How many follow-ups can I send?",
+        answer:
+          "As many as you want. Most customers use five to seven touches over two weeks, but you set it up however you like.",
+      },
+      {
+        question: "Do follow-ups go out on weekends?",
+        answer:
+          "Only if you want them to. You set the days and hours. Quiet hours are built in.",
+      },
+      {
+        question:
+          "Are there templates for trades besides HVAC, plumbing, and electrical?",
+        answer:
+          "We add more all the time. You can also duplicate and edit any template to fit your specific trade.",
       },
     ],
   },
+
+  // -----------------------------------------------------------------------
+  // 4. Good / Better / Best Estimates
+  // -----------------------------------------------------------------------
   {
-    slug: "invoicing-text-to-pay",
+    slug: "good-better-best-estimates",
+    badge: "📊 Estimates",
+    headline:
+      "Three options. One tap. The customer picks from their phone.",
+    description:
+      "Present Good, Better, and Best options on every call. Your customer chooses what fits, approves with a tap, and you close the job without the back-and-forth.",
+    ...demoCta,
+    mockup: "estimate",
+    metaTitle: "Good/Better/Best Estimates | LeverLoop",
+    metaDescription:
+      "Build Good, Better, and Best estimates your tech sends from the job site. Customers pick an option, approve, and sign from their phone in one tap.",
+    details: [
+      {
+        label: "Tiered Options",
+        headline:
+          "Give customers a choice, not a take-it-or-leave-it number",
+        description:
+          "Your tech builds three tiers right from the job site. Good covers the fix. Better adds peace of mind. Best is the full package. Customers pick what fits their budget without feeling pressured.",
+        cta: "See the estimate builder",
+        benefit:
+          "Average ticket goes up when customers see options. No awkward upselling required.",
+        mock: "estimate",
+      },
+      {
+        label: "One-Tap Approval",
+        headline:
+          "Your customer approves from their phone before your tech leaves the driveway",
+        description:
+          "Send the estimate by text. Your customer sees all three options, picks one, and signs with their finger. Done. No printing, no scanning, no chasing.",
+        cta: "See the approval flow",
+        benefit:
+          "Close jobs on the spot instead of waiting for callbacks.",
+        mock: "estimate",
+      },
+      {
+        label: "Estimate Follow-Up",
+        headline:
+          "An estimate sitting unanswered? LeverLoop follows up for you.",
+        description:
+          "Set a follow-up window. If an estimate goes unanswered for 24 or 48 hours (whatever you choose), LeverLoop sends a friendly nudge. Your team doesn't have to remember.",
+        cta: "See estimate follow-up",
+        benefit:
+          "Recover the estimates that would have gone stale.",
+        mock: "lead",
+      },
+    ],
+    relatedFeatureSlugs: [
+      "customer-approvals",
+      "text-to-pay",
+      "automatic-follow-up",
+    ],
+    resources: estimateResources,
+    faqs: [
+      {
+        question: "Can my techs build estimates from the field?",
+        answer:
+          "Yes. The estimate builder works on any phone or tablet. Your tech builds it on-site and sends it before leaving.",
+      },
+      {
+        question: "Does it pull from our pricebook?",
+        answer:
+          "Yes. LeverLoop pulls from your flat-rate pricebook so every tech quotes the same prices. No guessing in the field.",
+      },
+      {
+        question: "What if the customer wants to think about it?",
+        answer:
+          "That's fine. The estimate stays in the system and LeverLoop can send automatic follow-ups until they decide.",
+      },
+      {
+        question:
+          "Can we customize the Good / Better / Best labels?",
+        answer:
+          "Yes. Call them whatever you want. Some shops use Bronze, Silver, and Gold or Basic, Standard, and Premium.",
+      },
+      {
+        question: "Do customers need an app to approve?",
+        answer:
+          "No. They get a text with a link. It opens in their browser. Tap to approve, sign with their finger, done.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 5. Customer Approvals
+  // -----------------------------------------------------------------------
+  {
+    slug: "customer-approvals",
+    badge: "✅ Approvals",
+    headline:
+      "Your customer says yes from their phone. Signed before you leave the driveway.",
+    description:
+      "Send estimates by text. Customers see the options, pick one, and sign with their finger. No app to download, no paper to print, no waiting.",
+    ...demoCta,
+    mockup: "estimate",
+    metaTitle: "Customer Approvals & E-Signatures | LeverLoop",
+    metaDescription:
+      "Customers approve estimates and sign right from their phone. No app to download, no paper to print, no awkward follow-up calls. Signed in seconds.",
+    details: [
+      {
+        label: "Text-to-Approve",
+        headline: "One text. The customer opens, reviews, and signs.",
+        description:
+          "Your tech sends the estimate from the job site. The customer gets a text with a secure link. They see every option, tap to approve, and sign with their finger. The whole thing takes under a minute.",
+        cta: "See the approval experience",
+        benefit:
+          "Close jobs in the driveway instead of waiting days for a callback.",
+        mock: "estimate",
+      },
+      {
+        label: "No App Required",
+        headline: "Your customer doesn't need to download anything",
+        description:
+          "The approval link opens right in their phone's browser. No login. No account. No friction. Works on any phone.",
+        cta: "See the customer view",
+        benefit:
+          "Remove every barrier between 'let me think about it' and 'approved.'",
+        mock: "mobile",
+      },
+      {
+        label: "Signed Records",
+        headline: "Every approval saved. Every signature on file.",
+        description:
+          "Signed estimates attach to the customer record automatically. If there's ever a question about what was approved, you pull it up in seconds.",
+        cta: "See signed record storage",
+        benefit:
+          "Protect your business with a clear paper trail on every job.",
+        mock: "customer",
+      },
+    ],
+    relatedFeatureSlugs: [
+      "good-better-best-estimates",
+      "text-to-pay",
+      "customer-records",
+    ],
+    resources: estimateResources,
+    faqs: [
+      {
+        question: "Is the e-signature legally binding?",
+        answer:
+          "Yes. LeverLoop captures the signature, timestamp, and IP address. It meets e-signature requirements for service work.",
+      },
+      {
+        question: "Can I send the estimate by email instead of text?",
+        answer:
+          "Yes. You can send by text, email, or both. Most customers respond faster to texts.",
+      },
+      {
+        question:
+          "What if the customer wants to change the option they picked?",
+        answer:
+          "They can re-open the link and select a different tier before signing. After signing, your office can update the estimate if needed.",
+      },
+      {
+        question: "Does the signed estimate show up on the job?",
+        answer:
+          "Yes. Once approved, the selected option attaches to the work order so your tech knows exactly what was agreed to.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 6. Text-to-Pay
+  // -----------------------------------------------------------------------
+  {
+    slug: "text-to-pay",
     badge: "💳 Text-to-Pay",
-    headline: "Send an invoice by text and get paid before the truck leaves.",
+    headline: "Invoice to cash in minutes, not days.",
     description:
-      "Turn approved work into secure payment links instantly with card, ACH, and partial payment support.",
+      "Send a payment link by text the moment the job wraps. Your customer taps, pays by card, and the money hits your account. No chasing. No third-party app.",
     ...demoCta,
     mockup: "payments",
-    metaTitle: "Invoicing & Text-to-Pay | LeverLoop",
+    metaTitle: "Text-to-Pay Invoicing | LeverLoop",
     metaDescription:
-      "Convert approved work into invoices and collect payment by text in minutes instead of weeks.",
+      "Text a secure payment link after every job. Customers pay by card from their phone in seconds. One-click invoicing with Stripe payments built in.",
     details: [
       {
-        label: "One-Tap Conversion",
-        headline: "Create invoices directly from approved estimates",
+        label: "One-Tap Payment",
+        headline: "Your customer pays from the same text thread",
         description:
-          "Line items, taxes, and customer details flow into invoice drafts automatically for fast send-out.",
-        cta: "See estimate conversion",
-        benefit: "The office avoids repetitive data entry and billing lag.",
+          "After the job, LeverLoop sends a secure payment link by text. Your customer taps, enters their card or uses the one on file, and pays. No check to mail, no portal to log into.",
+        cta: "See the payment experience",
+        benefit:
+          "Get paid the same day instead of chasing invoices for weeks.",
         mock: "payments",
       },
       {
-        label: "Secure Collection",
-        headline: "Collect payment with trusted Stripe processing",
+        label: "One-Click Invoicing",
+        headline: "Job done? One click. Invoice sent.",
         description:
-          "Customers pay from their phone by card or ACH through a secure branded link.",
-        cta: "See payment experience",
-        benefit: "Shorter receivables cycle and stronger cash flow.",
-        mock: "mobile",
+          "When your tech closes out a job, the invoice generates automatically from the approved estimate. One click sends it to the customer with a payment link attached.",
+        cta: "See one-click invoicing",
+        benefit:
+          "No more re-typing line items into a separate invoicing tool.",
+        mock: "payments",
       },
       {
-        label: "Real-Time Confirmation",
-        headline: "Notify field and office when payment clears",
+        label: "Stripe Built In",
+        headline: "Card payments built right in. No extra software.",
         description:
-          "Webhook updates mark jobs paid, issue receipts, and keep accounting and operations aligned.",
-        cta: "See payment events",
-        benefit: "Everyone works from accurate payment status in real time.",
-        mock: "pipeline",
+          "LeverLoop uses Stripe for payment processing. Accept credit cards, debit cards, and ACH. Payments sync to your books automatically.",
+        cta: "See payment processing",
+        benefit:
+          "One less vendor, one less login, one less monthly bill.",
+        mock: "payments",
       },
     ],
     relatedFeatureSlugs: [
-      "digital-approvals-signatures",
-      "quickbooks-integration",
-      "mobile-tech-app",
+      "good-better-best-estimates",
+      "customer-approvals",
+      "customer-records",
     ],
-    resources: revenueResources,
+    resources: paymentResources,
     faqs: [
       {
-        question: "Can we take deposits or partial payments?",
+        question: "What payment methods can customers use?",
         answer:
-          "Yes. Partial invoicing supports deposits, progress billing, and staged collections.",
+          "Credit card, debit card, and ACH bank transfer. All processed through Stripe.",
       },
       {
-        question: "How quickly do funds settle?",
+        question: "Does the payment sync with QuickBooks?",
         answer:
-          "Settlement timing follows your Stripe payout schedule, typically within one to two business days.",
+          "Yes. Paid invoices sync to QuickBooks automatically. No double entry.",
+      },
+      {
+        question: "Is there a fee per transaction?",
+        answer:
+          "Standard Stripe processing fees apply. LeverLoop doesn't add any extra transaction fees on top.",
+      },
+      {
+        question: "Can we send the invoice by email too?",
+        answer:
+          "Yes. Send by text, email, or both. Text gets faster responses in our experience.",
+      },
+      {
+        question:
+          "What if the customer wants to pay with a check?",
+        answer:
+          "You can mark an invoice as paid manually with any payment method. Text-to-pay is for card and ACH.",
       },
     ],
   },
+
+  // -----------------------------------------------------------------------
+  // 7. Dispatch Board
+  // -----------------------------------------------------------------------
   {
     slug: "dispatch-board",
     badge: "📅 Dispatch",
-    headline: "Run your entire service day from one drag-and-drop board.",
+    headline: "Your whole team. One board. Drag, drop, done.",
     description:
-      "See every tech, every job, and every open slot in real time so dispatch can optimize instead of firefight.",
+      "See every tech, every job, and every open slot on one screen. Schedule calls in seconds. Your crew gets a text with the details, no app to download.",
     ...demoCta,
     mockup: "dispatch",
     metaTitle: "Dispatch Board | LeverLoop",
     metaDescription:
-      "Schedule and reassign jobs in real time with a dispatcher-friendly board built for field service operations.",
+      "Schedule jobs and manage your crew from one drag-and-drop board. Techs get a text with job details. Real-time status updates from the field.",
     details: [
       {
-        label: "Visual Scheduling",
-        headline: "Assign by drag-and-drop across techs and time slots",
+        label: "Drag-and-Drop Scheduling",
+        headline: "Assign jobs in two clicks, not twenty minutes",
         description:
-          "Move jobs between technicians and windows in seconds, with instant updates to the field.",
-        cta: "See schedule controls",
-        benefit: "Less time managing logistics and fewer assignment errors.",
+          "See your whole crew's schedule on one board. Open slots are obvious. Drag a job to a tech, pick a time, done. The tech gets a text with the address, customer name, and job details.",
+        cta: "See the dispatch board",
+        benefit:
+          "Your dispatcher stops juggling spreadsheets and phone calls.",
         mock: "dispatch",
       },
       {
-        label: "Capacity View",
-        headline: "Know exactly where you can add work today",
+        label: "Real-Time Status",
+        headline:
+          "Know where every tech is and what they're working on",
         description:
-          "Booked hours and unscheduled queues make bottlenecks and open capacity visible at a glance.",
-        cta: "See capacity planning",
-        benefit: "You fit more jobs into the same team day.",
-        mock: "pipeline",
+          "Techs update their status from their phone: on my way, on job, wrapping up. Your office sees it live. When a customer calls to ask about their tech, you actually know.",
+        cta: "See live status updates",
+        benefit:
+          "Answer customer calls with confidence instead of 'let me check.'",
+        mock: "dispatch",
       },
       {
-        label: "Live Status",
-        headline: "Track field progress without constant phone calls",
+        label: "No App for Your Crew",
+        headline: "Your crew gets a text with a link. That's it.",
         description:
-          "Status updates from the tech app feed the board automatically, including on-my-way and completion events.",
-        cta: "See live updates",
-        benefit: "Dispatchers stay proactive and customers stay informed.",
+          "No app store download. No password to remember. No training day. Your tech taps a link, sees the job, updates the status, and moves on.",
+        cta: "See the crew experience",
+        benefit:
+          "New techs are up and running in minutes, not days.",
         mock: "mobile",
       },
     ],
     relatedFeatureSlugs: [
-      "on-my-way-notifications",
-      "mobile-tech-app",
-      "unified-inbox",
+      "tech-app",
+      "on-my-way-texts",
+      "customer-records",
     ],
-    resources: operationsResources,
+    resources: dispatchResources,
     faqs: [
       {
-        question: "Can dispatchers use the board from mobile devices?",
+        question:
+          "Can multiple dispatchers use the board at the same time?",
         answer:
-          "Yes. The board is responsive so dispatchers can reassign and update jobs when away from desk.",
+          "Yes. Changes sync in real time. If one dispatcher assigns a job, everyone sees it instantly.",
       },
       {
-        question: "Can unscheduled jobs stay in a queue?",
+        question: "Can I see more than one day at a time?",
         answer:
-          "Yes. Jobs can remain unscheduled until ready, then be dragged directly onto a tech's timeline.",
+          "Yes. Toggle between daily, weekly, and monthly views. Most dispatchers live in the daily view.",
+      },
+      {
+        question: "What if a tech calls in sick?",
+        answer:
+          "Drag their jobs to another tech. The new tech gets a text with the updated assignment. The customer gets notified too.",
+      },
+      {
+        question: "Does the board work on a tablet?",
+        answer:
+          "Yes. The dispatch board works on any screen. Some shops run it on a wall-mounted monitor in the office.",
       },
     ],
   },
+
+  // -----------------------------------------------------------------------
+  // 8. Tech App
+  // -----------------------------------------------------------------------
   {
-    slug: "on-my-way-notifications",
-    badge: "📲 ETA Texts",
-    headline: "One tap tells customers who is coming and when.",
+    slug: "tech-app",
+    badge: "📱 Tech App",
+    headline: "Everything your tech needs. Even without a signal.",
     description:
-      "Reduce inbound status calls with automatic on-my-way messages including technician name, photo, and ETA.",
+      "Job details, customer history, equipment records, estimate builder, and photo uploads. All on your tech's phone. Works offline in basements, attics, and crawlspaces.",
     ...demoCta,
-    mockup: "dispatch",
-    metaTitle: "On My Way Notifications | LeverLoop",
+    mockup: "mobile",
+    metaTitle: "Tech App | LeverLoop",
     metaDescription:
-      "Send technician ETA updates in one tap to reduce where-is-my-tech calls and improve customer experience.",
+      "Your techs get job details, customer history, and equipment records on their phone. Build estimates, upload photos, and work offline anywhere.",
     details: [
       {
-        label: "One-Tap Send",
-        headline: "Notify customers directly from the job card",
+        label: "Full Job Details",
+        headline:
+          "Your tech shows up knowing exactly what they're walking into",
         description:
-          "Techs trigger on-my-way messages without calling the office, so communication stays fast and consistent.",
-        cta: "See notification action",
-        benefit: "Dispatch time is freed for higher-value work.",
+          "Every job shows the customer name, address, job type, and notes. Tap into the customer record to see every past service call, every piece of equipment, and every conversation.",
+        cta: "See the tech view",
+        benefit:
+          "No more calling the office to ask 'what am I doing here?'",
         mock: "mobile",
       },
       {
-        label: "Branded Context",
-        headline: "Include technician name, photo, and arrival window",
+        label: "Before & After Photos",
+        headline: "Document the work. Protect the business.",
         description:
-          "Messages provide enough context for customers to feel prepared and confident before arrival.",
-        cta: "View customer message",
-        benefit: "A more professional arrival experience on every job.",
-        mock: "inbox",
+          "Techs snap photos before and after every job. Photos attach to the work order automatically. When a customer calls about a previous job, you pull up the photos in seconds.",
+        cta: "See photo documentation",
+        benefit:
+          "Photo proof on every job protects you from disputes and builds customer trust.",
+        mock: "mobile",
       },
       {
-        label: "Delivery Logging",
-        headline: "Track every notification in one communication timeline",
+        label: "Works Offline",
+        headline: "No signal? No problem. Everything still works.",
         description:
-          "Delivery status and send history are visible to office staff for complete communication accountability.",
-        cta: "See notification logs",
-        benefit: "No uncertainty about whether key customer updates were sent.",
-        mock: "reliability",
+          "Basements, crawlspaces, rural properties. Your tech can pull up job details, build estimates, capture photos, and update status with no cell service. Everything syncs when they're back in range.",
+        cta: "See offline mode",
+        benefit:
+          "Your tech never gets stuck because of a dead signal.",
+        mock: "mobile",
       },
     ],
     relatedFeatureSlugs: [
       "dispatch-board",
-      "mobile-tech-app",
-      "unified-inbox",
+      "good-better-best-estimates",
+      "equipment-tracking",
     ],
-    resources: communicationResources,
+    resources: dispatchResources,
     faqs: [
       {
-        question: "Can ETA be adjusted by the technician?",
+        question: "Does my tech need to download an app?",
         answer:
-          "Yes. Techs can send either a mapped estimate or a manually chosen arrival window.",
+          "For full-time techs, yes, there's a free mobile app. For subs or temporary crew, they can use the web link with no download needed.",
       },
       {
-        question: "Can dispatch see if the message was sent?",
+        question: "Does it work on both iPhone and Android?",
+        answer: "Yes. The app works on iOS and Android.",
+      },
+      {
+        question: "How does offline mode work?",
         answer:
-          "Yes. The office sees message status and timing in the communication history.",
+          "The app stores job data locally. Your tech works normally, and everything syncs automatically when they reconnect. No lost data.",
+      },
+      {
+        question:
+          "Can techs see the customer's equipment before they arrive?",
+        answer:
+          "Yes. The full equipment list (make, model, install date, and service history) shows up on every work order.",
+      },
+      {
+        question: "Can techs add notes to a job?",
+        answer:
+          "Yes. Techs add notes, photos, and status updates from their phone. Everything attaches to the job record.",
       },
     ],
   },
+
+  // -----------------------------------------------------------------------
+  // 9. On My Way Texts
+  // -----------------------------------------------------------------------
   {
-    slug: "mobile-tech-app",
-    badge: "📱 Mobile App",
-    headline: "Everything techs need to run the job, in one app.",
+    slug: "on-my-way-texts",
+    badge: "📍 On My Way",
+    headline: 'No more "where\'s my guy?" calls. Ever.',
     description:
-      "Schedule, customer history, estimates, payments, photos, notes, and signatures all live on the technician's phone.",
+      "When your tech heads to the next call, the customer gets a text with their name and ETA. Automatic. Every time.",
     ...demoCta,
-    mockup: "mobile",
-    metaTitle: "Mobile Tech App | LeverLoop",
+    mockup: "dispatch",
+    metaTitle: "On My Way Texts | LeverLoop",
     metaDescription:
-      "Give technicians full field capability from one mobile app: jobs, estimates, documentation, and payments.",
+      "Automatic ETA texts to customers when your tech is en route. Your customer knows who's coming and when. No more 'where's my guy?' calls to your office.",
     details: [
       {
-        label: "Daily Command Center",
-        headline: "Start every day with schedule and job context ready",
+        label: "Automatic ETA Texts",
+        headline:
+          "Your tech taps 'On My Way.' The customer knows instantly.",
         description:
-          "Techs see their route, notes, and customer history in one workflow before leaving the first stop.",
-        cta: "See tech home view",
-        benefit: "Fewer calls back to office for basic context.",
-        mock: "mobile",
+          "When your tech marks themselves en route, the customer gets a text: 'Hi, Mike from [Your Company] is on the way. Expected arrival: 2:15 PM.' No phone call needed. No dispatcher typing.",
+        cta: "See the On My Way flow",
+        benefit:
+          "Fewer inbound calls for your office. Happier customers at the door.",
+        mock: "dispatch",
       },
       {
-        label: "Field Sales & Collection",
-        headline: "Build estimates and collect payment before leaving site",
+        label: "Professional First Impression",
+        headline: "Look like the most professional shop in town",
         description:
-          "Pricebook access, GBB quoting, digital approvals, and payment workflows are available in the same app.",
-        cta: "See in-field close flow",
-        benefit: "Higher close rates and faster cash collection.",
-        mock: "payments",
+          "Your customer knows exactly who's coming and when. They're not guessing, not waiting, not calling to check. That kind of communication wins five-star reviews.",
+        cta: "See customer communication",
+        benefit:
+          "First impressions start before your tech rings the doorbell.",
+        mock: "inbox",
       },
       {
-        label: "Live Documentation",
-        headline: "Capture photos and notes where work happens",
+        label: "Branded Messages",
+        headline: "Every text goes out under your company name",
         description:
-          "Before/after media and job notes attach instantly to the customer record and office timeline.",
-        cta: "See documentation tools",
-        benefit: "Cleaner records with less end-of-day paperwork.",
+          "On My Way texts use your business name and your tech's first name. Customize the message template to match your tone. It feels personal because it is.",
+        cta: "See message templates",
+        benefit: "Reinforce your brand on every service call.",
+        mock: "inbox",
+      },
+    ],
+    relatedFeatureSlugs: [
+      "dispatch-board",
+      "tech-app",
+      "two-way-texting",
+    ],
+    resources: dispatchResources,
+    faqs: [
+      {
+        question: "Can we customize the On My Way message?",
+        answer:
+          "Yes. You write the template. Most shops include the tech name, company name, and arrival window.",
+      },
+      {
+        question: "Does the customer need to do anything?",
+        answer:
+          "No. They receive a regular text message. No app, no link, nothing to sign up for.",
+      },
+      {
+        question: "Does this work for every job automatically?",
+        answer:
+          "It triggers when a tech taps 'On My Way' in the app. You can also set it to send automatically based on dispatch status.",
+      },
+      {
+        question: "Can the customer reply to the text?",
+        answer:
+          "Yes. Their reply comes into your inbox, tied to the customer record. Your office or the tech can respond.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 10. Customer Records
+  // -----------------------------------------------------------------------
+  {
+    slug: "customer-records",
+    badge: "👥 Customers",
+    headline:
+      "Every customer. Every property. Every service call. All in one place.",
+    description:
+      "Pull up any customer and see their full history: jobs, invoices, equipment, conversations, and properties. Searchable from anywhere.",
+    ...demoCta,
+    mockup: "customer",
+    metaTitle: "Customer Records | LeverLoop",
+    metaDescription:
+      "Every customer's full history in one record: jobs, equipment, invoices, conversations, and properties. Searchable from the office or the field.",
+    details: [
+      {
+        label: "Full Customer Timeline",
+        headline: "Every touchpoint in one scroll",
+        description:
+          "Open a customer record and see everything: every job, every estimate, every invoice, every text, every photo. Newest first. Your office manager knows what happened last. Your tech knows what to expect.",
+        cta: "See a customer timeline",
+        benefit:
+          "Stop asking 'have we been to this house before?' The record answers it.",
+        mock: "customer",
+      },
+      {
+        label: "Multi-Property Support",
+        headline:
+          "Landlords, property managers, multi-location customers. All handled.",
+        description:
+          "One customer, multiple properties. Each property has its own address, equipment list, and service history. Perfect for commercial accounts, rental properties, and property managers.",
+        cta: "See multi-property records",
+        benefit:
+          "Track every property without creating duplicate customer records.",
+        mock: "customer",
+      },
+      {
+        label: "Search Anything",
+        headline: "Find any customer in seconds",
+        description:
+          "Search by name, address, phone number, or equipment serial number. Results come up instantly. Works on desktop and mobile, in the office or in the field.",
+        cta: "See instant search",
+        benefit:
+          "When a customer calls, you have their whole file before they finish saying their name.",
         mock: "customer",
       },
     ],
     relatedFeatureSlugs: [
-      "offline-mode",
-      "dispatch-board",
-      "photo-job-documentation",
+      "equipment-tracking",
+      "two-way-texting",
+      "tech-app",
     ],
-    resources: operationsResources,
+    resources: customerResources,
     faqs: [
       {
-        question: "Do techs need to install from an app store?",
+        question: "Can I import my existing customer list?",
         answer:
-          "No. LeverLoop runs as a progressive web app and can be added to the phone home screen.",
+          "Yes. Upload a CSV or connect your existing system. Most shops are fully imported within an hour.",
       },
       {
-        question: "Can techs collect signatures and payments from mobile?",
+        question: "Can techs see customer records from the field?",
         answer:
-          "Yes. Both approval and payment workflows are built directly into the job flow.",
+          "Yes. The full customer record is available on the tech app, including past jobs, equipment, and notes.",
+      },
+      {
+        question: "Do customer records link to invoices and payments?",
+        answer:
+          "Yes. Every invoice, payment, and outstanding balance shows up on the customer timeline.",
+      },
+      {
+        question: "Can I store notes about a customer?",
+        answer:
+          "Yes. Add notes to the customer record or to individual properties. Notes are visible to anyone with access.",
+      },
+      {
+        question: "How does multi-property work?",
+        answer:
+          "Add as many properties as you need under one customer. Each property gets its own address, equipment list, and service history.",
       },
     ],
   },
+
+  // -----------------------------------------------------------------------
+  // 11. Equipment Tracking
+  // -----------------------------------------------------------------------
   {
-    slug: "offline-mode",
-    badge: "📡 Offline Mode",
-    headline: "Keep working in attics and basements with no signal.",
+    slug: "equipment-tracking",
+    badge: "🔧 Equipment",
+    headline:
+      "Know every unit at every property before your tech opens the door.",
     description:
-      "Technicians can access key job data, document work, and queue actions offline, then auto-sync when service returns.",
-    ...demoCta,
-    mockup: "mobile",
-    metaTitle: "Offline Mode | LeverLoop",
-    metaDescription:
-      "Run field workflows without connectivity and sync automatically when internet service returns.",
-    details: [
-      {
-        label: "Local Cache",
-        headline: "Preload schedule, customers, and pricebook each day",
-        description:
-          "Core job data is stored locally so techs can continue critical workflows with zero bars.",
-        cta: "See offline readiness",
-        benefit: "No work stoppage in low-signal environments.",
-        mock: "mobile",
-      },
-      {
-        label: "Queued Actions",
-        headline: "Capture notes, photos, and signatures offline",
-        description:
-          "Offline events are queued in order and synced automatically once connectivity returns.",
-        cta: "See sync queue",
-        benefit: "Field documentation stays complete and accurate.",
-        mock: "reliability",
-      },
-      {
-        label: "Conflict Handling",
-        headline: "Resolve edit collisions with clear prompts",
-        description:
-          "If overlapping edits happen, technicians and office users get simple resolution choices.",
-        cta: "See conflict workflow",
-        benefit: "Data stays trustworthy across teams.",
-        mock: "team",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "mobile-tech-app",
-      "photo-job-documentation",
-      "dispatch-board",
-    ],
-    resources: operationsResources,
-    faqs: [
-      {
-        question: "What can techs do without connectivity?",
-        answer:
-          "They can view cached jobs, access customer context, build estimates, capture notes and photos, and collect signatures.",
-      },
-      {
-        question: "Does syncing require manual steps?",
-        answer:
-          "No. Sync runs automatically in the background when service returns.",
-      },
-    ],
-  },
-  {
-    slug: "service-agreement-management",
-    badge: "🔁 Memberships",
-    headline: "Turn completed jobs into recurring revenue in three minutes.",
-    description:
-      "Create plans, enroll customers in the field, and automate recurring billing and renewals without extra admin.",
-    ...demoCta,
-    mockup: "memberships",
-    metaTitle: "Service Agreement Management | LeverLoop",
-    metaDescription:
-      "Enroll and manage service agreements with digital signatures and automated recurring billing.",
-    details: [
-      {
-        label: "Plan Builder",
-        headline: "Define membership offerings your techs can sell confidently",
-        description:
-          "Configure pricing, billing cycle, visits, and member benefits once and deploy across the team.",
-        cta: "See plan setup",
-        benefit: "Consistent member offers across every job.",
-        mock: "memberships",
-      },
-      {
-        label: "In-Field Enrollment",
-        headline: "Enroll customers right after a successful visit",
-        description:
-          "Techs present plans, capture signature, and start recurring billing from the same mobile workflow.",
-        cta: "See enrollment flow",
-        benefit: "Higher close rate at the point of maximum trust.",
-        mock: "mobile",
-      },
-      {
-        label: "Autopay Lifecycle",
-        headline: "Automate recurring charges and renewal communication",
-        description:
-          "Subscription events update member status and trigger renewal or failed-payment workflows.",
-        cta: "See billing automation",
-        benefit: "Reliable recurring revenue with less back-office effort.",
-        mock: "payments",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "mrr-dashboard",
-      "automated-maintenance-reminders",
-      "flat-monthly-pricing",
-    ],
-    resources: revenueResources,
-    faqs: [
-      {
-        question: "Can we offer monthly, quarterly, and annual plans?",
-        answer:
-          "Yes. Plan templates support multiple billing cadences and configurable included services.",
-      },
-      {
-        question: "How are failed membership payments handled?",
-        answer:
-          "Failed payments are flagged automatically so teams can trigger update-payment outreach and recovery workflows.",
-      },
-    ],
-  },
-  {
-    slug: "mrr-dashboard",
-    badge: "📈 Recurring Revenue",
-    headline: "See your membership business clearly on one screen.",
-    description:
-      "Track active members, MRR, churn, renewals, and at-risk accounts without exporting reports.",
-    ...demoCta,
-    mockup: "memberships",
-    metaTitle: "MRR Dashboard | LeverLoop",
-    metaDescription:
-      "Monitor recurring revenue health with visibility into members, churn, renewals, and at-risk payments.",
-    details: [
-      {
-        label: "Core Metrics",
-        headline: "Monitor MRR, active members, and churn daily",
-        description:
-          "A daily snapshot model keeps membership metrics fast, current, and easy to read.",
-        cta: "See MRR metrics",
-        benefit: "Leaders can make proactive recurring-revenue decisions.",
-        mock: "memberships",
-      },
-      {
-        label: "Renewal Forecast",
-        headline: "Project upcoming renewals and maintenance load",
-        description:
-          "Forward-looking trends reveal workload and retention risk before it impacts cash flow.",
-        cta: "See renewal forecast",
-        benefit: "You can plan staffing and outreach earlier.",
-        mock: "pipeline",
-      },
-      {
-        label: "At-Risk Actions",
-        headline: "Recover at-risk members with one-click outreach",
-        description:
-          "Drill into failing autopay and send update requests directly from the dashboard.",
-        cta: "See member recovery",
-        benefit: "Lower churn without extra reporting burden.",
-        mock: "recovery",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "service-agreement-management",
-      "automated-maintenance-reminders",
-      "revenue-recovery-dashboard",
-    ],
-    resources: revenueResources,
-    faqs: [
-      {
-        question: "How often does dashboard data refresh?",
-        answer:
-          "Dashboard metrics update on a daily snapshot cadence and drill-down records reflect the latest synced events.",
-      },
-      {
-        question: "Can we drill into each metric?",
-        answer:
-          "Yes. Every headline metric links to the underlying customer or agreement list for action.",
-      },
-    ],
-  },
-  {
-    slug: "automated-maintenance-reminders",
-    badge: "🛠️ Maintenance Reminders",
-    headline: "Send due-service texts automatically and book from replies.",
-    description:
-      "Trigger maintenance outreach by schedule, equipment history, or agreement terms and convert replies into booked work.",
-    ...demoCta,
-    mockup: "memberships",
-    metaTitle: "Automated Maintenance Reminders | LeverLoop",
-    metaDescription:
-      "Automatically remind customers when maintenance is due and convert replies into scheduled jobs.",
-    details: [
-      {
-        label: "Configurable Timing",
-        headline: "Set reminder cadence around your service model",
-        description:
-          "Run reminders at 30, 14, or 3 days out, or define custom timing windows per plan.",
-        cta: "See schedule controls",
-        benefit: "Outreach happens consistently without dispatcher task lists.",
-        mock: "pipeline",
-      },
-      {
-        label: "Reply-to-Book",
-        headline: "Create jobs from simple customer replies",
-        description:
-          "Reply handling can detect booking intent and create office-ready follow-up tasks immediately.",
-        cta: "See booking automation",
-        benefit: "More appointments from fewer manual touchpoints.",
-        mock: "inbox",
-      },
-      {
-        label: "Deduplication",
-        headline: "Prevent over-messaging with smart suppression rules",
-        description:
-          "Quiet hours, prior-send windows, and period matching prevent duplicate reminders.",
-        cta: "See reminder safeguards",
-        benefit: "Higher response rates with less customer fatigue.",
-        mock: "reliability",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "service-agreement-management",
-      "drip-campaigns",
-      "mrr-dashboard",
-    ],
-    resources: revenueResources,
-    faqs: [
-      {
-        question: "Can reminders run for non-members too?",
-        answer:
-          "Yes. Reminders can be triggered from service intervals and equipment records, not only agreements.",
-      },
-      {
-        question: "Can reminder copy match our brand voice?",
-        answer:
-          "Yes. Templates are fully editable, including merge fields for customer and company details.",
-      },
-    ],
-  },
-  {
-    slug: "revenue-recovery-dashboard",
-    badge: "💰 Revenue Recovery",
-    headline: "See every recoverable dollar and act in one click.",
-    description:
-      "Unify stale estimates, cold leads, declined repairs, and aging-equipment opportunities in one actionable queue.",
-    ...demoCta,
-    mockup: "recovery",
-    metaTitle: "Revenue Recovery Dashboard | LeverLoop",
-    metaDescription:
-      "Find and recover missed revenue opportunities with one dashboard for stale leads, estimates, and repair follow-up.",
-    details: [
-      {
-        label: "Opportunity Buckets",
-        headline: "Aggregate missed revenue by category and value",
-        description:
-          "Rows are grouped into clear categories so owners can prioritize the biggest recoverable dollars first.",
-        cta: "See recovery categories",
-        benefit: "You focus team effort where ROI is highest.",
-        mock: "recovery",
-      },
-      {
-        label: "One-Tap Actions",
-        headline: "Launch follow-up from the same dashboard row",
-        description:
-          "Send texts, enroll sequences, or schedule callbacks without opening multiple screens.",
-        cta: "See action controls",
-        benefit: "Recovery becomes a daily workflow, not a monthly scramble.",
-        mock: "inbox",
-      },
-      {
-        label: "Nightly Recalculation",
-        headline: "Keep queue quality high without manual reporting",
-        description:
-          "Automated refresh logic updates opportunities and hides dismissed rows until they are relevant again.",
-        cta: "See refresh logic",
-        benefit: "Teams spend time acting, not rebuilding lists.",
-        mock: "pipeline",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "declined-repair-follow-up",
-      "equipment-age-alerts",
-      "drip-campaigns",
-    ],
-    resources: revenueResources,
-    faqs: [
-      {
-        question: "Can we filter by opportunity type and value?",
-        answer:
-          "Yes. Filter controls let you prioritize specific opportunity classes and dollar thresholds.",
-      },
-      {
-        question: "Do dismissed items disappear forever?",
-        answer:
-          "Dismissed rows are hidden until recalculation surfaces them again based on fresh data.",
-      },
-    ],
-  },
-  {
-    slug: "declined-repair-follow-up",
-    badge: "🔁 Declined Repair",
-    headline: "When customers say no, follow-up starts automatically.",
-    description:
-      "Log objection reasons at decline time and trigger tailored message sequences that reopen the conversation later.",
-    ...demoCta,
-    mockup: "recovery",
-    metaTitle: "Declined Repair Follow-Up | LeverLoop",
-    metaDescription:
-      "Capture declined-repair reasons and run objection-specific follow-up sequences automatically.",
-    details: [
-      {
-        label: "Reason Capture",
-        headline: "Turn a decline into structured follow-up data",
-        description:
-          "Techs select a reason at the point of decline so messaging can address customer concerns directly.",
-        cta: "See decline logging",
-        benefit: "No more vague notes that never lead to action.",
-        mock: "recovery",
-      },
-      {
-        label: "Tailored Sequences",
-        headline: "Send objection-specific follow-up automatically",
-        description:
-          "Price, timing, and indecision can each trigger different messaging cadence and content.",
-        cta: "See sequence logic",
-        benefit: "Follow-up feels relevant instead of generic.",
-        mock: "inbox",
-      },
-      {
-        label: "Auto Exit",
-        headline: "Stop campaigns once customers reply or book",
-        description:
-          "Conversion and response events immediately remove customers from active decline sequences.",
-        cta: "See exit conditions",
-        benefit: "You stay persistent without over-messaging.",
-        mock: "reliability",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "revenue-recovery-dashboard",
-      "drip-campaigns",
-      "estimate-builder-good-better-best",
-    ],
-    resources: revenueResources,
-    faqs: [
-      {
-        question: "Can we customize decline reason options?",
-        answer:
-          "Yes. Reason lists can be tailored to your sales process while still supporting automation triggers.",
-      },
-      {
-        question: "Will the sequence stop if the customer books another service?",
-        answer:
-          "Yes. Booking and response triggers can automatically unenroll the customer.",
-      },
-    ],
-  },
-  {
-    slug: "equipment-age-alerts",
-    badge: "⏳ Age Alerts",
-    headline: "Spot replacement opportunities before systems fail.",
-    description:
-      "Flag units by age, repair frequency, and warranty windows so techs can present the right option at the right time.",
+      "Track make, model, serial number, and install date for every piece of equipment. Full service history per unit. Your tech sees it all on the work order.",
     ...demoCta,
     mockup: "equipment",
-    metaTitle: "Equipment Age Alerts | LeverLoop",
+    metaTitle: "Equipment Tracking | LeverLoop",
     metaDescription:
-      "Automatically identify aging-equipment replacement opportunities before emergency failures occur.",
+      "Track every piece of equipment at every property with make, model, serial, and install date. Full service history per unit on every work order.",
     details: [
       {
-        label: "Smart Thresholds",
-        headline: "Trigger alerts from practical replacement indicators",
+        label: "Complete Equipment Registry",
+        headline: "Make, model, serial number, install date. All logged.",
         description:
-          "Rules monitor age, repeat service frequency, and warranty expiration to surface high-likelihood opportunities.",
-        cta: "See alert rules",
-        benefit: "Replacement conversations happen earlier and with better context.",
+          "Every unit at every property lives in LeverLoop. Your tech logs it once, and it's there forever. When they show up for the next call, they already know what they're working on.",
+        cta: "See equipment records",
+        benefit:
+          "No more asking the homeowner 'what kind of unit do you have?' Your tech already knows.",
         mock: "equipment",
       },
       {
-        label: "Job Brief Context",
-        headline: "Give techs proactive talking points before arrival",
+        label: "Service History Per Unit",
+        headline: "See every job you've ever done on that unit",
         description:
-          "Job brief flags include actionable notes so the tech can frame repair-versus-replace clearly onsite.",
-        cta: "See job brief cues",
-        benefit: "Teams present upgrades confidently and consistently.",
-        mock: "mobile",
+          "Open a piece of equipment and see the full service timeline: every repair, every tune-up, every part replaced. Your tech spots patterns. Your office spots replacement candidates.",
+        cta: "See unit service history",
+        benefit:
+          "Better diagnostics, smarter recommendations, and fewer callbacks.",
+        mock: "equipment",
       },
       {
-        label: "Recovery Integration",
-        headline: "Pipe alerts directly into revenue recovery workflows",
+        label: "Equipment on Every Work Order",
+        headline: "Your tech sees the equipment list before they knock",
         description:
-          "Aging-equipment opportunities are tracked alongside other recoverable revenue categories.",
-        cta: "See dashboard tie-in",
-        benefit: "High-margin replacement work stays visible and actionable.",
-        mock: "recovery",
+          "When a job is scheduled, the equipment at that property shows up on the work order automatically. Your tech knows the make, model, age, and last service date before they ring the doorbell.",
+        cta: "See work order view",
+        benefit: "Techs arrive prepared. Customers notice the difference.",
+        mock: "mobile",
       },
     ],
     relatedFeatureSlugs: [
-      "equipment-asset-tracking",
-      "revenue-recovery-dashboard",
-      "estimate-builder-good-better-best",
+      "customer-records",
+      "tech-app",
+      "good-better-best-estimates",
     ],
-    resources: revenueResources,
+    resources: customerResources,
     faqs: [
       {
-        question: "Can alert thresholds be adjusted by trade?",
+        question:
+          "Can I import equipment data from another system?",
         answer:
-          "Yes. Alert logic can be configured to reflect your service standards and replacement strategy.",
+          "Yes. Upload a CSV with your equipment records. We map the fields and import everything.",
       },
       {
-        question: "Do techs see alerts before arriving at the property?",
+        question: "Do techs log equipment from the field?",
         answer:
-          "Yes. Alerts are included in job context so techs can prepare recommendations before the visit.",
+          "Yes. Techs add or update equipment from the app. Snap a photo of the data plate and fill in the details.",
+      },
+      {
+        question: "Can I track warranty expiration dates?",
+        answer:
+          "Yes. Log the warranty expiration and LeverLoop flags units approaching the end of coverage.",
+      },
+      {
+        question:
+          "Does the equipment list show up on the work order?",
+        answer:
+          "Yes. Every unit at the job's property appears on the work order automatically.",
+      },
+      {
+        question: "How does this help with replacements?",
+        answer:
+          "When a unit hits a certain age or service count, you can see it in the equipment record. Use that data for honest conversations about replacement timing.",
       },
     ],
   },
+
+  // -----------------------------------------------------------------------
+  // 12. Two-Way Texting
+  // -----------------------------------------------------------------------
   {
-    slug: "drip-campaigns",
-    badge: "💬 Drip Campaigns",
-    headline: "Lifecycle messaging that runs while your team runs jobs.",
+    slug: "two-way-texting",
+    badge: "💬 Texting",
+    headline:
+      "Text your customers from one place. Get their replies right back.",
     description:
-      "Automate prebuilt trade-specific sequences across lead nurture, estimate follow-up, reactivation, and renewals.",
+      "Send and receive texts from your business number, all inside LeverLoop. Every conversation ties to the customer record. Automatic quiet hours keep you professional.",
     ...demoCta,
     mockup: "inbox",
-    metaTitle: "Drip Campaigns | LeverLoop",
+    metaTitle: "Two-Way Texting | LeverLoop",
     metaDescription:
-      "Automate customer follow-up with trigger-based drip campaigns built for home service lifecycle stages.",
+      "Text customers from your business number. Every conversation ties to the customer record automatically. Quiet hours keep texts professional.",
     details: [
       {
-        label: "Trigger-Based Entry",
-        headline: "Enroll customers automatically from real system events",
+        label: "One Inbox for Everything",
+        headline:
+          "Customer texts, automation messages, and replies. All in one thread.",
         description:
-          "Campaigns can start from new leads, sent estimates, completed jobs, inactivity, and membership milestones.",
-        cta: "See trigger library",
-        benefit: "Follow-up happens by design, not memory.",
-        mock: "pipeline",
-      },
-      {
-        label: "Trade-Specific Templates",
-        headline: "Launch proven sequences without writing from scratch",
-        description:
-          "Prebuilt messaging gives teams a fast starting point, then can be customized to match local brand voice.",
-        cta: "See campaign templates",
-        benefit: "You deploy automation faster with better copy quality.",
+          "Every text conversation lives inside LeverLoop, tied to the customer record. Whether it was sent by your dispatcher, your automation, or the customer themselves, it's all in one place.",
+        cta: "See the inbox",
+        benefit:
+          "No more scrolling through personal phones to find what someone said last Tuesday.",
         mock: "inbox",
       },
       {
-        label: "Exit Conditions",
-        headline: "Stop campaigns as soon as goals are met",
+        label: "Tied to the Customer Record",
+        headline: "Every conversation has context",
         description:
-          "Replies, approvals, and bookings can automatically remove customers from active sequences.",
-        cta: "See campaign exits",
-        benefit: "Customers receive timely follow-up without unnecessary noise.",
-        mock: "reliability",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "speed-to-lead-engine",
-      "automated-maintenance-reminders",
-      "declined-repair-follow-up",
-    ],
-    resources: communicationResources,
-    faqs: [
-      {
-        question: "Can we build our own custom sequences?",
-        answer:
-          "Yes. You can clone templates or build custom multi-step workflows with your own timing and copy.",
-      },
-      {
-        question: "How do merge fields work in messages?",
-        answer:
-          "Templates support dynamic fields like customer name, company, and technician so each message feels personal.",
-      },
-    ],
-  },
-  {
-    slug: "unified-inbox",
-    badge: "📥 Unified Inbox",
-    headline: "See every customer text and email in one thread.",
-    description:
-      "Centralize human and automated communication so dispatchers always have context before they reply.",
-    ...demoCta,
-    mockup: "inbox",
-    metaTitle: "Unified Inbox | LeverLoop",
-    metaDescription:
-      "Centralize customer communication across SMS and email with complete thread history and live reply handling.",
-    details: [
-      {
-        label: "Single Timeline",
-        headline: "Keep automated and manual messages in one place",
-        description:
-          "Outbound reminders, lead texts, and dispatcher replies are threaded by customer for full visibility.",
-        cta: "See conversation view",
-        benefit: "No more dropped context across tools and personal phones.",
-        mock: "inbox",
-      },
-      {
-        label: "Real-Time Routing",
-        headline: "Surface inbound replies the moment they arrive",
-        description:
-          "Inbound message events post directly to the inbox and flag unread state for quick dispatcher action.",
-        cta: "See inbound routing",
-        benefit: "Customers get faster response and fewer handoff misses.",
-        mock: "lead",
-      },
-      {
-        label: "Search & Status",
-        headline: "Find conversations and consent state instantly",
-        description:
-          "Search by contact, phone, or message content while keeping opt-in context visible to responders.",
-        cta: "See inbox search",
-        benefit: "Faster service with safer communication handling.",
-        mock: "reliability",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "drip-campaigns",
-      "speed-to-lead-engine",
-      "on-my-way-notifications",
-    ],
-    resources: communicationResources,
-    faqs: [
-      {
-        question: "Can dispatchers see which messages were automated?",
-        answer:
-          "Yes. Message metadata indicates whether each send came from a person or automation.",
-      },
-      {
-        question: "Do replies send from our business number?",
-        answer:
-          "Yes. Inbox replies use your configured business communication channel, not a personal device.",
-      },
-    ],
-  },
-  {
-    slug: "photo-job-documentation",
-    badge: "📸 Job Documentation",
-    headline: "Capture proof of work while the job is happening.",
-    description:
-      "Store before/after photos, data plates, and notes with every job record for future service and dispute protection.",
-    ...demoCta,
-    mockup: "customer",
-    metaTitle: "Photo & Job Documentation | LeverLoop",
-    metaDescription:
-      "Capture and store before/after photos and job notes directly from the field, permanently attached to service records.",
-    details: [
-      {
-        label: "In-App Capture",
-        headline: "Take and tag photos directly in the job workflow",
-        description:
-          "Techs capture media inside the app, attach context tags, and keep documentation tied to the right record.",
-        cta: "See photo capture flow",
-        benefit: "No more missing images trapped on personal camera rolls.",
-        mock: "mobile",
-      },
-      {
-        label: "Permanent History",
-        headline: "Attach media and notes to customer timeline forever",
-        description:
-          "Documentation propagates from job records into long-term customer history for future visits.",
-        cta: "See record timeline",
-        benefit: "Any team member can understand prior work instantly.",
+          "Open a customer and see every text thread alongside their jobs, invoices, and equipment. When a customer texts 'is my part in yet?', you see their full history without switching screens.",
+        cta: "See conversation context",
+        benefit:
+          "Your team responds faster because they're never starting from zero.",
         mock: "customer",
       },
       {
-        label: "Risk Protection",
-        headline: "Use evidence to resolve quality and damage disputes",
+        label: "Automatic Quiet Hours",
+        headline: "No texts at 11 PM. Ever.",
         description:
-          "Timestamped visual proof strengthens communication and reduces ambiguity after job completion.",
-        cta: "See evidence trail",
-        benefit: "Clearer accountability for both team and customer.",
-        mock: "reliability",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "mobile-tech-app",
-      "customer-database",
-      "digital-approvals-signatures",
-    ],
-    resources: operationsResources,
-    faqs: [
-      {
-        question: "Can photos be tagged by type?",
-        answer:
-          "Yes. Common tags include before, after, data plate, issue, and other.",
-      },
-      {
-        question: "Can the office review uploaded photos immediately?",
-        answer:
-          "Yes. New uploads appear in the job record in near real time when connectivity is available.",
-      },
-    ],
-  },
-  {
-    slug: "google-review-requests",
-    badge: "⭐ Reviews",
-    headline: "Ask for Google reviews at the moment satisfaction peaks.",
-    description:
-      "Automatically send review requests after completed jobs using your direct listing link and smart suppression rules.",
-    ...demoCta,
-    mockup: "inbox",
-    metaTitle: "Google Review Requests | LeverLoop",
-    metaDescription:
-      "Automatically send Google review requests after completed jobs to grow trust and local lead conversion.",
-    details: [
-      {
-        label: "Automatic Trigger",
-        headline: "Send review requests after job completion",
-        description:
-          "Completion status can start a timed review request without dispatcher reminders or manual outreach.",
-        cta: "See trigger setup",
-        benefit: "Review generation becomes consistent across every job.",
-        mock: "pipeline",
-      },
-      {
-        label: "Direct Link",
-        headline: "Take customers straight to your review page",
-        description:
-          "One-tap links reduce friction so satisfied customers can leave feedback immediately.",
-        cta: "See message template",
-        benefit: "Higher review completion with less effort.",
-        mock: "mobile",
-      },
-      {
-        label: "Send Controls",
-        headline: "Prevent duplicate asks and respect quiet hours",
-        description:
-          "Suppression windows and routing rules ensure requests remain timely and customer-friendly.",
-        cta: "See send safeguards",
-        benefit: "Protects brand trust while still increasing volume.",
-        mock: "reliability",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "drip-campaigns",
-      "unified-inbox",
-      "speed-to-lead-engine",
-    ],
-    resources: communicationResources,
-    faqs: [
-      {
-        question: "Can we set our own request delay window?",
-        answer:
-          "Yes. Delay timing is configurable so you can choose the right post-job window for your brand.",
-      },
-      {
-        question: "Can duplicate requests be prevented?",
-        answer:
-          "Yes. Deduplication rules can suppress repeat sends within a chosen timeframe.",
-      },
-    ],
-  },
-  {
-    slug: "quickbooks-integration",
-    badge: "📚 QuickBooks",
-    headline: "Keep operations and accounting in sync without double entry.",
-    description:
-      "Sync customers, invoices, and payments between LeverLoop and QuickBooks Online with transparent event logs.",
-    ...demoCta,
-    mockup: "reliability",
-    metaTitle: "QuickBooks Integration | LeverLoop",
-    metaDescription:
-      "Sync invoices, payments, and customer records with QuickBooks Online to reduce bookkeeping overhead.",
-    details: [
-      {
-        label: "Two-Way Sync",
-        headline: "Propagate invoice and payment events automatically",
-        description:
-          "Operational events in LeverLoop are pushed to QuickBooks, reducing duplicate data entry.",
-        cta: "See sync events",
-        benefit: "Bookkeeping becomes faster and less error-prone.",
-        mock: "reliability",
-      },
-      {
-        label: "Connection Flow",
-        headline: "Connect accounts with secure OAuth setup",
-        description:
-          "Owners can authorize QuickBooks in minutes without manual API configuration.",
-        cta: "See connection steps",
-        benefit: "Integrations launch quickly with low technical overhead.",
-        mock: "team",
-      },
-      {
-        label: "Error Visibility",
-        headline: "Review sync logs and retry failed events",
-        description:
-          "A detailed event log surfaces what synced, when, and what needs attention.",
-        cta: "See sync monitoring",
-        benefit: "No silent failures in your accounting pipeline.",
-        mock: "pipeline",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "invoicing-text-to-pay",
-      "service-agreement-management",
-      "revenue-recovery-dashboard",
-    ],
-    resources: platformResources,
-    faqs: [
-      {
-        question: "How does duplicate customer handling work?",
-        answer:
-          "Sync logic attempts matching based on existing customer identifiers before creating new records.",
-      },
-      {
-        question: "Do sync errors require support intervention?",
-        answer:
-          "Most issues can be retried directly from the sync log with guided error details.",
-      },
-    ],
-  },
-  {
-    slug: "team-management-invitations",
-    badge: "👥 Team Management",
-    headline: "Invite, onboard, and offboard team members in minutes.",
-    description:
-      "Send role-based invites by email, speed up new-hire setup, and disable access instantly when needed.",
-    ...demoCta,
-    mockup: "team",
-    metaTitle: "Team Management & Invitations | LeverLoop",
-    metaDescription:
-      "Invite and manage technicians, dispatchers, and admins quickly with role-based onboarding.",
-    details: [
-      {
-        label: "Fast Invites",
-        headline: "Add new users with email and role in one step",
-        description:
-          "Owners assign role at invite time so new team members land in the right workspace immediately.",
-        cta: "See invite flow",
-        benefit: "Day-one productivity without IT bottlenecks.",
-        mock: "team",
-      },
-      {
-        label: "Lifecycle Control",
-        headline: "Resend, revoke, or disable access anytime",
-        description:
-          "Account lifecycle controls keep access clean as staffing changes.",
-        cta: "See account controls",
-        benefit: "Reduced security risk from stale accounts.",
-        mock: "reliability",
-      },
-      {
-        label: "Role Landing",
-        headline: "Drop each user into role-appropriate workflows",
-        description:
-          "Dispatchers, techs, and admins each see the tools they need from first login.",
-        cta: "See role experiences",
-        benefit: "Lower training overhead across growing teams.",
-        mock: "mobile",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "role-based-access",
-      "flat-monthly-pricing",
-      "mobile-tech-app",
-    ],
-    resources: managementResources,
-    faqs: [
-      {
-        question: "Can pending invites be revoked?",
-        answer:
-          "Yes. Owners can revoke or resend pending invitations directly from team settings.",
-      },
-      {
-        question: "Do role updates require users to log out and back in?",
-        answer:
-          "Role changes apply immediately, so users can continue without a full re-login cycle.",
-      },
-    ],
-  },
-  {
-    slug: "role-based-access",
-    badge: "🔐 Access Control",
-    headline: "Show each role exactly what they need, nothing more.",
-    description:
-      "Protect sensitive business data while keeping field and office workflows simple and focused.",
-    ...demoCta,
-    mockup: "team",
-    metaTitle: "Role-Based Access | LeverLoop",
-    metaDescription:
-      "Control platform visibility by role so owners, admins, dispatchers, and techs only access what they need.",
-    details: [
-      {
-        label: "Role Design",
-        headline: "Align access with real home-service responsibilities",
-        description:
-          "Owner, admin, dispatcher, and tech roles reflect actual operational needs and avoid permission sprawl.",
-        cta: "See role model",
-        benefit: "Cleaner workflows and less accidental exposure of sensitive data.",
-        mock: "team",
-      },
-      {
-        label: "Server Enforcement",
-        headline: "Protect data beyond UI-level hiding",
-        description:
-          "Authorization policies enforce access rules at the backend, not just on visible navigation.",
-        cta: "See policy protections",
-        benefit: "Security remains strong even on direct URL attempts.",
-        mock: "reliability",
-      },
-      {
-        label: "Instant Updates",
-        headline: "Apply permission changes as org structure evolves",
-        description:
-          "Role updates propagate quickly, so access stays aligned during hiring and reorganization.",
-        cta: "See role update flow",
-        benefit: "Admin overhead stays low while governance stays tight.",
-        mock: "pipeline",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "team-management-invitations",
-      "flat-monthly-pricing",
-      "ens-router",
-    ],
-    resources: managementResources,
-    faqs: [
-      {
-        question: "Can technicians access financial dashboards?",
-        answer:
-          "No. Role permissions limit financial visibility to the roles you define for that access.",
-      },
-      {
-        question: "Are permissions enforced on API and backend routes?",
-        answer:
-          "Yes. Access policies are enforced server-side to prevent unauthorized data access.",
-      },
-    ],
-  },
-  {
-    slug: "flat-monthly-pricing",
-    badge: "🧮 Flat Pricing",
-    headline: "One monthly price for your whole team. No per-seat tax.",
-    description:
-      "Add dispatchers, techs, and managers without pricing penalties so adoption can scale with your business.",
-    ...demoCta,
-    mockup: "team",
-    metaTitle: "Flat Monthly Pricing | LeverLoop",
-    metaDescription:
-      "Scale your team on LeverLoop with one predictable monthly price and no per-user penalties.",
-    details: [
-      {
-        label: "Growth-Aligned",
-        headline: "Hire without triggering a software bill spike",
-        description:
-          "Flat pricing removes per-seat friction so owners can onboard the full team by default.",
-        cta: "See pricing philosophy",
-        benefit: "Adoption decisions follow operations, not billing anxiety.",
-        mock: "team",
-      },
-      {
-        label: "Full-Team Adoption",
-        headline: "Unlock stronger data when everyone participates",
-        description:
-          "Field, office, and leadership workflows connect better when every role uses the same system.",
-        cta: "See team-wide workflow",
-        benefit: "Platform value compounds as usage broadens.",
-        mock: "pipeline",
-      },
-      {
-        label: "Predictable Spend",
-        headline: "Keep software costs stable as you grow",
-        description:
-          "Flat monthly billing keeps budgets cleaner and avoids surprise invoices tied to hiring cycles.",
-        cta: "See billing model",
-        benefit: "Simpler forecasting for owners and finance teams.",
-        mock: "reliability",
-      },
-    ],
-    relatedFeatureSlugs: [
-      "team-management-invitations",
-      "role-based-access",
-      "service-agreement-management",
-    ],
-    resources: managementResources,
-    faqs: [
-      {
-        question: "Does pricing change when we add more technicians?",
-        answer:
-          "No. Flat monthly pricing is designed to support full-team growth without per-seat increases.",
-      },
-      {
-        question: "Can we onboard seasonal staff without plan changes?",
-        answer:
-          "Yes. Team changes do not require per-user plan adjustments.",
-      },
-    ],
-  },
-  {
-    slug: "ens-router",
-    badge: "🛰️ ENS Router",
-    headline: "Reliable, compliant delivery for every business message.",
-    description:
-      "Route SMS and email through provider-agnostic infrastructure with failover, audit logs, and compliance controls built in.",
-    ...demoCta,
-    mockup: "reliability",
-    metaTitle: "ENS Router | LeverLoop",
-    metaDescription:
-      "Deliver customer messages reliably with multi-provider failover, compliance checks, and full communication audit trails.",
-    details: [
-      {
-        label: "Automatic Failover",
-        headline: "Route around provider outages without disruption",
-        description:
-          "If one downstream provider degrades, routing can shift traffic to healthy channels automatically.",
-        cta: "See failover behavior",
-        benefit: "Critical workflows like speed-to-lead keep firing.",
-        mock: "reliability",
-      },
-      {
-        label: "Compliance Guardrails",
-        headline: "Enforce opt-ins, quiet hours, and stop handling",
-        description:
-          "Every send passes through policy checks before dispatch, and opt-out updates are applied immediately.",
-        cta: "See compliance controls",
-        benefit: "Lower regulatory risk across automated communication volume.",
+          "Set your quiet hours once. LeverLoop holds outbound texts until morning. Automated messages, follow-ups, reminders: nothing goes out when your customers are sleeping.",
+        cta: "See quiet hours settings",
+        benefit:
+          "Stay professional without babysitting the automation.",
         mock: "inbox",
       },
-      {
-        label: "Audit Visibility",
-        headline: "Track message status end-to-end",
-        description:
-          "Delivery metadata, provider logs, and event timestamps create a complete communication trail.",
-        cta: "See routing logs",
-        benefit: "Operators can debug and verify message outcomes quickly.",
-        mock: "pipeline",
-      },
     ],
     relatedFeatureSlugs: [
-      "speed-to-lead-engine",
-      "drip-campaigns",
-      "unified-inbox",
+      "speed-to-lead",
+      "automatic-follow-up",
+      "on-my-way-texts",
     ],
-    resources: platformResources,
+    resources: textingResources,
     faqs: [
       {
-        question: "Why does provider failover matter for service businesses?",
+        question:
+          "Does texting use our existing business phone number?",
         answer:
-          "Because lead response, ETA texts, and payment reminders are operationally critical and should not depend on a single provider.",
+          "Yes. LeverLoop sends and receives texts from your business number. Customers see your name, not a random number.",
       },
       {
-        question: "How are STOP and opt-out requests handled?",
+        question:
+          "Can multiple people in the office respond to texts?",
         answer:
-          "Opt-out events are processed immediately and reflected across communication workflows to prevent further sends.",
+          "Yes. Any team member with inbox access can read and reply. You see who sent each message.",
+      },
+      {
+        question: "What are quiet hours?",
+        answer:
+          "Quiet hours block outbound texts during off-hours (for example, 8 PM to 7 AM). You set the window. Inbound texts from customers still come through so you don't miss anything urgent.",
+      },
+      {
+        question: "Can customers opt out of texts?",
+        answer:
+          "Yes. Standard STOP and unsubscribe handling is built in and fully compliant.",
+      },
+      {
+        question: "Is there a limit on how many texts we can send?",
+        answer:
+          "Texting is included in your LeverLoop plan. No per-message fees.",
       },
     ],
   },

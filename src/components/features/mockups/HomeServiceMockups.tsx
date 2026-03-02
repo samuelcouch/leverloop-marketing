@@ -342,7 +342,7 @@ export function TeamManagementMockup() {
 
 export function ReliabilityRouterMockup() {
   return (
-    <MockFrame title="ENS Router" subtitle="Multi-provider reliability">
+    <MockFrame title="Smart Delivery" subtitle="Every message lands">
       <div className="rounded-xl border border-[#e5e7eb] p-3">
         <div className="flex items-center gap-2 text-[11px] font-medium text-[#111827]">
           <span className="w-2 h-2 rounded-full bg-[#10b981]" /> Primary provider healthy

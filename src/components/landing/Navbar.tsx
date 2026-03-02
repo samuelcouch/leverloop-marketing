@@ -8,7 +8,6 @@ import {
 } from '@headlessui/react';
 import {
   announcementBar,
-  navbarNavLinks,
   navbarNavigation,
   navbarPrimaryCta,
   type NavbarFeature,
@@ -68,15 +67,19 @@ function FeaturedPanel({
 }: {
   item: Extract<NavbarItemConfig, { type: 'featured' }>;
 }) {
+  const hasFeatures = item.features.length > 0;
+
   return (
     <div className="flex gap-8 max-w-5xl">
-      <div className="flex flex-col gap-5 flex-1 min-w-[280px] max-w-[320px]">
-        {item.features.map((feature) => (
-          <FeatureCard key={feature.title} feature={feature} />
-        ))}
-      </div>
+      {hasFeatures && (
+        <div className="flex flex-col gap-5 flex-1 min-w-[280px] max-w-[320px]">
+          {item.features.map((feature) => (
+            <FeatureCard key={feature.title} feature={feature} />
+          ))}
+        </div>
+      )}
       {item.categories && (
-        <div className="grid grid-cols-3 gap-x-6 gap-y-5 border-l border-[#f0f0f0] pl-6">
+        <div className={`grid gap-x-6 gap-y-5 ${hasFeatures ? 'grid-cols-3 border-l border-[#f0f0f0] pl-6' : 'grid-cols-2'}`}>
           {item.categories.map((category) => (
             <div key={category.heading}>
               <p className="text-xs font-medium text-muted uppercase tracking-wider mb-2">
@@ -276,7 +279,7 @@ export default function Navbar() {
                   <PopoverPanel
                     anchor={{ to: 'bottom', gap: 16, padding: 24 }}
                     transition
-                    className="z-[60] bg-white rounded-2xl shadow-[0_4px_32px_-8px_rgba(0,0,0,0.12),0_0_0_1px_rgba(0,0,0,0.04)] p-6 origin-top transition duration-200 ease-out data-[closed]:scale-95 data-[closed]:opacity-0 w-[min(800px,calc(100vw-2rem))]"
+                    className="z-[60] bg-white rounded-2xl shadow-[0_4px_32px_-8px_rgba(0,0,0,0.12),0_0_0_1px_rgba(0,0,0,0.04)] p-6 origin-top transition duration-200 ease-out data-[closed]:scale-95 data-[closed]:opacity-0 max-w-[calc(100vw-2rem)]"
                   >
                     {item.type === 'featured' && <FeaturedPanel item={item} />}
                     {item.type === 'simple' && <SimplePanel item={item} />}

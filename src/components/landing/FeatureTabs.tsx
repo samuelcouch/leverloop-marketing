@@ -6,7 +6,6 @@ import {
   estimateMock,
   paymentMock,
   dispatchMock,
-  membershipMock,
   type EstimateOptionTone,
   type LandingFeatureMockId,
 } from '../../data/landing';
@@ -22,7 +21,6 @@ const mockById: Record<LandingFeatureMockId, React.ComponentType> = {
   estimates: EstimateMock,
   payments: PaymentMock,
   dispatch: DispatchMock,
-  memberships: MembershipMock,
 };
 
 export default function FeatureTabs() {
@@ -254,56 +252,4 @@ function DispatchMock() {
   );
 }
 
-function MembershipMock() {
-  return (
-    <div className="p-5">
-      <div className="bg-white rounded-xl border border-[#e5e7eb] shadow-sm overflow-hidden">
-        <div className="px-4 py-3 border-b border-[#f1f5f9] flex items-center justify-between">
-          <div className="text-xs font-semibold text-[#111827]">{membershipMock.title}</div>
-          <div className="flex gap-1.5">
-            <span className="text-[10px] px-2 py-0.5 rounded bg-[#f9fafb] text-[#9ca3af] border border-[#f1f5f9]">
-              {membershipMock.range}
-            </span>
-          </div>
-        </div>
-        <div className="p-4">
-          <div className="flex items-end gap-1.5 h-28 mb-3">
-            {[40, 65, 50, 80, 70, 55, 90, 75, 85, 60, 95, 78].map((height, index) => (
-              <div
-                key={index}
-                className="flex-1 rounded-t"
-                style={{
-                  height: `${height}%`,
-                  backgroundColor:
-                    index === 11 ? '#023e8a' : index >= 9 ? '#5a9bd5' : '#c5d9ed',
-                }}
-              />
-            ))}
-          </div>
-          <div className="flex justify-between text-[10px] text-[#9ca3af] mb-4">
-            <span>Jan</span>
-            <span>Feb</span>
-            <span>Mar</span>
-          </div>
-          <div className="grid grid-cols-3 gap-2">
-            {membershipMock.stats.map((stat) => {
-              const changeClass = stat.change.startsWith('+')
-                ? 'text-[#10b981]'
-                : stat.change.startsWith('-')
-                  ? 'text-[#ef4444]'
-                  : 'text-[#6b7280]';
 
-              return (
-                <div key={stat.label} className="bg-[#f9fafb] rounded-lg p-2.5">
-                  <div className="text-[10px] text-[#9ca3af]">{stat.label}</div>
-                  <div className="text-sm font-semibold text-[#111827]">{stat.value}</div>
-                  <div className={`text-[10px] font-medium ${changeClass}`}>{stat.change}</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}

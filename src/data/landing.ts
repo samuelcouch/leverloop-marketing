@@ -4,9 +4,9 @@ export type SiteMetadata = {
 };
 
 export const siteMetadata: SiteMetadata = {
-  defaultTitle: 'LeverLoop | CRM + Dispatch + Payments for Home Service Teams',
+  defaultTitle: 'LeverLoop | CRM + Dispatch + Payments for HVAC, Plumbing & Electrical Contractors',
   defaultDescription:
-    'Auto-respond to every lead in 60 seconds, build estimates on-site, and collect payment by text. Flat crew-size pricing for HVAC, plumbing, and electrical shops.',
+    'Auto-respond to every lead in as fast as 60 seconds, send Good/Better/Best estimates for e-signature, and collect payment by text. Flat monthly pricing with SMS included. Starting at $99/mo.',
 };
 
 export type AnnouncementBarData = {
@@ -16,9 +16,9 @@ export type AnnouncementBarData = {
 };
 
 export const announcementBar: AnnouncementBarData = {
-  message: 'The next version of LeverLoop is coming soon!',
-  linkText: 'Be the first to try it →',
-  linkHref: '#',
+  message: 'Two-way SMS included on every plan. Field crew access at no extra cost.',
+  linkText: 'See pricing →',
+  linkHref: '/pricing',
 };
 
 export type NavbarLink = {
@@ -74,85 +74,47 @@ export type NavbarAuth = {
 
 export const navbarNavLinks: NavbarLink[] = [
   { label: 'Product', href: '/#features' },
-  { label: 'Speed-to-Lead', href: '/features/speed-to-lead-engine' },
-  { label: 'Estimates & Payments', href: '/features/estimate-builder-good-better-best' },
-  { label: 'Dispatch & Mobile', href: '/features/dispatch-board' },
-  { label: 'Revenue Growth', href: '/features/service-agreement-management' },
+  { label: 'Speed-to-Lead', href: '/features/speed-to-lead' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Blog', href: '/blog' },
 ];
 
 export const navbarNavigation: NavbarItemConfig[] = [
   {
-    label: 'Product',
+    label: 'Features',
     type: 'featured',
-    features: [
-      {
-        title: 'Speed-to-Lead Engine',
-        description: 'Auto-text every new lead in 60 seconds so you stay first to respond',
-        href: '/features/speed-to-lead-engine',
-        gradient: 'from-sky-300 via-blue-200 to-emerald-200',
-      },
-      {
-        title: 'Good / Better / Best Estimates',
-        description: 'Build option-based quotes on-site using your flat-rate pricebook',
-        href: '/features/estimate-builder-good-better-best',
-        gradient: 'from-amber-300 via-yellow-200 to-lime-200',
-      },
-      {
-        title: 'Dispatch + Field Mobile App',
-        description: 'Schedule jobs, alert customers, and run every service call from the field',
-        href: '/features/dispatch-board',
-        gradient: 'from-emerald-400 via-green-300 to-lime-200',
-      },
-    ],
+    features: [],
     categories: [
       {
         heading: 'Sales & Leads',
         links: [
-          { label: 'Speed-to-Lead Engine', href: '/features/speed-to-lead-engine' },
-          { label: 'Pipeline Board', href: '/features/lead-pipeline-visual-board' },
-          { label: 'Customer Database', href: '/features/customer-database' },
+          { label: 'Speed-to-Lead', href: '/features/speed-to-lead' },
+          { label: 'Lead Board', href: '/features/lead-board' },
+          { label: 'Auto Follow-Up', href: '/features/automatic-follow-up' },
         ],
       },
       {
         heading: 'Estimates & Payments',
         links: [
-          { label: 'Estimate Builder', href: '/features/estimate-builder-good-better-best' },
-          { label: 'Text-to-Pay Invoicing', href: '/features/invoicing-text-to-pay' },
-          { label: 'Digital Approvals', href: '/features/digital-approvals-signatures' },
+          { label: 'Estimates', href: '/features/good-better-best-estimates' },
+          { label: 'Customer Approvals', href: '/features/customer-approvals' },
+          { label: 'Text-to-Pay', href: '/features/text-to-pay' },
         ],
       },
       {
-        heading: 'Field Operations',
+        heading: 'Dispatch & Field',
         links: [
           { label: 'Dispatch Board', href: '/features/dispatch-board' },
-          { label: 'Mobile Tech App', href: '/features/mobile-tech-app' },
-          { label: 'Job Documentation', href: '/features/photo-job-documentation' },
+          { label: 'Tech App', href: '/features/tech-app' },
+          { label: 'On My Way Texts', href: '/features/on-my-way-texts' },
         ],
       },
       {
-        heading: 'Revenue Growth',
+        heading: 'Customers & Texting',
         links: [
-          { label: 'Service Agreements', href: '/features/service-agreement-management' },
-          { label: 'Revenue Recovery', href: '/features/revenue-recovery-dashboard' },
-          { label: 'Drip Campaigns', href: '/features/drip-campaigns' },
-        ],
-      },
-      {
-        heading: 'Communication',
-        links: [
-          { label: 'Unified Inbox', href: '/features/unified-inbox' },
-          { label: 'Google Reviews', href: '/features/google-review-requests' },
-          { label: 'ETA Notifications', href: '/features/on-my-way-notifications' },
-        ],
-      },
-      {
-        heading: 'Platform',
-        links: [
-          { label: 'QuickBooks Integration', href: '/features/quickbooks-integration' },
-          { label: 'Team Management', href: '/features/team-management-invitations' },
-          { label: 'Flat Monthly Pricing', href: '/features/flat-monthly-pricing' },
+          { label: 'Customer Records', href: '/features/customer-records' },
+          { label: 'Equipment Tracking', href: '/features/equipment-tracking' },
+          { label: 'Two-Way Texting', href: '/features/two-way-texting' },
         ],
       },
     ],
@@ -244,10 +206,10 @@ export type HeroCopy = {
 export const heroCopy: HeroCopy = {
   badgeHref: '#features',
   badgeEmoji: ['🔧', '⚡', '💧'],
-  badgeText: 'For HVAC, plumbing, electrical, and every trade',
+  badgeText: 'Built for HVAC, plumbing, and electrical contractors',
   headline: 'Win more jobs from the leads you already have',
   subtitle:
-    'Auto-respond in 60 seconds, build estimates on-site, and collect payment by text. One system for your whole crew, starting at $49/mo.',
+    'Auto-respond to every lead in as fast as 60 seconds, send Good/Better/Best estimates for e-signature, and collect payment by text. SMS included on every plan, starting at $99/mo.',
   emailLabel: "What's your work email?",
   emailPlaceholder: 'owner@yourcompany.com',
   teamLabel: 'How many people are on your team?',
@@ -265,7 +227,6 @@ export const heroCopy: HeroCopy = {
       { icon: '📥', label: 'Leads' },
       { icon: '📅', label: 'Dispatch' },
       { icon: '🧾', label: 'Invoices' },
-      { icon: '🔁', label: 'Memberships' },
       { icon: '💬', label: 'Inbox' },
       { icon: '📊', label: 'Dashboard', active: true },
     ],
@@ -287,7 +248,7 @@ export const heroCopy: HeroCopy = {
           },
           {
             name: 'Marcus Hill',
-            company: 'Water Heater Quote',
+            company: 'Water Heater Estimate',
             email: 'marcushill@email.com',
             color: '#f59e0b',
           },
@@ -358,8 +319,7 @@ export type LandingFeatureMockId =
   | 'speed_to_lead'
   | 'estimates'
   | 'payments'
-  | 'dispatch'
-  | 'memberships';
+  | 'dispatch';
 
 export type LandingFeatureRow = {
   label: string;
@@ -375,18 +335,18 @@ export const landingFeatureRows: LandingFeatureRow[] = [
     label: 'Speed-to-Lead',
     headline: 'Reply in 60 seconds. Follow up until they book.',
     description:
-      'Every new lead gets an automatic text within a minute. If they go quiet, your drip sequence keeps following up until they book, reply, or opt out. No leads lost to slow callbacks.',
-    cta: 'See lead automation',
-    ctaHref: '/features/speed-to-lead-engine',
+      'Set your first response to fire in as fast as 60 seconds. If they go quiet, automatic follow-ups keep going until they book, reply, or opt out. No leads lost to slow callbacks.',
+    cta: 'See how it works',
+    ctaHref: '/features/speed-to-lead',
     mock: 'speed_to_lead',
   },
   {
     label: 'Estimate & Close',
     headline: 'Build Good / Better / Best options on the customer\'s phone',
     description:
-      'Pick a repair from your pricebook and LeverLoop builds three flat-rate tiers. The customer reviews options, picks a tier, and signs from their phone. Your tech closes the job without calling the office.',
+      'Pick a repair from your pricebook and LeverLoop builds three flat-rate tiers. The customer reviews options, picks a tier, and signs from their phone. No printing, no back-and-forth.',
     cta: 'See a Good / Better / Best estimate',
-    ctaHref: '/features/estimate-builder-good-better-best',
+    ctaHref: '/features/good-better-best-estimates',
     mock: 'estimates',
   },
   {
@@ -395,26 +355,17 @@ export const landingFeatureRows: LandingFeatureRow[] = [
     description:
       'Convert an approved estimate to an invoice in one tap and text the customer a payment link. They pay from their phone on the spot. No paper invoices, no payment chase.',
     cta: 'See text-to-pay',
-    ctaHref: '/features/invoicing-text-to-pay',
+    ctaHref: '/features/text-to-pay',
     mock: 'payments',
   },
   {
     label: 'Dispatch Board',
     headline: 'Dispatch faster, cut "where is my tech" calls',
     description:
-      'Drag-and-drop scheduling, one-tap On My Way texts with tech name and ETA, and live job status keep dispatchers, techs, and customers in sync all day.',
+      'Calendar scheduling, one-tap On My Way texts with crew name and ETA, and live job status keep your office and customers in sync all day.',
     cta: 'See dispatch board',
     ctaHref: '/features/dispatch-board',
     mock: 'dispatch',
-  },
-  {
-    label: 'Service Agreements',
-    headline: 'Turn one-time jobs into monthly recurring revenue',
-    description:
-      'Enroll service agreements from the field, auto-collect monthly dues, and trigger maintenance reminders that fill your calendar year-round. Track enrollments, renewals, and MRR in one dashboard.',
-    cta: 'See membership tools',
-    ctaHref: '/features/service-agreement-management',
-    mock: 'memberships',
   },
 ];
 
@@ -572,29 +523,6 @@ export const dispatchMock: DispatchMock = {
   ],
 };
 
-export type MembershipStat = {
-  label: string;
-  value: string;
-  change: string;
-  positive: boolean;
-};
-
-export type MembershipMock = {
-  title: string;
-  range: string;
-  stats: MembershipStat[];
-};
-
-export const membershipMock: MembershipMock = {
-  title: 'Membership growth',
-  range: 'Last 90 days',
-  stats: [
-    { label: 'Enrolled members', value: '428', change: '+19', positive: true },
-    { label: 'Monthly recurring revenue', value: '$57,340', change: '+11%', positive: true },
-    { label: 'Renewals due', value: '34', change: 'This week', positive: false },
-  ],
-};
-
 export type SecurityIcon = 'shield-check' | 'lock' | 'list-check';
 
 export type SecurityBadge = {
@@ -612,8 +540,8 @@ export const securityCopy: SecurityCopy = {
   heading: 'Your data stays protected, your messages stay compliant',
   badges: [
     {
-      title: 'Role-Based Access',
-      subtitle: 'Owner, admin, tech',
+      title: 'Owner & Admin Permissions',
+      subtitle: 'Control who sees what',
       icon: 'shield-check',
     },
     {
@@ -642,36 +570,34 @@ export type OutcomesSectionCopy = {
 };
 
 export const outcomesSectionCopy: OutcomesSectionCopy = {
-  heading: 'Revenue leaks are costing you jobs every week',
+  heading: 'Leads go cold. Estimates sit. Payments lag.',
   subheading:
-    'Leads sit unanswered. Estimates never get followed up. Techs finish work but payment comes later, or never. LeverLoop closes those gaps automatically.',
+    'Most shops lose revenue to slow callbacks, forgotten follow-ups, and invoices that take days to collect. LeverLoop closes those gaps automatically.',
   pillars: [
     {
       title: 'Respond First, Win First',
       summary:
-        'Auto-text every new lead in under 60 seconds and keep follow-up running until they book or opt out.',
-      highlight: '60-second auto-response',
+        'Auto-text every new lead in as fast as 60 seconds. Automatic follow-ups keep going until they book, reply, or opt out. No leads lost to slow callbacks.',
+      highlight: '60-second auto-text',
     },
     {
-      title: 'Close and Collect On-Site',
+      title: 'Close and Collect by Text',
       summary:
-        'Build tiered estimates on the customer\'s phone, get a signature, and send a text-to-pay link before your tech leaves.',
-      highlight: 'Same-visit payment',
+        'Send Good / Better / Best estimates to the customer\'s phone, get an e-signature, and text a payment link. No printing, no back-and-forth.',
+      highlight: 'Estimate to paid. By text.',
     },
     {
-      title: 'Grow Monthly Revenue',
+      title: 'Keep Crews Moving, No App Required',
       summary:
-        'Enroll service agreements from the field, auto-collect dues, and trigger maintenance reminders year-round.',
-      highlight: 'Recurring revenue from day one',
+        'Crew gets a text with a link. No app to download, no password to remember. They see the job details, update status, and add photos right from their phone.',
+      highlight: 'No app to download',
     },
   ],
 };
 
 export type GrowthMockId =
   | 'customer_intel'
-  | 'unified_inbox'
-  | 'revenue_recovery'
-  | 'mobile_offline';
+  | 'unified_inbox';
 
 export type GrowthSystemCard = {
   label: string;
@@ -688,57 +614,32 @@ export type GrowthSystemsCopy = {
 };
 
 export const growthSystemsCopy: GrowthSystemsCopy = {
-  heading: 'Find money hiding in your existing customer base',
+  heading: 'Look like the most professional shop in town. Because you will be.',
   subheading:
-    'Most shops leave revenue on the table in stale estimates, missed follow-ups, and aging equipment. These tools help you capture it.',
+    'Your techs show up knowing the equipment. Your customers get timely texts, not voicemails. Every conversation tied to the customer record, not lost in someone\'s personal phone.',
   cards: [
     {
-      label: 'Customer Intelligence',
-      headline: 'Know every property, unit, and warranty before your tech arrives',
+      label: 'Equipment Tracking',
+      headline: 'Know every unit at every property before your tech knocks',
       description:
-        'Full customer context in seconds. Techs see equipment age, service history, and open opportunities so every visit is informed and professional.',
+        'Track make, model, serial number, and install date for every piece of equipment at every address. Full service history per unit, across every job you\'ve ever done there. Your tech opens the work order and sees it all.',
       bullets: [
         'Search by name, phone, address, or equipment serial number',
-        'Track make, model, install date, and warranty status for every unit',
-        'Surface aging-equipment replacement opportunities automatically',
+        'Full service history per unit. Every job, every visit, all in one place.',
       ],
       mock: 'customer_intel',
     },
     {
-      label: 'Unified Inbox',
-      headline: 'Every text, follow-up, and update in one shared timeline',
+      label: 'Two-Way Texting',
+      headline: 'Text customers from LeverLoop. Get their replies in one place.',
       description:
-        'Speed-to-lead replies, on-my-way alerts, and customer messages all live in one place. The whole office sees what happened and what to do next.',
+        'Every conversation tied to the customer record. No more lost threads in personal phones, no more "who texted them last?" Your whole office sees what happened and what to do next.',
       bullets: [
-        'See automated and manual messages in a single timeline',
-        'Send on-my-way alerts with tech name and ETA in one tap',
-        'Trigger Google review requests after completed jobs automatically',
+        'Send and receive texts tied to each customer record',
+        'Automatic quiet hours so you never text a customer at 11 PM',
+        'Speed-to-lead replies and on-my-way alerts in the same thread',
       ],
       mock: 'unified_inbox',
-    },
-    {
-      label: 'Revenue Recovery',
-      headline: 'See recoverable dollars and act on them in one click',
-      description:
-        'Stale estimates, declined repairs, aging equipment, and at-risk memberships all surface in one dashboard. Turn missed revenue into booked work.',
-      bullets: [
-        'Prioritize recovery opportunities by dollar value',
-        'Launch follow-up sequences from the same screen',
-        'Keep your pipeline active without spreadsheets or manual tracking',
-      ],
-      mock: 'revenue_recovery',
-    },
-    {
-      label: 'Mobile + Offline',
-      headline: 'Your techs keep working, even without signal',
-      description:
-        'Basements, attics, rural properties. Your team builds estimates, captures photos, and collects signatures without needing cell service.',
-      bullets: [
-        'Build estimates and collect signatures from the job site',
-        'Capture before/after photos with notes attached to the job record',
-        'Auto-sync all queued activity when signal returns',
-      ],
-      mock: 'mobile_offline',
     },
   ],
 };
@@ -766,9 +667,8 @@ export type CustomerIntelMock = {
 export const customerIntelMock: CustomerIntelMock = {
   customersTitle: 'Recent customers',
   customers: [
-    { name: 'Olivia Reed', subtitle: '2 properties · Member', flag: 'VIP' },
+    { name: 'Olivia Reed', subtitle: 'Last service: No-cool call · Jun 2025' },
     { name: 'Marcus Hill', subtitle: 'Panel upgrade estimate open' },
-    { name: 'Diana Flores', subtitle: 'Warranty expiring in 21 days', flag: 'Alert' },
   ],
   detailTitle: 'Equipment profile',
   detailSubtitle: 'Carrier 4-ton split system',
@@ -777,7 +677,7 @@ export const customerIntelMock: CustomerIntelMock = {
     { label: 'Service calls (12 mo)', value: '4' },
     { label: 'Warranty status', value: 'Expires soon' },
   ],
-  alert: 'Replacement conversation recommended on next visit',
+  alert: 'Your tech sees this before they knock. Make, model, history, everything.',
 };
 
 export type InboxThreadItem = {
@@ -796,7 +696,7 @@ export type UnifiedInboxMock = {
 };
 
 export const unifiedInboxMock: UnifiedInboxMock = {
-  title: 'Unified inbox',
+  title: 'Customer texts',
   contact: 'Olivia Reed · No-cool call',
   status: '2 unread',
   thread: [
@@ -821,68 +721,7 @@ export const unifiedInboxMock: UnifiedInboxMock = {
       tag: 'On My Way',
       tone: 'human',
     },
-    {
-      sender: 'LeverLoop Auto',
-      message: 'Thanks again today. Mind leaving a quick Google review?',
-      time: '6:15 PM',
-      tag: 'Review Request',
-      tone: 'auto',
-    },
   ],
-};
-
-export type RevenueOpportunity = {
-  label: string;
-  amount: string;
-  action: string;
-};
-
-export type RevenueRecoveryMock = {
-  title: string;
-  subtitle: string;
-  opportunities: RevenueOpportunity[];
-  footer: string;
-};
-
-export const revenueRecoveryMock: RevenueRecoveryMock = {
-  title: 'Revenue recovery dashboard',
-  subtitle: 'Recoverable this week',
-  opportunities: [
-    { label: 'Stale estimates', amount: '$8,450', action: 'Send reminder' },
-    { label: 'Declined repairs', amount: '$6,120', action: 'Start sequence' },
-    { label: 'Aging equipment', amount: '$24,900', action: 'Flag for techs' },
-    { label: 'At-risk memberships', amount: '$1,960', action: 'Update payment' },
-  ],
-  footer: 'One tap actions turn missed opportunities into booked revenue',
-};
-
-export type MobileQueueItem = {
-  icon: string;
-  text: string;
-};
-
-export type MobileOfflineMock = {
-  title: string;
-  mode: string;
-  customer: string;
-  task: string;
-  queueLabel: string;
-  queue: MobileQueueItem[];
-  syncStatus: string;
-};
-
-export const mobileOfflineMock: MobileOfflineMock = {
-  title: 'Tech mobile app',
-  mode: 'Offline mode active',
-  customer: 'Job: Reed Residence',
-  task: 'Built estimate + captured signature',
-  queueLabel: 'Queued until signal returns',
-  queue: [
-    { icon: '🧾', text: 'Estimate update saved' },
-    { icon: '📷', text: '2 before/after photos attached' },
-    { icon: '✍️', text: 'Customer sign-off captured' },
-  ],
-  syncStatus: 'Auto-sync ready',
 };
 
 export type CtaLink = {
@@ -910,36 +749,33 @@ export type FooterCopy = {
 };
 
 export const footerCopy: FooterCopy = {
-  tagline: 'CRM + dispatch + payments for home service teams.',
+  tagline: 'CRM + dispatch + payments for HVAC, plumbing, and electrical contractors.',
   columns: [
     {
       heading: 'Product',
       links: [
-        { label: 'Speed-to-Lead Engine', href: '/features/speed-to-lead-engine' },
-        { label: 'Estimate Builder', href: '/features/estimate-builder-good-better-best' },
+        { label: 'Speed-to-Lead', href: '/features/speed-to-lead' },
+        { label: 'Estimates', href: '/features/good-better-best-estimates' },
         { label: 'Dispatch Board', href: '/features/dispatch-board' },
-        { label: 'Service Agreements', href: '/features/service-agreement-management' },
+        { label: 'Auto Follow-Up', href: '/features/automatic-follow-up' },
       ],
     },
     {
       heading: 'Platform',
       links: [
-        { label: 'Unified Inbox', href: '/features/unified-inbox' },
-        { label: 'Mobile Tech App', href: '/features/mobile-tech-app' },
-        { label: 'Text-to-Pay', href: '/features/invoicing-text-to-pay' },
-        { label: 'QuickBooks Integration', href: '/features/quickbooks-integration' },
+        { label: 'Two-Way Texting', href: '/features/two-way-texting' },
+        { label: 'Text-to-Pay', href: '/features/text-to-pay' },
+        { label: 'Equipment Tracking', href: '/features/equipment-tracking' },
+        { label: 'Customer Approvals', href: '/features/customer-approvals' },
       ],
     },
     {
       heading: 'Resources',
       links: [
         { label: 'Blog', href: '/blog' },
-        { label: 'AI Assistants Launch', href: '/blog/introducing-ai-assistants' },
-        {
-          label: 'Scaling Postgres',
-          href: '/blog/scaling-postgres-beyond-1b-rows',
-        },
-        { label: 'Revenue Recovery Workflows', href: '/features/revenue-recovery-dashboard' },
+        { label: 'Why Contractors Lose Leads', href: '/blog/why-contractors-lose-leads' },
+        { label: 'Automated Follow-Up Sequences', href: '/blog/automated-follow-up-sequences-contractors' },
+        { label: 'Flat-Rate Pricing', href: '/features/flat-monthly-pricing' },
       ],
     },
     {
