@@ -229,42 +229,42 @@ export const features: Feature[] = [
   {
     slug: "speed-to-lead",
     badge: "⚡ Speed-to-Lead",
-    headline: "New lead? They hear from you in 60 seconds.",
+    headline: "New leads get a reply in under 60 seconds, every time.",
     description:
-      "The first company to respond wins the job. LeverLoop texts new leads the moment they come in, then keeps following up until they book or reply.",
+      "LeverLoop texts every new lead in under 60 seconds from your business number, then follows up automatically until they book or reply. Stop losing paid leads to faster competitors.",
     ...demoCta,
     mockup: "lead",
-    metaTitle: "Speed-to-Lead | LeverLoop",
+    metaTitle: "Speed-to-Lead for Home Service Contractors | LeverLoop",
     metaDescription:
-      "Respond to every new lead in under 60 seconds with an automatic text from your business number. Stop losing jobs to the company that texts back first.",
+      "Text every new lead in under 60 seconds from your business number. Automatic follow-up keeps working until they book or reply. No dispatcher needed.",
     details: [
       {
         label: "Instant Response",
-        headline: "Reply to every lead before your competitor picks up the phone",
+        headline: "Be first, without dropping what you're doing",
         description:
-          "The second a lead hits your system, LeverLoop sends a personalized text from your business number. No dispatcher needed. No delay.",
+          "A lead fills out a form while you're in an attic. Within 60 seconds, they get a text from your business number with your name on it. Short, helpful, and human. No dispatcher needed. No app to check. You stay on the job, and the lead stays warm.",
         cta: "See the instant response flow",
         benefit:
-          "Protect your ad spend by reaching leads while they're still thinking about their problem.",
+          "Every dollar you spend on ads works harder when leads hear back before they call your competitor.",
         mock: "lead",
       },
       {
         label: "Automated Follow-Up",
         headline:
-          "Keep the conversation going without anyone lifting a finger",
+          "Most jobs are won on follow-up two through six",
         description:
-          "Lead goes quiet? Your follow-up sequence keeps working. Texts go out on a schedule you set until there's a clear outcome: booked, replied, or opted out.",
-        cta: "See follow-up automation",
-        benefit: "No more warm leads dying in someone's inbox.",
+          "Not every lead books on the first text. LeverLoop sends follow-ups on a schedule you control until there's a clear outcome: booked, replied, or opted out. You set the timing and the wording. Nothing goes out that you didn't approve.",
+        cta: "See follow-up sequences",
+        benefit: "Consistent follow-up without hiring a front desk or remembering to check your inbox.",
         mock: "inbox",
       },
       {
         label: "Pipeline Visibility",
-        headline: "See every lead, every stage, every response",
+        headline: "Know what happened to every lead without asking anyone",
         description:
-          "Stage updates, replies, and booking actions log automatically. Your office always knows which leads are hot, which went cold, and what happened last.",
+          "Every text, reply, and status change logs to the lead's timeline automatically. Your office sees which leads are hot, which went cold, and exactly what was said. No more 'I thought we called them' conversations.",
         cta: "View lead tracking",
-        benefit: "Speed and accountability in one place.",
+        benefit: "Accountability you can point to. Every lead has a paper trail from first contact to outcome.",
         mock: "pipeline",
       },
     ],
@@ -276,24 +276,29 @@ export const features: Feature[] = [
     resources: leadResources,
     faqs: [
       {
-        question: "Can we customize the first-response message?",
+        question: "Will the texts sound robotic or annoy my customers?",
         answer:
-          "Yes. You write the copy and choose the merge fields, so it sounds like your business. Not a robot.",
+          "You write the base templates, and LeverLoop personalizes each one with the lead's name, service request, and property details. The texts are short, helpful, and stop the moment a lead replies, books, or opts out. Customers see your business name, not a random number.",
       },
       {
-        question: "Does speed-to-lead work after hours?",
+        question: "Can I control what gets sent and when?",
         answer:
-          "Yes. Automated texts fire around the clock. You set quiet hours for anything that needs them.",
+          "Yes. You set the base templates, the follow-up schedule, and the stop conditions. LeverLoop customizes the details per lead, but the voice and timing are yours. You can also set quiet hours to prevent texts late at night.",
+      },
+      {
+        question: "Does this work with the way we already get leads?",
+        answer:
+          "LeverLoop connects to web forms, Google LSA, and most lead providers. You don't need to change how you generate leads. Setup takes minutes.",
       },
       {
         question: "What if a lead replies right away?",
         answer:
-          "Their reply lands in your inbox immediately. Your team can pick up the conversation live, and the automation pauses.",
+          "Their reply lands in your inbox immediately. Your team picks up the conversation live, and the automation pauses so nothing overlaps.",
       },
       {
-        question: "Do we need to connect our lead sources?",
+        question: "How fast can we go live?",
         answer:
-          "LeverLoop works with web forms, Google LSA, and most lead providers. Setup takes minutes.",
+          "Most shops are sending their first auto-response the same day they connect a lead source. There's no long onboarding process.",
       },
     ],
   },

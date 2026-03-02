@@ -17,7 +17,7 @@ export default function Footer() {
               </svg>
               <span className="font-display font-bold text-xl">LeverLoop</span>
             </div>
-            <p className="text-sm text-body mt-3">{footerCopy.tagline}</p>
+            {footerCopy.tagline && <p className="text-sm text-body mt-3">{footerCopy.tagline}</p>}
           </div>
 
           {footerCopy.columns.map((column) => (

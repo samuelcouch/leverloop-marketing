@@ -1,7 +1,6 @@
 import Button from '../ui/Button';
 import Input from '../ui/Input';
 import Select from '../ui/Select';
-import { Badge } from '../ui/Badge';
 import {
   heroCopy,
   type HeroPipelineColumnTone,
@@ -30,15 +29,6 @@ export default function Hero() {
       }}
     >
       <div className="max-w-3xl mx-auto px-5 lg:px-8 text-center">
-        <Badge variant="pill" className="gap-2 mb-6">
-          <span className="flex -space-x-1 text-base">
-            {heroCopy.badgeEmoji.map((emoji) => (
-              <span key={emoji}>{emoji}</span>
-            ))}
-          </span>
-          {heroCopy.badgeText}
-        </Badge>
-
         <h1 className="font-display text-[3.25rem] sm:text-[4rem] lg:text-[4.75rem] font-extrabold tracking-[-0.03em] leading-[1.05] text-heading">
           {heroCopy.headline}
         </h1>

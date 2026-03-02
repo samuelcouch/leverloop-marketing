@@ -6,7 +6,7 @@ export type SiteMetadata = {
 export const siteMetadata: SiteMetadata = {
   defaultTitle: 'LeverLoop | CRM + Dispatch + Payments for HVAC, Plumbing & Electrical Contractors',
   defaultDescription:
-    'Auto-respond to every lead in as fast as 60 seconds, send Good/Better/Best estimates for e-signature, and collect payment by text. Flat monthly pricing with SMS included. Starting at $99/mo.',
+    'Respond to leads in under 60 seconds, send Good/Better/Best estimates your customers can sign on the spot, and get paid by text before your tech leaves the driveway.',
 };
 
 export type AnnouncementBarData = {
@@ -16,9 +16,7 @@ export type AnnouncementBarData = {
 };
 
 export const announcementBar: AnnouncementBarData = {
-  message: 'Two-way SMS included on every plan. Field crew access at no extra cost.',
-  linkText: 'See pricing →',
-  linkHref: '/pricing',
+  message: 'A new LeverLoop is coming. Rebuilt from the ground up for trades businesses.',
 };
 
 export type NavbarLink = {
@@ -209,7 +207,7 @@ export const heroCopy: HeroCopy = {
   badgeText: 'Built for HVAC, plumbing, and electrical contractors',
   headline: 'Win more jobs from the leads you already have',
   subtitle:
-    'Auto-respond to every lead in as fast as 60 seconds, send Good/Better/Best estimates for e-signature, and collect payment by text. SMS included on every plan, starting at $99/mo.',
+    'Respond to leads in under 60 seconds, send Good/Better/Best estimates your customers can sign on the spot, and get paid by text before your tech leaves the driveway.',
   emailLabel: "What's your work email?",
   emailPlaceholder: 'owner@yourcompany.com',
   teamLabel: 'How many people are on your team?',
@@ -749,7 +747,7 @@ export type FooterCopy = {
 };
 
 export const footerCopy: FooterCopy = {
-  tagline: 'CRM + dispatch + payments for HVAC, plumbing, and electrical contractors.',
+  tagline: '',
   columns: [
     {
       heading: 'Product',
@@ -773,9 +771,7 @@ export const footerCopy: FooterCopy = {
       heading: 'Resources',
       links: [
         { label: 'Blog', href: '/blog' },
-        { label: 'Why Contractors Lose Leads', href: '/blog/why-contractors-lose-leads' },
-        { label: 'Automated Follow-Up Sequences', href: '/blog/automated-follow-up-sequences-contractors' },
-        { label: 'Flat-Rate Pricing', href: '/features/flat-monthly-pricing' },
+        { label: 'Pricing', href: '/pricing' },
       ],
     },
     {
