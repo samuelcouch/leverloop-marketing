@@ -1,7 +1,7 @@
 import { features, type Feature } from "../../data/features";
 import FeatureHero from "./FeatureHero";
 import FeatureDetails from "./FeatureDetails";
-import FreeResources from "./FreeResources";
+
 import FAQ from "./FAQ";
 import {
   CustomerDatabaseMockup,
@@ -50,7 +50,6 @@ export default function FeaturePage({ feature }: { feature: Feature }) {
       />
       <FeatureDetails details={feature.details} />
       <FAQ faqs={feature.faqs} />
-      <FreeResources resources={feature.resources} />
     </>
   );
 }
