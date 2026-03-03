@@ -15,17 +15,40 @@ Use this skill when the user wants to create a new blog post. Look for phrases l
 - "new blog entry"
 - "blog about..."
 
-## Purpose & Competitive Positioning
+## Purpose & Content Philosophy
 
-Every blog post is a marketing asset for LeverLoop. The goal is to educate the reader AND drive them toward LeverLoop as the best option.
+Every blog post is a marketing asset for LeverLoop, but **the reader should never feel marketed to.** The goal is to earn trust by being genuinely, specifically useful. Conversions come from trust, not from sales pressure.
 
-- **These are NOT puff pieces.** Write genuinely useful, specific content that a trades business owner would respect and share. The quality of the advice is what earns trust.
+### Content-to-Product Ratio
+
+- **90–95% education, 5–10% product/contextual.** The vast majority of every post should be actionable advice the reader can use whether or not they ever try LeverLoop.
+- **The reader must be able to succeed without us.** If someone follows the advice in the post using spreadsheets and sticky notes, it should still work. LeverLoop is presented as the way to make it repeatable, faster, or automatic.
+
+### Product Mention Rules
+
+- **First product mention: after 50–70% of the article.** Do not mention LeverLoop in the intro, quick answer, or early sections. Earn the reader's attention first with genuinely useful content.
+- **Maximum product touchpoints per post:** 1 contextual mention in a mid/late section + 1 clear end CTA. That's it for educational and how-to posts.
+- **Frame LeverLoop as an implementation option, not the answer.** Example: "If you want this process to run without spreadsheets, a field-service CRM like LeverLoop can centralize customer history, job scheduling, and follow-ups." Not: "LeverLoop is the best way to do this."
+- **BOFU exception:** For comparison and "best software" posts where the query is explicitly evaluative, LeverLoop can appear earlier, but still lead with criteria and use-case fit, not hype.
+
+### Competitor Mentions
+
 - **It IS okay to mention competitors** (DripJobs, ServiceTitan, Housecall Pro, Jobber, etc.) for credibility and SEO. Readers searching for alternatives or comparisons should find us.
-- **But LeverLoop must always be the hero.** Every post should leave the reader thinking "I should try LeverLoop," not "I should try [competitor]."
-- **Competitor mentions should be brief and factual.** Acknowledge what a competitor does, then pivot to how LeverLoop does it better, more completely, or as part of a full system. Never dedicate entire sections to praising a competitor.
+- **Competitor mentions should be brief and factual.** Acknowledge what a competitor does. Never dedicate entire sections to praising a competitor.
 - **Positioning pattern:** "Competitor X proved that [concept] matters. LeverLoop takes it further by [specific advantage]." One or two sentences, not a whole section.
 - **Never trash competitors.** Be respectful and factual. Let LeverLoop's breadth and depth speak for itself.
-- **The CTA is always LeverLoop.** Every post should end with the reader knowing exactly how LeverLoop solves the problem discussed.
+- **Be honest about trade-offs.** If a competitor is genuinely better for a specific niche (e.g., enterprise-scale with 100+ trucks), say so briefly and redirect to where LeverLoop shines. Honesty builds trust.
+
+### Information Gain Requirement
+
+Every post MUST include at least one of the following to differentiate from generic content:
+- A **checklist** the reader can use immediately
+- A **template** (call script, follow-up message, pricing framework, etc.)
+- A **worked example** with specific numbers from a realistic scenario
+- A **comparison table** with decision criteria
+- A **step-by-step process** with concrete actions
+
+This is what separates content that gets cited by AI engines from content that gets ignored.
 
 ## AEO Focus
 
@@ -85,12 +108,17 @@ Create a structured outline that follows an AEO-friendly pattern:
 - **Quick answer block** at the very top (before the standard introduction):
   - 2–3 sentences that directly answer the query
   - 3–5 bullets summarizing the main options/steps/recommendations
-- Introduction hook (1–2 short paragraphs giving context)
+  - **NO product mentions in the quick answer.** This block exists to win AI extraction/featured snippets. Keep it purely informational.
+- Introduction hook (1–2 short paragraphs giving context, no product mentions)
 - H2: "Who this is for"
 - 3–5 main H2 sections based on the user's bullet points and selected **page type**
-- H2: "How LeverLoop fits into this" (or similar product-role section) for bottom/mid-funnel posts
+  - These are the educational core. No LeverLoop mentions until the last 1–2 sections.
+  - At least one section must contain an "information gain" element (checklist, template, worked example, table, or step-by-step)
+- H2: "Making it repeatable" (or similar implementation section) for bottom/mid-funnel posts
+  - This is where LeverLoop appears as ONE implementation option. Frame as: "here's how to automate what you just learned."
+  - Keep this section short (3–5 paragraphs max). The educational content before it is what earns the right to mention the product.
 - H2: "Frequently asked questions" with 4–8 FAQs derived from likely follow-up questions
-- H2: "What to do next" with clear CTAs and internal links
+- H2: "What to do next" with clear CTA
 
 Present the outline to the user for approval before proceeding.
 
@@ -105,7 +133,9 @@ For EACH H2 section in the outline, use the `oracle` tool to:
 - Propose the **quick answer** (2–3 sentences + 3–5 bullets) for the top of the article
 - Suggest 4–8 **FAQ questions** in natural language, based on likely follow-ups
 - Recommend places to use **comparison tables** or structured lists for AI-friendly parsing
-- Call out where to use **explicit entity naming** (e.g., "LeverLoop is the operating system for trades businesses" instead of "it")
+- Call out where to use **explicit entity naming** (only in the implementation/CTA sections, e.g., "LeverLoop tracks every declined repair" instead of "it")
+- Identify where the "information gain" element (checklist, template, worked example, etc.) should live
+- Ensure product mentions are confined to the implementation section and CTA
 
 Example oracle prompt:
 ```
@@ -119,6 +149,7 @@ Page type: [comparison | how-to | checklist/template | case-study | FAQ-collecti
 Section: [H2 TITLE]
 Context: This is for LeverLoop, the operating system for trades businesses (HVAC, plumbing, electrical, pool & spa).
 Target audience: Trades business owners, dispatchers, office managers
+Product mention rules: LeverLoop should NOT appear in this section unless it is the implementation/CTA section (typically the last H2 before FAQ). Keep educational sections product-free.
 
 Provide:
 1. 2-3 H3 subsections with key talking points
@@ -126,7 +157,8 @@ Provide:
 3. Any statistics or data points to research or insert
 4. Internal linking opportunities (blog posts, feature pages at /features/[slug])
 5. Suggestions for 1-2 FAQ questions that relate to this section
-6. Notes on where explicit entity naming and tables/lists will help AI parsing
+6. Where to include an "information gain" element (checklist, template, worked example, table, or step-by-step)
+7. Notes on where tables/lists will help AI parsing
 ```
 
 ### Step 3: SEO Metadata Creation
@@ -198,6 +230,7 @@ Before writing the full draft, finalize the AEO-critical elements:
 
 1. **Quick Answer**
    - Write 2–3 sentences that directly answer the primary user query.
+   - **No product mentions.** This is purely informational to maximize AI extraction.
    - This maps to the `quickAnswer` field on `BlogArticle`.
 
 2. **Who This Is For**
@@ -206,18 +239,21 @@ Before writing the full draft, finalize the AEO-critical elements:
 
 3. **Key Takeaways**
    - List 5–7 concrete, specific takeaways.
+   - At most 1 of these may reference LeverLoop. The rest should be tool-agnostic.
    - This maps to the `keyTakeaways` string array on `BlogArticle`.
 
-4. **LeverLoop's Role**
-   - Define where LeverLoop is the best fit (be specific about use cases).
+4. **Implementation Section Plan**
+   - Define what LeverLoop specifically does for this use case (reference only real features from `src/data/features.ts`).
    - Note any honest limitations or cases where another approach is better.
+   - This section should be short (3–5 paragraphs) and positioned after all educational content.
 
 5. **FAQ List**
    - Draft 4–8 FAQs as **natural language questions** (full sentences).
-   - Ensure at least some FAQs map to:
-     - Pricing/implementation questions (bottom-funnel)
-     - Comparison or alternatives questions
+   - **At most 1 FAQ may mention LeverLoop.** The rest should be broadly useful and product-neutral.
+   - Ensure FAQs cover:
+     - Practical "how do I actually do this" questions
      - Edge cases (small shops, no tech staff, offline, etc.)
+     - At most 1 tooling/software question (can mention LeverLoop as one option)
    - This maps to the `faq` array of `{ question, answer }` on `BlogArticle`.
 
 6. **Schema Candidates**
@@ -312,19 +348,22 @@ export default article;
 - Target length: 1,500–2,500 words across all sections
 - Short paragraphs (2–4 sentences)
 - Use bullet points and numbered lists for scannability
+- **Answer-first at every heading.** Every H2/H3 that looks like a question should be answered in the first sentence under it. This is critical for AEO extraction.
+- **Define key terms** the first time they appear ("flat-rate pricing", "maintenance agreement", "dispatch board", etc.)
 - Include **comparison tables** (`<table>`) when comparing tools or approaches
-- Use **explicit entity naming** in key explanations:
-  - "LeverLoop tracks every declined repair" instead of "It tracks every declined repair"
+- Include at least one "information gain" element per post (checklist, template, worked example, table, or step-by-step)
 - Ground key claims in data and examples:
   - Use realistic ranges or concrete scenarios from trades businesses
   - If an exact number is not available, phrase as "In our experience with [context]..." and flag for citation
-- Maintain a neutral-to-positive brand tone:
+- **Product mention discipline:**
+  - No LeverLoop mentions in the quick answer, intro, or early educational sections
+  - Use **explicit entity naming** only in the implementation/CTA section (e.g., "LeverLoop tracks every declined repair" instead of "It tracks every declined repair")
+  - 1 contextual product mention in a mid/late section + 1 end CTA. No more.
   - Be candid about when LeverLoop is and is not the best fit
-  - Avoid hype and buzzwords. Be specific about capabilities.
-- Include a clear CTA related to LeverLoop features
 - **NEVER use em dashes (—).** Use periods or commas instead.
 - **NEVER use buzzwords.** Be specific and concrete.
-- **Competitor mentions:** Keep brief (1-2 sentences max per mention). Always pivot to LeverLoop's advantage. Never dedicate a full section to praising a competitor. The reader should leave wanting LeverLoop, not the competitor.
+- **Competitor mentions:** Keep brief (1-2 sentences max per mention). Never dedicate a full section to praising a competitor.
+- **Internal links:** ONLY link to pages that verifiably exist. For feature pages, ONLY use slugs from the "LeverLoop Feature Slugs" list below. For blog posts, ONLY use slugs from the `posts` array in `blog.ts`. NEVER invent, guess, or assume a URL exists. If no existing page fits, omit the link entirely.
 - **Author avatar** is the author's initials (e.g., `MG` for Maria Gonzalez, `SC` for Sarah Chen)
 - **`relatedSlugs`** must reference existing slugs from the `posts` array in `blog.ts`
 
@@ -334,32 +373,9 @@ No blog posts exist yet. The `posts` array in `src/data/blog.ts` is empty. When 
 
 ### Step 5: Editor Review
 
-After writing the draft, self-review against these checks. Load the `leverloop-brand-voice` skill for full vocabulary reference.
+After writing the draft, load the `blog-editor` skill and run a full editor pass on the new article. The blog-editor skill applies all brand voice, SEO, AEO, readability, technical accuracy, and content quality checks, then auto-fixes everything it can and flags remaining issues for human review.
 
-**Editor Checklist:**
-- [ ] Brand name is "LeverLoop" (one word, capital L capital L) everywhere
-- [ ] No em dashes (—) anywhere. Replaced with periods or commas.
-- [ ] No buzzwords from the avoid list (leverage, solution, utilize, streamline, robust, seamless, end-to-end, stakeholder, empower, disrupt)
-- [ ] Keyword density is under 2%
-- [ ] Every H2 section has at least 150 words of content
-- [ ] Excerpt is 150-160 characters
-- [ ] Passive voice under 10%
-- [ ] CTA is compelling and specific
-- [ ] Transition sentences between sections are smooth
-- [ ] Claims that need citations are flagged with `<!-- CITATION NEEDED -->`
-- [ ] At least 1 internal link to another blog post (use `/blog/[slug]`)
-- [ ] At least 1 internal link to a feature page (use `/features/[slug]`)
-- [ ] All referenced features actually exist (see feature slugs below)
-- [ ] Quick answer block exists (`quickAnswer` field)
-- [ ] "Who this is for" section exists (`whoIsThisFor` field)
-- [ ] FAQ section has 4–8 natural language questions (`faq` array)
-- [ ] Explicit entity naming is used (say "LeverLoop" not "it" or "the platform")
-- [ ] Comparison tables exist where appropriate
-- [ ] Tone sounds like a sharp operator, not a corporate SaaS blog
-- [ ] Content respects the trade. No patronizing language.
-- [ ] Competitor mentions are brief (1-2 sentences) and always pivot back to LeverLoop
-- [ ] No section is primarily about praising a competitor. LeverLoop is the hero of every post.
-- [ ] Reader would leave wanting to try LeverLoop, not a competitor
+**Do NOT skip this step or substitute a manual checklist.** The blog-editor skill is the authoritative final gate for all blog content.
 
 ### Step 6: Final Output
 
@@ -367,7 +383,8 @@ After editor review, produce:
 
 1. The **BlogPost** entry added to the `posts` array in `src/data/blog.ts`
 2. A new **`src/data/articles/<slug>.ts`** file with the `BlogArticle` (do NOT edit `index.ts`)
-3. A summary of:
+3. **Link audit:** Grep the new article file for every `href=` and `/features/` reference. Verify each link target exists in either the feature slugs list below or the `posts` array in `blog.ts`. Remove or replace any link that does not resolve to a real page.
+4. A summary of:
    - Word count
    - Keyword density report
    - Internal links added (blog + feature pages)
@@ -417,6 +434,6 @@ Create a blog post:
   • Why declined repairs are the biggest hidden revenue leak
   • How to calculate your declined repair number
   • The follow-up timing that actually works
-  • What to say in the follow-up message
-  • How LeverLoop automates the entire process
+  • What to say in the follow-up message (include a template)
+  • Making it repeatable (implementation section — LeverLoop appears here)
 ```
