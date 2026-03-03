@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrivacyPolicyPage from '../components/landing/PrivacyPolicyPage';
+import { privacyPageData } from '../data/privacy';
+
+const { meta } = privacyPageData;
+
+const siteUrl = Astro.site ?? new URL('https://leverloop.com');
+const pageUrl = new URL('/privacy-policy', siteUrl).href;
+
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": "WebPage",
+	name: meta.title,
+	description: meta.description,
+	url: pageUrl,
+	isPartOf: { "@type": "WebSite", name: "LeverLoop", url: siteUrl.toString() },
+};
+---
+
+<Layout title={meta.title} description={meta.description} jsonLd={jsonLd}>
+	<PrivacyPolicyPage />
+</Layout>

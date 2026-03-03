@@ -787,6 +787,8 @@ export const footerCopy: FooterCopy = {
     { label: 'Home', href: '/' },
     { label: 'Features', href: '/#features' },
     { label: 'Blog', href: '/blog' },
+    { label: 'Privacy Policy', href: '/privacy-policy' },
+    { label: 'Terms & Conditions', href: '/terms-and-conditions' },
   ],
   copyright: '© 2026 LeverLoop. All rights reserved.',
 };
